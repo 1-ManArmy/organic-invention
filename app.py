@@ -11,6 +11,9 @@ from auth.middleware import PassageMiddleware
 from agents import register_agent_routes
 from payments import register_payment_routes
 from pages import register_page_routes
+from websocket_handler import init_socketio
+from notifications_system import notifications_bp
+from analytics_system import analytics_bp
 
 def create_app():
     """Application factory pattern"""
@@ -24,16 +27,28 @@ def create_app():
     migrate = Migrate(app, db)
     CORS(app)
     
+    # Initialize SocketIO for real-time features
+    socketio = init_socketio(app)
+    
     # Register blueprints
     register_agent_routes(app)
     register_payment_routes(app)
     register_page_routes(app)
+    
+    # Register new real-time feature blueprints
+    app.register_blueprint(notifications_bp)
+    app.register_blueprint(analytics_bp)
     
     # Main routes
     @app.route("/")
     def homepage():
         """AI Agents Platform Homepage"""
         return render_template("index.html", title="AI Digital Friends - Next-Gen Platform")
+    
+    @app.route("/nav")
+    def navigation():
+        """Platform Navigation Hub"""
+        return render_template("navigation.html", title="Platform Navigation")
     
     @app.route("/agents")
     def agents_overview():
@@ -54,6 +69,46 @@ def create_app():
             {"name": "Navigator", "role": "🧭 Path Finder", "description": "Guidance and direction services"}
         ]
         return render_template("agents_overview.html", agents=agents, title="AI Agents")
+    
+    @app.route("/chat/<agent_id>")
+    def agent_chat_interface(agent_id):
+        """Enhanced chat interface for specific agent"""
+        # Agent definitions with personalities
+        agents_db = {
+            'strategist': {
+                'name': 'Strategist',
+                'role': '🎯 Master Planner',
+                'description': 'I specialize in strategic thinking and long-term planning',
+                'personality': {'avatar': '🎯'}
+            },
+            'healer': {
+                'name': 'Healer',
+                'role': '💚 Digital Wellness',
+                'description': 'I provide mental health support and wellness guidance',
+                'personality': {'avatar': '💚'}
+            },
+            'scout': {
+                'name': 'Scout',
+                'role': '🔍 Information Hunter',
+                'description': 'I excel at research and data collection',
+                'personality': {'avatar': '🔍'}
+            },
+            'analyst': {
+                'name': 'Analyst',
+                'role': '📊 Data Detective',
+                'description': 'I analyze data and provide insights',
+                'personality': {'avatar': '📊'}
+            }
+        }
+        
+        agent = agents_db.get(agent_id)
+        if not agent:
+            return render_template('error.html', error_code=404, error_message=f"Agent '{agent_id}' not found"), 404
+        
+        return render_template('chat/interface.html', 
+                             agent=agent, 
+                             agent_id=agent_id,
+                             title=f"Chat with {agent['name']}")
     
     @app.route("/api/health")
     def health_check():

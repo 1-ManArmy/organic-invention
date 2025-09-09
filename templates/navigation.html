@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Navigation - AI Agents Platform</title>
+    <link href="/static/main.css" rel="stylesheet">
+    <style>
+        .nav-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .nav-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .nav-header h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .nav-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #007bff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .nav-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-section.agents {
+            border-left-color: #28a745;
+        }
+        
+        .nav-section.analytics {
+            border-left-color: #17a2b8;
+        }
+        
+        .nav-section.realtime {
+            border-left-color: #ffc107;
+        }
+        
+        .nav-section.dashboard {
+            border-left-color: #dc3545;
+        }
+        
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #495057;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 500;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .quick-links {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .quick-links h3 {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .quick-link {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #495057;
+            transition: background-color 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .quick-link:hover {
+            background: #e9ecef;
+            color: #007bff;
+            text-decoration: none;
+            border-color: #007bff;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #28a745;
+            margin-right: 0.5rem;
+        }
+        
+        .new-badge {
+            background: #dc3545;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-header">
+            <h1>🚀 AI Agents Platform</h1>
+            <p>Navigate through our comprehensive suite of AI-powered tools and features</p>
+            <p><span class="status-indicator"></span> All systems operational</p>
+        </div>
+        
+        <div class="nav-grid">
+            <div class="nav-section agents">
+                <span class="section-icon">🤖</span>
+                <h3 class="section-title">AI Agents Hub</h3>
+                <p class="section-description">
+                    Interact with our 13 specialized AI agents, each with unique personalities and capabilities.
+                </p>
+                <ul class="feature-list">
+                    <li>13 Unique AI Personalities</li>
+                    <li>Real-time Chat Interface</li>
+                    <li>Specialized Expertise Areas</li>
+                    <li>Conversation History</li>
+                </ul>
+                <a href="/agents" class="nav-button">Explore Agents</a>
+            </div>
+            
+            <div class="nav-section analytics">
+                <span class="section-icon">📊</span>
+                <h3 class="section-title">Analytics Dashboard <span class="new-badge">NEW</span></h3>
+                <p class="section-description">
+                    Comprehensive insights into your usage patterns, agent performance, and platform metrics.
+                </p>
+                <ul class="feature-list">
+                    <li>Usage Analytics</li>
+                    <li>Agent Performance Metrics</li>
+                    <li>Interactive Charts</li>
+                    <li>AI-Generated Insights</li>
+                </ul>
+                <a href="/dashboard/analytics" class="nav-button">View Analytics</a>
+            </div>
+            
+            <div class="nav-section realtime">
+                <span class="section-icon">⚡</span>
+                <h3 class="section-title">Real-time Features <span class="new-badge">NEW</span></h3>
+                <p class="section-description">
+                    Experience instant notifications, live chat, and real-time updates across the platform.
+                </p>
+                <ul class="feature-list">
+                    <li>WebSocket Communication</li>
+                    <li>Live Notifications</li>
+                    <li>Typing Indicators</li>
+                    <li>Instant Responses</li>
+                </ul>
+                <a href="/chat/strategist" class="nav-button">Try Live Chat</a>
+            </div>
+            
+            <div class="nav-section dashboard">
+                <span class="section-icon">🎛️</span>
+                <h3 class="section-title">Control Dashboard</h3>
+                <p class="section-description">
+                    Manage your account, view notifications, configure settings, and access administrative tools.
+                </p>
+                <ul class="feature-list">
+                    <li>Account Management</li>
+                    <li>Notification Center</li>
+                    <li>Usage Statistics</li>
+                    <li>System Settings</li>
+                </ul>
+                <a href="/dashboard" class="nav-button">Open Dashboard</a>
+            </div>
+        </div>
+        
+        <div class="quick-links">
+            <h3>🔗 Quick Access</h3>
+            <div class="quick-links-grid">
+                <a href="/chat/strategist" class="quick-link">
+                    🎯 Chat with Strategist
+                </a>
+                <a href="/chat/healer" class="quick-link">
+                    💚 Talk to Healer
+                </a>
+                <a href="/chat/scout" class="quick-link">
+                    🔍 Research with Scout
+                </a>
+                <a href="/chat/analyst" class="quick-link">
+                    📊 Analyze with Data Expert
+                </a>
+                <a href="/api/notifications" class="quick-link">
+                    🔔 View Notifications
+                </a>
+                <a href="/dashboard/analytics" class="quick-link">
+                    📈 Analytics Dashboard
+                </a>
+                <a href="/api/health" class="quick-link">
+                    ❤️ System Health
+                </a>
+                <a href="/payments" class="quick-link">
+                    💳 Payment Center
+                </a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 10px;">
+            <h3>🌟 Platform Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #007bff;">13</div>
+                    <div style="color: #6c757d;">AI Agents</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #28a745;">5</div>
+                    <div style="color: #6c757d;">Payment Gateways</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #17a2b8;">24/7</div>
+                    <div style="color: #6c757d;">Availability</div>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">∞</div>
+                    <div style="color: #6c757d;">Possibilities</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add pulse animation to status indicator
+            const statusIndicator = document.querySelector('.status-indicator');
+            setInterval(() => {
+                statusIndicator.style.opacity = '0.5';
+                setTimeout(() => {
+                    statusIndicator.style.opacity = '1';
+                }, 500);
+            }, 2000);
+            
+            // Add click tracking for analytics
+            document.querySelectorAll('.nav-button, .quick-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('Navigation:', this.href);
+                    // Here you could send analytics data
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - AI Agents Platform</title>
+    <link href="/static/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .analytics-dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .dashboard-header h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #007bff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .metric-card.success {
+            border-left-color: #28a745;
+        }
+        
+        .metric-card.warning {
+            border-left-color: #ffc107;
+        }
+        
+        .metric-card.info {
+            border-left-color: #17a2b8;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .metric-change {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .metric-change.positive {
+            color: #28a745;
+        }
+        
+        .metric-change.negative {
+            color: #dc3545;
+        }
+        
+        .charts-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .agent-stats {
+            margin-bottom: 3rem;
+        }
+        
+        .agent-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .agent-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .agent-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .agent-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .agent-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .agent-metric {
+            text-align: center;
+        }
+        
+        .agent-metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .agent-metric-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .insights-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .insight-item {
+            padding: 1rem;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+            margin-bottom: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .insight-item.trend {
+            border-left-color: #28a745;
+        }
+        
+        .insight-item.pattern {
+            border-left-color: #17a2b8;
+        }
+        
+        .insight-item.opportunity {
+            border-left-color: #ffc107;
+        }
+        
+        .insight-item.achievement {
+            border-left-color: #dc3545;
+        }
+        
+        .insight-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .insight-description {
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .insight-recommendation {
+            color: #007bff;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .export-controls {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .export-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: background-color 0.2s;
+        }
+        
+        .export-btn:hover {
+            background: #0056b3;
+        }
+        
+        @media (max-width: 768px) {
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agent-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="analytics-dashboard">
+        <div class="dashboard-header">
+            <h1>📊 Analytics Dashboard</h1>
+            <p>Comprehensive insights into your AI Agents usage and platform performance</p>
+        </div>
+        
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card success">
+                <div class="metric-value">{{ user_metrics.total_messages }}</div>
+                <div class="metric-label">Total Messages</div>
+                <div class="metric-change positive">↗ +{{ "%.1f"|format(user_metrics.growth_rate) }}% this month</div>
+            </div>
+            
+            <div class="metric-card info">
+                <div class="metric-value">{{ user_metrics.total_sessions }}</div>
+                <div class="metric-label">Active Sessions</div>
+                <div class="metric-change positive">{{ user_metrics.period }}</div>
+            </div>
+            
+            <div class="metric-card warning">
+                <div class="metric-value">{{ "%.1f"|format(user_metrics.avg_session_duration) }}m</div>
+                <div class="metric-label">Avg Session Duration</div>
+                <div class="metric-change positive">Engaged usage</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-value">{{ user_metrics.unique_agents_used }}</div>
+                <div class="metric-label">Agents Used</div>
+                <div class="metric-change">Out of 13 available</div>
+            </div>
+        </div>
+        
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <div class="chart-title">📈 Daily Activity Trend</div>
+                <canvas id="activityChart" width="400" height="200"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-title">🎯 Feature Usage</div>
+                <canvas id="featureChart" width="300" height="200"></canvas>
+            </div>
+        </div>
+        
+        <!-- Agent Statistics -->
+        <div class="agent-stats">
+            <h2 style="text-align: center; margin-bottom: 2rem;">🤖 Agent Performance Stats</h2>
+            <div class="agent-stats-grid">
+                {% for agent in agent_stats[:6] %}
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar">{{ agent.agent_name[0] }}</div>
+                        <div class="agent-name">{{ agent.agent_name }}</div>
+                    </div>
+                    <div class="agent-metrics">
+                        <div class="agent-metric">
+                            <div class="agent-metric-value">{{ agent.total_interactions }}</div>
+                            <div class="agent-metric-label">Interactions</div>
+                        </div>
+                        <div class="agent-metric">
+                            <div class="agent-metric-value">{{ "%.1f"|format(agent.avg_response_time) }}s</div>
+                            <div class="agent-metric-label">Response Time</div>
+                        </div>
+                        <div class="agent-metric">
+                            <div class="agent-metric-value">{{ "%.1f"|format(agent.satisfaction_score) }}</div>
+                            <div class="agent-metric-label">Satisfaction</div>
+                        </div>
+                        <div class="agent-metric">
+                            <div class="agent-metric-value">
+                                {% if agent.usage_trend == 'up' %}📈{% elif agent.usage_trend == 'down' %}📉{% else %}➡️{% endif %}
+                            </div>
+                            <div class="agent-metric-label">Trend</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- AI Insights -->
+        <div class="insights-section">
+            <h2 style="margin-bottom: 1.5rem;">🧠 AI-Generated Insights</h2>
+            <div id="insights-container">
+                <!-- Insights will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Platform Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">{{ "{:,}".format(platform_metrics.total_users) }}</div>
+                <div class="metric-label">Total Users</div>
+            </div>
+            
+            <div class="metric-card success">
+                <div class="metric-value">{{ "{:,}".format(platform_metrics.active_users_today) }}</div>
+                <div class="metric-label">Active Today</div>
+            </div>
+            
+            <div class="metric-card info">
+                <div class="metric-value">{{ "%.1f"|format(performance_metrics.server_response_time * 1000) }}ms</div>
+                <div class="metric-label">Response Time</div>
+            </div>
+            
+            <div class="metric-card warning">
+                <div class="metric-value">{{ "%.1f"|format(platform_metrics.uptime_percentage) }}%</div>
+                <div class="metric-label">Uptime</div>
+            </div>
+        </div>
+        
+        <!-- Export Controls -->
+        <div class="export-controls">
+            <button class="export-btn" onclick="exportData('json')">📄 Export JSON</button>
+            <button class="export-btn" onclick="exportData('csv')">📊 Export CSV</button>
+            <button class="export-btn" onclick="refreshData()">🔄 Refresh Data</button>
+        </div>
+    </div>
+    
+    <script>
+        // Activity Trend Chart
+        const activityCtx = document.getElementById('activityChart').getContext('2d');
+        const activityData = {{ user_metrics.daily_data | tojsonfilter }};
+        
+        new Chart(activityCtx, {
+            type: 'line',
+            data: {
+                labels: activityData.map(d => new Date(d.date).toLocaleDateString()),
+                datasets: [{
+                    label: 'Messages Sent',
+                    data: activityData.map(d => d.messages_sent),
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Agents Used',
+                    data: activityData.map(d => d.agents_used),
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+        });
+        
+        // Feature Usage Chart
+        const featureCtx = document.getElementById('featureChart').getContext('2d');
+        const featureData = {{ platform_metrics.top_features | tojsonfilter }};
+        
+        new Chart(featureCtx, {
+            type: 'doughnut',
+            data: {
+                labels: featureData.map(f => f.name),
+                datasets: [{
+                    data: featureData.map(f => f.usage),
+                    backgroundColor: [
+                        '#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Load AI Insights
+        async function loadInsights() {
+            try {
+                const response = await fetch('/api/analytics/insights');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const container = document.getElementById('insights-container');
+                    container.innerHTML = '';
+                    
+                    data.insights.forEach(insight => {
+                        const div = document.createElement('div');
+                        div.className = `insight-item ${insight.type}`;
+                        div.innerHTML = `
+                            <div class="insight-title">${insight.title}</div>
+                            <div class="insight-description">${insight.description}</div>
+                            <div class="insight-recommendation">💡 ${insight.recommendation}</div>
+                        `;
+                        container.appendChild(div);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading insights:', error);
+            }
+        }
+        
+        // Export Data
+        function exportData(format) {
+            const days = 30; // Can be made configurable
+            window.open(`/api/analytics/export?format=${format}&days=${days}`, '_blank');
+        }
+        
+        // Refresh Data
+        function refreshData() {
+            location.reload();
+        }
+        
+        // Load insights on page load
+        loadInsights();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            loadInsights();
+        }, 300000);
+    </script>
+</body>
+</html>
