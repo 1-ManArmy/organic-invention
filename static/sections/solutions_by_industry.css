@@ -1,0 +1,83 @@
+/* Solutions by Industry Section Styles */
+.solutions-industry {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.solutions-industry .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.solutions-industry h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.industry-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.industry-blocks > div {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.industry-blocks > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.industry-blocks > div:hover::before {
+    left: 100%;
+}
+
+.industry-blocks > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.industry-blocks > div:nth-child(even) {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+.industry-blocks > div:nth-child(even):hover {
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+}
+
+@media (max-width: 768px) {
+    .solutions-industry h2 {
+        font-size: 2rem;
+    }
+    
+    .industry-blocks {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .industry-blocks > div {
+        padding: 2rem;
+        font-size: 1.1rem;
+    }
+}

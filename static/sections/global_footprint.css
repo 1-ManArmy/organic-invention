@@ -1,0 +1,64 @@
+/* Global Footprint Section Styles */
+.global-footprint {
+    padding: 80px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.global-footprint .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.global-footprint h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.global-footprint p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.global-footprint img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.global-footprint img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Add a world map placeholder if no image */
+.global-footprint::before {
+    content: '🌍';
+    font-size: 6rem;
+    display: block;
+    margin: 2rem 0;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .global-footprint h2 {
+        font-size: 2rem;
+    }
+    
+    .global-footprint p {
+        font-size: 1.2rem;
+    }
+    
+    .global-footprint::before {
+        font-size: 4rem;
+    }
+}

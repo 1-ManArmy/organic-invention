@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - AI Agents Platform</title>
+    <link href="/static/main.css" rel="stylesheet">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-header h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-header p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+            font-weight: 600;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .magic-link-info {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .magic-link-info h3 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .magic-link-info p {
+            color: #388e3c;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .security-note {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .security-note h4 {
+            margin: 0 0 0.5rem 0;
+            color: #495057;
+        }
+        
+        .powered-by {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .powered-by img {
+            height: 16px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🔐 Secure Login</h1>
+            <p>Passwordless authentication powered by 1Password</p>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'success' if category == 'success' else 'error' }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% if magic_link_sent %}
+            <div class="magic-link-info">
+                <h3>✨ Magic Link Sent!</h3>
+                <p>Check your email <strong>{{ email }}</strong> and click the link to complete your login.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                    The link will expire in 10 minutes for security.
+                </p>
+            </div>
+        {% else %}
+            <form method="POST" action="{{ url_for('auth.login') }}">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                    >
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    Send Magic Link 🪄
+                </button>
+            </form>
+            
+            <div class="security-note">
+                <h4>🛡️ How it works:</h4>
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                    <li>Enter your email address above</li>
+                    <li>We'll send you a secure magic link</li>
+                    <li>Click the link to instantly log in</li>
+                    <li>No passwords to remember or manage!</li>
+                </ul>
+            </div>
+        {% endif %}
+        
+        <div class="powered-by">
+            🔒 Secured by Passage
+            <img src="https://passage.id/assets/images/passage-logo.svg" alt="Passage" style="height: 14px;">
+            powered by
+            <img src="https://1password.com/img/logo/1password-logo.svg" alt="1Password" style="height: 14px;">
+        </div>
+    </div>
+    
+    <script>
+        // Auto-focus email input
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            if (emailInput && !document.querySelector('.magic-link-info')) {
+                emailInput.focus();
+            }
+        });
+        
+        // Handle form submission with loading state
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '⏳ Sending...';
+            button.disabled = true;
+            
+            // Re-enable after 5 seconds to prevent infinite loading
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
