@@ -2,21 +2,21 @@
 Flask==2.3.3
 Flask-SQLAlchemy==3.0.5
 Flask-Migrate==4.0.5
-Flask-CORS==4.0.0
+Flask-CORS==6.0.0
 Flask-SocketIO==5.3.6
-Werkzeug==2.3.7
+Werkzeug==3.0.6
 
 # Database
 psycopg2-binary==2.9.7
 SQLAlchemy==2.0.21
 
 # Authentication & Security (Passage powered by 1Password)
-requests==2.31.0
-cryptography==41.0.4
+requests==2.32.4
+cryptography==44.0.1
 bcrypt==4.0.1
 
 # HTTP & API clients
-urllib3==2.0.4
+urllib3==2.5.0
 
 # Payment processing
 stripe==6.6.0
@@ -26,15 +26,15 @@ paypalrestsdk==1.13.3
 python-dotenv==1.0.0
 
 # WSGI Server
-gunicorn==21.2.0
-gevent==23.7.0
-eventlet==0.33.3
+gunicorn==23.0.0
+gevent==23.9.0
+eventlet==0.40.3
 
 # Development & Testing
 pytest==7.4.2
 pytest-flask==1.2.0
 flake8==6.0.0
-black==23.7.0
+black==24.3.0
 
 # Utilities
 click==8.1.7
@@ -46,7 +46,7 @@ pytz==2023.3
 python-dateutil==2.8.2
 
 # JSON & Data Processing
-orjson==3.9.5
+orjson==3.9.15
 marshmallow==3.20.1
 
 # Caching (optional)
@@ -60,7 +60,7 @@ sentry-sdk[flask]==1.32.0
 Flask-Mail==0.9.1
 
 # File uploads (optional)
-Pillow==10.0.0
+Pillow==10.3.0
 
 # Background tasks (optional)
 celery==5.3.1
