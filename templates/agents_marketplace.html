@@ -12,7 +12,7 @@
         </p>
         <div class="hero-stats">
             <div class="stat">
-                <span class="stat-number">14</span>
+                <span class="stat-number">22</span>
                 <span class="stat-label">AI Agents</span>
             </div>
             <div class="stat">
@@ -38,6 +38,7 @@
                     <button class="filter-btn" data-filter="creative">Creative</button>
                     <button class="filter-btn" data-filter="personal">Personal</button>
                     <button class="filter-btn" data-filter="romantic">Romantic</button>
+                    <button class="filter-btn" data-filter="advanced">🚀 Advanced</button>
                 </div>
             </div>
             
@@ -444,13 +445,704 @@
                 </div>
             </div>
 
-            <!-- More agents can be dynamically loaded -->
-            <div class="load-more-container">
-                <button class="btn-load-more" onclick="loadMoreAgents()">
-                    <i class="fas fa-plus"></i>
-                    Show More Agents
-                </button>
+            <!-- The Archivist -->
+            <div class="agent-card" data-category="business" data-agent="archivist">
+                <div class="agent-header" style="background: linear-gradient(135deg, #805ad5, #6b46c1);">
+                    <div class="agent-avatar">📚</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Archivist</h3>
+                    <p class="agent-role">Knowledge Keeper</p>
+                    <p class="agent-description">Information storage and organization specialist with advanced knowledge management capabilities.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Knowledge Management</span>
+                        <span class="specialty-tag">Documentation</span>
+                        <span class="specialty-tag">Information Retrieval</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-book"></i>
+                            <span>Knowledge Base</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Documentation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Smart Search</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$16.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('archivist')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('archivist', 16.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <!-- The Diplomat -->
+            <div class="agent-card" data-category="business" data-agent="diplomat">
+                <div class="agent-header" style="background: linear-gradient(135deg, #38b2ac, #319795);">
+                    <div class="agent-avatar">🤝</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Diplomat</h3>
+                    <p class="agent-role">Relationship Builder</p>
+                    <p class="agent-description">Communication and negotiation expert specializing in relationship management and conflict resolution.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Negotiation</span>
+                        <span class="specialty-tag">Communication</span>
+                        <span class="specialty-tag">Conflict Resolution</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <span>Negotiation Skills</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Mediation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$17.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('diplomat')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('diplomat', 17.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Tactician -->
+            <div class="agent-card" data-category="business" data-agent="tactician">
+                <div class="agent-header" style="background: linear-gradient(135deg, #3182ce, #2c5282);">
+                    <div class="agent-avatar">⚔️</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Tactician</h3>
+                    <p class="agent-role">Problem Solver</p>
+                    <p class="agent-description">Strategic solutions expert providing tactical planning and problem resolution services.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Problem Solving</span>
+                        <span class="specialty-tag">Tactical Planning</span>
+                        <span class="specialty-tag">Crisis Management</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-chess-knight"></i>
+                            <span>Strategic Moves</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Crisis Response</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$18.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('tactician')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('tactician', 18.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Messenger -->
+            <div class="agent-card" data-category="business" data-agent="messenger">
+                <div class="agent-header" style="background: linear-gradient(135deg, #00b5d8, #0891b2);">
+                    <div class="agent-avatar">📡</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Messenger</h3>
+                    <p class="agent-role">Communication Hub</p>
+                    <p class="agent-description">Message delivery and coordination expert facilitating seamless communication.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Message Delivery</span>
+                        <span class="specialty-tag">Coordination</span>
+                        <span class="specialty-tag">Networking</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-envelope"></i>
+                            <span>Message Systems</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Network Coordination</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <span>Communication Hub</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$13.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('messenger')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('messenger', 13.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Analyst -->
+            <div class="agent-card" data-category="business" data-agent="analyst">
+                <div class="agent-header" style="background: linear-gradient(135deg, #d53f8c, #b83280);">
+                    <div class="agent-avatar">📊</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Analyst</h3>
+                    <p class="agent-role">Data Detective</p>
+                    <p class="agent-description">Data analysis expert providing insights generation and analytical reporting services.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Data Analysis</span>
+                        <span class="specialty-tag">Statistical Modeling</span>
+                        <span class="specialty-tag">Insights Generation</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calculator"></i>
+                            <span>Statistical Analysis</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Insights Discovery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$19.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('analyst')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('analyst', 19.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Navigator -->
+            <div class="agent-card" data-category="personal" data-agent="navigator">
+                <div class="agent-header" style="background: linear-gradient(135deg, #319795, #2c7a7b);">
+                    <div class="agent-avatar">🧭</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">The Navigator</h3>
+                    <p class="agent-role">Path Finder</p>
+                    <p class="agent-description">Guidance and direction expert providing pathfinding assistance and journey optimization.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Path Finding</span>
+                        <span class="specialty-tag">Direction Planning</span>
+                        <span class="specialty-tag">Journey Optimization</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-map"></i>
+                            <span>Route Planning</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-compass"></i>
+                            <span>Direction Guidance</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Goal Achievement</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$14.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('navigator')">
+                            <i class="fas fa-play"></i>
+                            Try Free
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('navigator', 14.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW ADVANCED AGENTS -->
+            
+            <!-- Sophia AI Assistant -->
+            <div class="agent-card advanced" data-category="business" data-agent="sophia_assistant">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #4a90e2, #357abd);">
+                    <div class="agent-avatar">👩‍💼</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Sophia AI Assistant</h3>
+                    <p class="agent-role">Professional Assistant</p>
+                    <p class="agent-description">Advanced AI assistant with voice chat, document analysis, and smart scheduling capabilities.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Chat</span>
+                        <span class="specialty-tag">Document Analysis</span>
+                        <span class="specialty-tag">Task Management</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-microphone"></i>
+                            <span>Voice Interaction</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-file-upload"></i>
+                            <span>Document Upload</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <span>Chat Export</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$39.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('sophia_assistant')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('sophia_assistant', 39.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marcus Fitness Coach -->
+            <div class="agent-card advanced" data-category="personal" data-agent="marcus_fitness">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #ff6b35, #e55a2b);">
+                    <div class="agent-avatar">💪</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Marcus Fitness Coach</h3>
+                    <p class="agent-role">Fitness Coach</p>
+                    <p class="agent-description">Dynamic fitness coach with voice coaching, workout plans, and motivational support.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Coaching</span>
+                        <span class="specialty-tag">Workout Plans</span>
+                        <span class="specialty-tag">Progress Tracking</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Fitness Programs</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Progress Analytics</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-trophy"></i>
+                            <span>Achievement System</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$34.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('marcus_fitness')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('marcus_fitness', 34.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elena AI Therapist -->
+            <div class="agent-card advanced" data-category="personal" data-agent="elena_therapist">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #7b68ee, #6a5acd);">
+                    <div class="agent-avatar">🌸</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Elena AI Therapist</h3>
+                    <p class="agent-role">Mental Health Therapist</p>
+                    <p class="agent-description">Compassionate AI therapist with voice therapy, mood tracking, and mindfulness exercises.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Therapy</span>
+                        <span class="specialty-tag">Mood Tracking</span>
+                        <span class="specialty-tag">Mindfulness</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Emotional Support</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Wellness Programs</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <span>Mental Health Tools</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$44.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('elena_therapist')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('elena_therapist', 44.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alex Creative Director -->
+            <div class="agent-card advanced" data-category="creative" data-agent="alex_creative">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #ff69b4, #e91e63);">
+                    <div class="agent-avatar">🎨</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Alex Creative Director</h3>
+                    <p class="agent-role">Creative Director</p>
+                    <p class="agent-description">Innovative creative assistant with voice brainstorming, design feedback, and project management.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Brainstorming</span>
+                        <span class="specialty-tag">Design Feedback</span>
+                        <span class="specialty-tag">Creative Projects</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-palette"></i>
+                            <span>Creative Tools</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Idea Generation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Project Management</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$42.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('alex_creative')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('alex_creative', 42.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- David Finance Expert -->
+            <div class="agent-card advanced" data-category="business" data-agent="david_finance">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #2e8b57, #228b22);">
+                    <div class="agent-avatar">📈</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">David Finance Expert</h3>
+                    <p class="agent-role">Financial Advisor</p>
+                    <p class="agent-description">Professional financial advisor with voice analysis, market insights, and portfolio management.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Analysis</span>
+                        <span class="specialty-tag">Market Insights</span>
+                        <span class="specialty-tag">Portfolio Management</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-chart-area"></i>
+                            <span>Market Analysis</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wallet"></i>
+                            <span>Financial Planning</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Risk Assessment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$47.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('david_finance')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('david_finance', 47.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luna Mystic Guide -->
+            <div class="agent-card advanced" data-category="personal" data-agent="luna_mystic">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #9370db, #8a2be2);">
+                    <div class="agent-avatar">🌙</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Luna Mystic Guide</h3>
+                    <p class="agent-role">Mystic Guide</p>
+                    <p class="agent-description">Mystical AI guide with voice readings, tarot guidance, and cosmic insights.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Readings</span>
+                        <span class="specialty-tag">Tarot Guidance</span>
+                        <span class="specialty-tag">Cosmic Insights</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-crystal-ball"></i>
+                            <span>Mystical Readings</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-moon"></i>
+                            <span>Lunar Wisdom</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-stars"></i>
+                            <span>Cosmic Connection</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$37.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('luna_mystic')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('luna_mystic', 37.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zoe Gaming Companion -->
+            <div class="agent-card advanced" data-category="creative" data-agent="zoe_gaming">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #00ced1, #20b2aa);">
+                    <div class="agent-avatar">🎮</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Zoe Gaming Companion</h3>
+                    <p class="agent-role">Gaming Companion</p>
+                    <p class="agent-description">Ultimate gaming companion with voice strategy, game analysis, and team coordination.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Strategy</span>
+                        <span class="specialty-tag">Game Analysis</span>
+                        <span class="specialty-tag">Team Coordination</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Gaming Strategies</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <span>Team Building</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-medal"></i>
+                            <span>Performance Boost</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$29.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('zoe_gaming')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('zoe_gaming', 29.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chef Antonio -->
+            <div class="agent-card advanced" data-category="creative" data-agent="chef_antonio">
+                <div class="agent-badge">🚀 Advanced</div>
+                <div class="agent-header" style="background: linear-gradient(135deg, #dc143c, #b91c3c);">
+                    <div class="agent-avatar">👨‍🍳</div>
+                </div>
+                <div class="agent-body">
+                    <h3 class="agent-name">Chef Antonio</h3>
+                    <p class="agent-role">Culinary Expert</p>
+                    <p class="agent-description">Passionate culinary expert with voice cooking, recipe creation, and cultural cuisine guidance.</p>
+                    
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Voice Cooking</span>
+                        <span class="specialty-tag">Recipe Creation</span>
+                        <span class="specialty-tag">Cultural Cuisine</span>
+                    </div>
+                    
+                    <div class="agent-features">
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>Cooking Techniques</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-book-open"></i>
+                            <span>Recipe Library</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-globe"></i>
+                            <span>World Cuisine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-footer">
+                    <div class="agent-pricing">
+                        <span class="price-free">Free Trial</span>
+                        <span class="price-premium">$32.99/month</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="btn-launch" onclick="launchAgent('chef_antonio')">
+                            <i class="fas fa-play"></i>
+                            Launch
+                        </button>
+                        <button class="btn-subscribe" onclick="subscribeAgent('chef_antonio', 32.99)">
+                            <i class="fas fa-crown"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
         </div>
     </div>
 </section>
@@ -637,6 +1329,16 @@
 .agent-card.featured {
     border: 3px solid #ffd700;
     box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+.agent-card.advanced {
+    border: 2px solid #667eea;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+.agent-card.advanced .agent-badge {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
 
 .agent-badge {
@@ -934,7 +1636,9 @@ function filterAgents(category) {
     const agentCards = document.querySelectorAll('.agent-card:not(.load-more-container)');
     
     agentCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
+        if (category === 'all' || 
+            card.dataset.category === category ||
+            (category === 'advanced' && card.classList.contains('advanced'))) {
             card.classList.remove('hidden');
         } else {
             card.classList.add('hidden');

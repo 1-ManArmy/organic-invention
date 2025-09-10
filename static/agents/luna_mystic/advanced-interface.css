@@ -1,0 +1,55 @@
+/* Advanced Luna Agent Styles */
+:root {
+    --luna_mystic-primary: #7c3aed;
+    --luna_mystic-secondary: #a855f7;
+    --luna_mystic-accent: #ec4899;
+    --luna_mystic-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+    --luna_mystic-shadow: 0 10px 30px #7c3aed30;
+    --luna_mystic-glow: 0 0 20px #7c3aed50;
+}
+
+.luna_mystic-hero {
+    background: var(--luna_mystic-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.luna_mystic-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="30" cy="40" r="3" fill="white" opacity="0.6"/><circle cx="70" cy="60" r="2" fill="white" opacity="0.4"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.luna_mystic-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #7c3aed08, #a855f705);
+}
+
+/* Agent-specific customizations */
+
+.luna_mystic-mode .feature-btn:hover {
+    border-color: var(--luna_mystic-primary);
+    background: var(--luna_mystic-primary);
+    color: white;
+}
+
+.luna_mystic-mode .send-btn {
+    background: var(--luna_mystic-gradient);
+}
+
+.luna_mystic-mode .mood-btn.active {
+    background: var(--luna_mystic-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

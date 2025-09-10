@@ -1,0 +1,55 @@
+/* Advanced Alex Agent Styles */
+:root {
+    --alex_creative-primary: #8b5cf6;
+    --alex_creative-secondary: #ec4899;
+    --alex_creative-accent: #f59e0b;
+    --alex_creative-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%);
+    --alex_creative-shadow: 0 10px 30px #8b5cf630;
+    --alex_creative-glow: 0 0 20px #8b5cf650;
+}
+
+.alex_creative-hero {
+    background: var(--alex_creative-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.alex_creative-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,20 60,40 40,40" fill="white" opacity="0.3"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.alex_creative-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #8b5cf608, #ec489905);
+}
+
+/* Agent-specific customizations */
+
+.alex_creative-mode .feature-btn:hover {
+    border-color: var(--alex_creative-primary);
+    background: var(--alex_creative-primary);
+    color: white;
+}
+
+.alex_creative-mode .send-btn {
+    background: var(--alex_creative-gradient);
+}
+
+.alex_creative-mode .mood-btn.active {
+    background: var(--alex_creative-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

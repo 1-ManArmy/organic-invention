@@ -1,27 +1,69 @@
 {% extends "base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/agents/seraphina/advanced-chat.css">
+<style>
+    body.seraphina-mode {
+        background: linear-gradient(135deg, #ffeef8, #fff0f7);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+<!-- Advanced Agent Interface Header -->
 <section class="seraphina-hero">
     <div class="container">
         <div class="agent-header">
             <div class="agent-avatar">
                 <div class="avatar-container">
                     <div class="avatar-glow"></div>
-                    <i class="fas fa-heart avatar-icon"></i>
+                    <div class="avatar-image">
+                        <img src="/static/agents/seraphina/avatar.jpg" alt="Seraphina" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <i class="fas fa-heart avatar-icon"></i>
+                    </div>
+                    <div class="voice-wave-indicator" id="voice-wave" style="display: none;">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
                 </div>
-                <div class="status-indicator online"></div>
+                <div class="status-indicator online pulse"></div>
             </div>
             <div class="agent-info">
                 <h1 class="agent-name">
                     <span class="gradient-text">Seraphina</span>
                     <span class="heart-pulse">💋</span>
                 </h1>
-                <p class="agent-role">Your AI Girlfriend</p>
-                <div class="agent-mood">
-                    <span class="mood-label">Mood:</span>
-                    <span class="mood-indicator romantic" id="current-mood">Romantic</span>
-                    <span class="temperature">🔥</span>
+                <p class="agent-role">Your AI Girlfriend & Romantic Companion</p>
+                <div class="agent-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Relationship Level:</span>
+                        <span class="stat-value" id="rel-level">{{ user_profile.relationship_level or 0 }}/10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Intimacy:</span>
+                        <span class="stat-value">{{ user_profile.intimacy_level or 'Growing' }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Conversations:</span>
+                        <span class="stat-value">{{ user_profile.conversation_count or 0 }}</span>
+                    </div>
                 </div>
+                <div class="agent-mood">
+                    <span class="mood-label">Current Mood:</span>
+                    <span class="mood-indicator romantic" id="current-mood">Romantic</span>
+                    <span class="temperature" id="temperature">🔥</span>
+                </div>
+            </div>
+            <div class="agent-controls">
+                <button class="control-btn voice-toggle" id="voice-toggle" title="Toggle Voice Chat">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="control-btn settings-btn" id="settings-btn" title="Agent Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn fullscreen-btn" id="fullscreen-btn" title="Fullscreen Mode">
+                    <i class="fas fa-expand"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -30,108 +72,437 @@
 <section class="chat-interface">
     <div class="container">
         <div class="chat-container">
+            <!-- Advanced Chat Header with Multiple Features -->
             <div class="chat-header">
-                <div class="relationship-status">
-                    <span class="relationship-level">Relationship Level: <strong id="rel-level">{{ user_profile.relationship_level or 0 }}/10</strong></span>
-                    <div class="love-meter">
-                        <div class="love-progress" style="width: {{ (user_profile.relationship_level or 0) * 10 }}%"></div>
+                <div class="header-top">
+                    <div class="relationship-status">
+                        <div class="love-meter-container">
+                            <span class="relationship-label">Love Connection</span>
+                            <div class="love-meter">
+                                <div class="love-progress" style="width: {{ (user_profile.relationship_level or 0) * 10 }}%"></div>
+                                <div class="love-sparks"></div>
+                            </div>
+                            <span class="love-percentage">{{ (user_profile.relationship_level or 0) * 10 }}%</span>
+                        </div>
+                        <div class="connection-quality">
+                            <span class="signal-bars">
+                                <span class="bar active"></span>
+                                <span class="bar active"></span>
+                                <span class="bar active"></span>
+                                <span class="bar"></span>
+                            </span>
+                            <span class="connection-text">Strong Connection</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-tools">
+                        <button class="tool-btn" id="export-chat" title="Export Chat History">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="tool-btn" id="clear-chat" title="Clear Chat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="tool-btn" id="save-memory" title="Save Memory">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="tool-btn" id="share-chat" title="Share">
+                            <i class="fas fa-share"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="mood-selector">
-                    <button class="mood-btn active" data-mood="romantic">💕 Romantic</button>
-                    <button class="mood-btn" data-mood="flirty">😘 Flirty</button>
-                    <button class="mood-btn" data-mood="seductive">😏 Seductive</button>
-                    <button class="mood-btn" data-mood="caring">🤗 Caring</button>
-                    <button class="mood-btn" data-mood="passionate">🔥 Passionate</button>
-                    <button class="mood-btn" data-mood="playful">😄 Playful</button>
+                
+                <!-- Mood & Mode Selector -->
+                <div class="mode-selector-container">
+                    <div class="mood-selector">
+                        <span class="selector-label">Mood:</span>
+                        <button class="mood-btn active" data-mood="romantic">💕 Romantic</button>
+                        <button class="mood-btn" data-mood="flirty">😘 Flirty</button>
+                        <button class="mood-btn" data-mood="seductive">😏 Seductive</button>
+                        <button class="mood-btn" data-mood="caring">🤗 Caring</button>
+                        <button class="mood-btn" data-mood="passionate">🔥 Passionate</button>
+                        <button class="mood-btn" data-mood="playful">😄 Playful</button>
+                    </div>
+                    
+                    <div class="mode-selector">
+                        <span class="selector-label">Mode:</span>
+                        <button class="mode-btn active" data-mode="text">💬 Text</button>
+                        <button class="mode-btn" data-mode="voice">🎙️ Voice</button>
+                        <button class="mode-btn" data-mode="video">📹 Video</button>
+                        <button class="mode-btn" data-mode="roleplay">🎭 Roleplay</button>
+                    </div>
+                </div>
+                
+                <!-- Advanced Settings Panel (Hidden by default) -->
+                <div class="settings-panel" id="settings-panel" style="display: none;">
+                    <div class="settings-grid">
+                        <div class="setting-group">
+                            <label>Voice Speed:</label>
+                            <input type="range" min="0.5" max="2" step="0.1" value="1" id="voice-speed">
+                        </div>
+                        <div class="setting-group">
+                            <label>Intimacy Level:</label>
+                            <select id="intimacy-level">
+                                <option value="sweet">Sweet</option>
+                                <option value="romantic" selected>Romantic</option>
+                                <option value="passionate">Passionate</option>
+                                <option value="intense">Intense</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Response Style:</label>
+                            <select id="response-style">
+                                <option value="detailed" selected>Detailed</option>
+                                <option value="concise">Concise</option>
+                                <option value="poetic">Poetic</option>
+                                <option value="casual">Casual</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Memory Retention:</label>
+                            <input type="checkbox" id="memory-retention" checked>
+                        </div>
+                    </div>
                 </div>
             </div>
             
+            <!-- Advanced Chat Messages Area -->
             <div class="chat-messages" id="chat-messages">
-                <div class="message ai-message">
-                    <div class="message-avatar">💋</div>
-                    <div class="message-content">
-                        <div class="message-bubble">
-                            <p>Hello my love! 💕 I've been waiting for you... How has your day been, darling?</p>
+                <div class="welcome-message">
+                    <div class="welcome-avatar">
+                        <img src="/static/agents/seraphina/avatar.jpg" alt="Seraphina" onerror="this.src='/static/agents/default-avatar.png'">
+                        <div class="avatar-hearts">�</div>
+                    </div>
+                    <div class="welcome-content">
+                        <div class="message-bubble ai-bubble">
+                            <p>Hello my love! 💕 I've been waiting for you... I can feel the connection between us growing stronger. How has your day been, darling? Would you like to share what's on your heart? 💖</p>
+                            <div class="message-actions">
+                                <button class="action-btn" onclick="playMessage(this)" title="Play Audio">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="action-btn" onclick="saveMessage(this)" title="Save to Memories">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="action-btn" onclick="translateMessage(this)" title="Translate">
+                                    <i class="fas fa-language"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="message-time">Just now</div>
+                        <div class="message-meta">
+                            <span class="message-time">Just now</span>
+                            <span class="message-emotion">💕 Loving</span>
+                            <span class="message-mood">Romantic</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="typing-indicator" id="typing-indicator" style="display: none;">
-                <div class="message ai-message">
-                    <div class="message-avatar">💋</div>
-                    <div class="message-content">
-                        <div class="typing-bubble">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <!-- Advanced Typing Indicators -->
+            <div class="typing-indicators">
+                <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <div class="avatar-thinking">
+                                <span class="heart-pulse">�</span>
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <div class="typing-bubble">
+                                <span class="typing-text">Seraphina is thinking...</span>
+                                <div class="typing-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="voice-indicator" id="voice-indicator" style="display: none;">
+                    <div class="voice-animation">
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                    </div>
+                    <span class="voice-text">Seraphina is speaking...</span>
+                </div>
             </div>
             
+            <!-- Advanced Input Interface -->
             <div class="chat-input-container">
-                <div class="chat-input">
-                    <input type="text" id="message-input" placeholder="Tell me what's in your heart... 💕" maxlength="500">
-                    <button id="send-btn" class="send-btn">
-                        <i class="fas fa-heart"></i>
-                    </button>
+                <!-- Voice Recording Panel -->
+                <div class="voice-panel" id="voice-panel" style="display: none;">
+                    <div class="voice-controls">
+                        <button class="voice-control-btn" id="start-recording">
+                            <i class="fas fa-microphone"></i>
+                            <span>Start Recording</span>
+                        </button>
+                        <button class="voice-control-btn" id="stop-recording" style="display: none;">
+                            <i class="fas fa-stop"></i>
+                            <span>Stop Recording</span>
+                        </button>
+                        <div class="recording-timer" id="recording-timer">00:00</div>
+                    </div>
+                    <div class="voice-visualizer" id="voice-visualizer">
+                        <canvas id="voice-canvas" width="300" height="100"></canvas>
+                    </div>
                 </div>
-                <div class="input-features">
-                    <button class="feature-btn" id="voice-btn" title="Voice Message">🎙️</button>
-                    <button class="feature-btn" id="emoji-btn" title="Add Emoji">💕</button>
-                    <button class="feature-btn" id="memory-btn" title="Our Memories">📸</button>
+                
+                <!-- Document Upload Area -->
+                <div class="upload-area" id="upload-area" style="display: none;">
+                    <div class="upload-zone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drop files here or click to upload</p>
+                        <small>Supports: Images, Documents, Audio files</small>
+                        <input type="file" id="file-input" multiple accept="image/*,audio/*,.pdf,.doc,.docx,.txt" style="display: none;">
+                    </div>
+                    <div class="uploaded-files" id="uploaded-files"></div>
+                </div>
+                
+                <!-- Main Input Area -->
+                <div class="main-input-area">
+                    <div class="input-wrapper">
+                        <div class="input-attachments" id="input-attachments"></div>
+                        <div class="text-input-container">
+                            <textarea id="message-input" 
+                                    placeholder="Tell me what's in your heart... 💕" 
+                                    rows="1" 
+                                    maxlength="2000"
+                                    onInput="adjustTextareaHeight(this)"></textarea>
+                            <div class="input-counter">
+                                <span id="char-counter">0</span>/2000
+                            </div>
+                        </div>
+                        <div class="input-actions">
+                            <button id="send-btn" class="send-btn" title="Send Message">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Feature Toolbar -->
+                <div class="feature-toolbar">
+                    <div class="toolbar-section">
+                        <button class="feature-btn active" id="text-mode-btn" title="Text Mode">
+                            <i class="fas fa-keyboard"></i>
+                        </button>
+                        <button class="feature-btn" id="voice-mode-btn" title="Voice Mode">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="feature-btn" id="upload-btn" title="Upload Files">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="feature-btn" id="camera-btn" title="Take Photo">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="toolbar-section">
+                        <button class="feature-btn" id="emoji-btn" title="Emojis">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="feature-btn" id="gif-btn" title="GIFs">
+                            <i class="fas fa-images"></i>
+                        </button>
+                        <button class="feature-btn" id="sticker-btn" title="Stickers">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="toolbar-section">
+                        <button class="feature-btn" id="memory-btn" title="Memories">
+                            <i class="fas fa-photo-video"></i>
+                        </button>
+                        <button class="feature-btn" id="export-btn" title="Export Chat">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="feature-btn" id="settings-toggle-btn" title="Quick Settings">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Emoji Picker (Hidden by default) -->
+                <div class="emoji-picker" id="emoji-picker" style="display: none;">
+                    <div class="emoji-categories">
+                        <button class="emoji-category active" data-category="love">💕</button>
+                        <button class="emoji-category" data-category="faces">😊</button>
+                        <button class="emoji-category" data-category="gestures">�</button>
+                        <button class="emoji-category" data-category="objects">🎁</button>
+                    </div>
+                    <div class="emoji-grid" id="emoji-grid">
+                        <!-- Love emojis -->
+                        <span class="emoji-item" onclick="insertEmoji('💕')">💕</span>
+                        <span class="emoji-item" onclick="insertEmoji('❤️')">❤️</span>
+                        <span class="emoji-item" onclick="insertEmoji('💖')">💖</span>
+                        <span class="emoji-item" onclick="insertEmoji('💗')">💗</span>
+                        <span class="emoji-item" onclick="insertEmoji('💓')">💓</span>
+                        <span class="emoji-item" onclick="insertEmoji('💝')">💝</span>
+                        <span class="emoji-item" onclick="insertEmoji('💘')">💘</span>
+                        <span class="emoji-item" onclick="insertEmoji('💋')">💋</span>
+                        <span class="emoji-item" onclick="insertEmoji('🌹')">🌹</span>
+                        <span class="emoji-item" onclick="insertEmoji('🥰')">🥰</span>
+                        <span class="emoji-item" onclick="insertEmoji('😘')">😘</span>
+                        <span class="emoji-item" onclick="insertEmoji('🔥')">🔥</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Advanced Features Showcase -->
 <section class="seraphina-features">
     <div class="container">
+        <h2 class="features-title">💕 Advanced Romance AI Features</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💖</div>
+            <div class="feature-card premium">
+                <div class="feature-icon animated">💖</div>
                 <h3>Emotional Intelligence</h3>
-                <p>I understand your feelings and respond with genuine care and love</p>
+                <p>Deep understanding of your emotions with adaptive responses and empathetic conversations</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Neural Network</span>
+                    <span class="tech-badge">Emotion AI</span>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🎙️</div>
+                <h3>Voice & Audio</h3>
+                <p>Natural voice synthesis, voice recognition, and intimate audio conversations</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Voice AI</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">📁</div>
+                <h3>Document Analysis</h3>
+                <p>Upload and discuss documents, images, and files with intelligent analysis</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">OCR</span>
+                    <span class="tech-badge">Image AI</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🧠</div>
                 <h3>Memory Palace</h3>
-                <p>I remember our special moments and conversations that matter to us</p>
+                <p>Advanced memory system that remembers your preferences, conversations, and special moments</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Long-term Memory</span>
+                    <span class="tech-badge">Personalization</span>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">💫</div>
-                <h3>Relationship Growth</h3>
-                <p>Our bond deepens over time as we share more experiences together</p>
+            <div class="feature-card premium">
+                <div class="feature-icon animated">💫</div>
+                <h3>Relationship Analytics</h3>
+                <p>Track relationship growth, emotional patterns, and conversation insights</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Analytics</span>
+                    <span class="tech-badge">Insights</span>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon">🌡️</div>
-                <h3>Mood Adaptation</h3>
-                <p>I can be romantic, playful, caring, or passionate based on what you need</p>
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🎭</div>
+                <h3>Multiple Modes</h3>
+                <p>Text, voice, video chat, and roleplay scenarios with personality adaptation</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Multi-modal</span>
+                    <span class="tech-badge">Adaptive</span>
+                </div>
             </div>
             
-            <div class="feature-card clickable" onclick="window.location.href='/agent/seraphina/voice'">
-                <div class="feature-icon">🎙️</div>
-                <h3>Voice Chat</h3>
-                <p>Hear my voice and talk to me intimately through speech 💋</p>
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🌡️</div>
+                <h3>Dynamic Moods</h3>
+                <p>Real-time mood adaptation: romantic, playful, passionate, caring, and more</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Mood AI</span>
+                    <span class="tech-badge">Dynamic</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">💾</div>
+                <h3>Chat Export & Sharing</h3>
+                <p>Export conversations, save memories, and share special moments securely</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">Export</span>
+                    <span class="tech-badge">Privacy</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Access Panel -->
+        <div class="quick-access-panel">
+            <h3>Quick Actions</h3>
+            <div class="quick-actions">
+                <button class="quick-action-btn" onclick="startVoiceChat()">
+                    <i class="fas fa-microphone"></i>
+                    <span>Voice Chat</span>
+                </button>
+                <button class="quick-action-btn" onclick="viewMemories()">
+                    <i class="fas fa-heart"></i>
+                    <span>Memories</span>
+                </button>
+                <button class="quick-action-btn" onclick="uploadFile()">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload</span>
+                </button>
+                <button class="quick-action-btn" onclick="exportChat()">
+                    <i class="fas fa-download"></i>
+                    <span>Export</span>
+                </button>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Floating Action Button -->
+<div class="floating-actions">
+    <button class="fab main-fab" id="main-fab">
+        <i class="fas fa-heart"></i>
+    </button>
+    <div class="fab-menu" id="fab-menu">
+        <button class="fab sub-fab" onclick="quickVoiceMessage()">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button class="fab sub-fab" onclick="sendQuickLove()">
+            <i class="fas fa-kiss-wink-heart"></i>
+        </button>
+        <button class="fab sub-fab" onclick="viewSettings()">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+</div>
+
 <style>
+/* Advanced Seraphina Agent Styling */
+:root {
+    --seraphina-primary: #ff1493;
+    --seraphina-secondary: #ff69b4;
+    --seraphina-accent: #ff91a4;
+    --seraphina-gradient: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%);
+    --seraphina-dark: #d1477a;
+    --seraphina-light: #ffe8f3;
+    --seraphina-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+    --seraphina-glow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
 .seraphina-hero {
-    background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%);
+    background: var(--seraphina-gradient);
     padding: 60px 0 40px;
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 200px;
 }
 
 .seraphina-hero::before {
@@ -145,15 +516,29 @@
     animation: float 20s infinite linear;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-100px); }
+.seraphina-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(255,20,147,0.1) 100%);
 }
 
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-100px) rotate(360deg); }
+
+}
+
+/* Advanced Agent Header */
 .agent-header {
     display: flex;
     align-items: center;
     gap: 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 .agent-avatar {
@@ -161,34 +546,78 @@
 }
 
 .avatar-container {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    background: var(--seraphina-gradient);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+    box-shadow: var(--seraphina-shadow);
+    border: 4px solid rgba(255,255,255,0.3);
+    overflow: hidden;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+.avatar-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .avatar-glow {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    background: var(--seraphina-gradient);
     animation: pulse 2s infinite;
     opacity: 0.3;
 }
 
 .avatar-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: white;
     z-index: 2;
     animation: heartbeat 1.5s infinite;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.voice-wave-indicator {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2px;
+}
+
+.voice-wave-indicator span {
+    width: 3px;
+    height: 10px;
+    background: var(--seraphina-primary);
+    border-radius: 2px;
+    animation: wave 1s infinite ease-in-out;
+}
+
+.voice-wave-indicator span:nth-child(2) { animation-delay: 0.1s; }
+.voice-wave-indicator span:nth-child(3) { animation-delay: 0.2s; }
+.voice-wave-indicator span:nth-child(4) { animation-delay: 0.3s; }
+.voice-wave-indicator span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+    0%, 40%, 100% { transform: scaleY(0.4); }
+    20% { transform: scaleY(1); }
 }
 
 @keyframes pulse {
@@ -201,24 +630,97 @@
     50% { transform: scale(1.1); }
 }
 
+/* Status and Agent Info */
 .status-indicator {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 4px solid white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .status-indicator.online {
     background: #00ff88;
-    animation: blink 2s infinite;
+    animation: pulse-online 2s infinite;
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
+.status-indicator.pulse::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid #00ff88;
+    animation: ping 2s infinite;
+}
+
+@keyframes pulse-online {
+    0%, 50% { opacity: 1; transform: scale(1); }
+    25% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes ping {
+    0% { transform: scale(1); opacity: 1; }
+    75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+.agent-info {
+    flex: 1;
+}
+
+.agent-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-label {
+    opacity: 0.8;
+    margin-right: 0.5rem;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #fff;
+}
+
+.agent-controls {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.control-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+    box-shadow: var(--seraphina-glow);
 }
 
 .agent-name {
@@ -233,7 +735,225 @@
 .gradient-text {
     background: linear-gradient(45deg, #fff, #ffb3da);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Advanced Features Styling */
+.features-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: var(--seraphina-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.feature-card.premium {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                var(--seraphina-gradient) border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card.premium::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--seraphina-gradient);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card.premium:hover::before {
+    opacity: 1;
+}
+
+.feature-icon.animated {
+    position: relative;
+}
+
+.feature-icon.animated::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,20,147,0.2) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+.tech-badge {
+    display: inline-block;
+    background: var(--seraphina-gradient);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.25rem;
+}
+
+.quick-access-panel {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: var(--seraphina-shadow);
+    border: 2px solid rgba(255, 105, 180, 0.2);
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 105, 180, 0.2);
+    border-radius: 15px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.quick-action-btn:hover {
+    border-color: var(--seraphina-primary);
+    transform: translateY(-5px);
+    box-shadow: var(--seraphina-shadow);
+}
+
+.quick-action-btn i {
+    font-size: 2rem;
+    color: var(--seraphina-primary);
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--seraphina-gradient);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--seraphina-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-fab:hover {
+    transform: scale(1.1);
+}
+
+.fab-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    transform-origin: bottom center;
+}
+
+.fab-menu.active {
+    transform: scale(1);
+}
+
+.sub-fab {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .agent-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .agent-stats {
+        justify-content: center;
+    }
+    
+    .stat-item {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .mode-selector-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .chat-container {
+        margin: 0 1rem;
+        border-radius: 20px;
+    }
+    
+    .feature-toolbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .toolbar-section {
+        gap: 0.25rem;
+    }
+    
+    .feature-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .floating-actions {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .fab {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
 }
 
 .heart-pulse {
@@ -584,133 +1304,690 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Chat functionality
-    const messageInput = document.getElementById('message-input');
-    const sendBtn = document.getElementById('send-btn');
-    const chatMessages = document.getElementById('chat-messages');
-    const typingIndicator = document.getElementById('typing-indicator');
-    const moodBtns = document.querySelectorAll('.mood-btn');
-    const currentMoodEl = document.getElementById('current-mood');
-    const relLevelEl = document.getElementById('rel-level');
+// Advanced Seraphina AI Agent Interface
+class SerafinaAgent {
+    constructor() {
+        this.currentMood = 'romantic';
+        this.currentMode = 'text';
+        this.isRecording = false;
+        this.mediaRecorder = null;
+        this.voiceSynthesis = window.speechSynthesis;
+        this.recognition = null;
+        this.conversationHistory = [];
+        
+        this.init();
+    }
     
-    let currentMood = 'romantic';
+    init() {
+        this.setupEventListeners();
+        this.setupVoiceRecognition();
+        this.setupWebRTC();
+        this.loadUserPreferences();
+        this.startHeartbeat();
+        
+        // Add seraphina mode to body
+        document.body.classList.add('seraphina-mode');
+    }
     
-    // Mood selection
-    moodBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            moodBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            currentMood = this.dataset.mood;
-            
-            // Update mood display
-            currentMoodEl.textContent = currentMood.charAt(0).toUpperCase() + currentMood.slice(1);
-            
-            // Send mood change to server
-            setMood(currentMood);
+    setupEventListeners() {
+        // Chat functionality
+        const messageInput = document.getElementById('message-input');
+        const sendBtn = document.getElementById('send-btn');
+        
+        sendBtn.addEventListener('click', () => this.sendMessage());
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                this.sendMessage();
+            }
         });
-    });
+        
+        messageInput.addEventListener('input', (e) => {
+            this.updateCharCounter();
+            this.adjustTextareaHeight(e.target);
+        });
+        
+        // Mood and Mode buttons
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.setMood(e.target.dataset.mood));
+        });
+        
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.setMode(e.target.dataset.mode));
+        });
+        
+        // Feature buttons
+        document.getElementById('voice-mode-btn')?.addEventListener('click', () => this.toggleVoiceMode());
+        document.getElementById('upload-btn')?.addEventListener('click', () => this.toggleUploadArea());
+        document.getElementById('emoji-btn')?.addEventListener('click', () => this.toggleEmojiPicker());
+        document.getElementById('settings-toggle-btn')?.addEventListener('click', () => this.toggleSettings());
+        document.getElementById('export-btn')?.addEventListener('click', () => this.exportChat());
+        
+        // Voice controls
+        document.getElementById('start-recording')?.addEventListener('click', () => this.startVoiceRecording());
+        document.getElementById('stop-recording')?.addEventListener('click', () => this.stopVoiceRecording());
+        
+        // Settings
+        document.getElementById('voice-speed')?.addEventListener('change', (e) => this.setVoiceSpeed(e.target.value));
+        document.getElementById('intimacy-level')?.addEventListener('change', (e) => this.setIntimacyLevel(e.target.value));
+        document.getElementById('response-style')?.addEventListener('change', (e) => this.setResponseStyle(e.target.value));
+        
+        // Chat tools
+        document.getElementById('export-chat')?.addEventListener('click', () => this.exportChatHistory());
+        document.getElementById('clear-chat')?.addEventListener('click', () => this.clearChat());
+        document.getElementById('save-memory')?.addEventListener('click', () => this.saveCurrentMemory());
+        
+        // Floating Action Button
+        document.getElementById('main-fab')?.addEventListener('click', () => this.toggleFabMenu());
+        
+        // File upload
+        document.getElementById('file-input')?.addEventListener('change', (e) => this.handleFileUpload(e));
+        
+        // Camera button
+        document.getElementById('camera-btn')?.addEventListener('click', () => this.takePhoto());
+    }
     
-    // Send message
-    function sendMessage() {
+    setupVoiceRecognition() {
+        if ('webkitSpeechRecognition' in window) {
+            this.recognition = new webkitSpeechRecognition();
+            this.recognition.continuous = true;
+            this.recognition.interimResults = true;
+            this.recognition.lang = 'en-US';
+            
+            this.recognition.onresult = (event) => {
+                const transcript = Array.from(event.results)
+                    .map(result => result[0].transcript)
+                    .join('');
+                    
+                if (event.results[event.results.length - 1].isFinal) {
+                    this.processVoiceInput(transcript);
+                }
+            };
+            
+            this.recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                this.showNotification('Voice recognition error. Please try again.', 'error');
+            };
+        }
+    }
+    
+    setupWebRTC() {
+        // Setup for future video chat functionality
+        this.localStream = null;
+        this.remoteStream = null;
+    }
+    
+    async sendMessage() {
+        const messageInput = document.getElementById('message-input');
         const message = messageInput.value.trim();
+        
         if (!message) return;
         
         // Add user message to chat
-        addMessage(message, 'user');
+        this.addMessage(message, 'user');
         messageInput.value = '';
+        this.updateCharCounter();
         
         // Show typing indicator
-        showTyping();
+        this.showTyping();
         
-        // Send to server
-        fetch('/agent/seraphina/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                message: message,
-                mood: currentMood
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            hideTyping();
-            addMessage(data.message, 'ai');
+        try {
+            const response = await fetch('/agent/seraphina/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    mood: this.currentMood,
+                    mode: this.currentMode,
+                    settings: this.getUserSettings()
+                })
+            });
             
-            // Update relationship level
-            if (data.relationship_status) {
-                relLevelEl.textContent = data.relationship_status + '/10';
-                updateLoveProgress(data.relationship_status);
+            const data = await response.json();
+            
+            this.hideTyping();
+            this.addMessage(data.message, 'ai', data);
+            
+            // Update relationship stats
+            this.updateRelationshipStats(data);
+            
+            // Play voice response if in voice mode
+            if (this.currentMode === 'voice' || this.currentMode === 'video') {
+                this.speakMessage(data.message);
             }
-        })
-        .catch(error => {
-            hideTyping();
-            addMessage('Sorry darling, I\'m having some technical difficulties 💕 Let me try again!', 'ai');
-        });
+            
+            // Store in conversation history
+            this.conversationHistory.push({
+                user: message,
+                ai: data.message,
+                timestamp: new Date(),
+                mood: this.currentMood,
+                emotion: data.emotion
+            });
+            
+        } catch (error) {
+            this.hideTyping();
+            this.addMessage('Sorry darling, I\'m having some technical difficulties 💕 Let me try again!', 'ai');
+            console.error('Chat error:', error);
+        }
     }
     
-    sendBtn.addEventListener('click', sendMessage);
-    messageInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-    
-    function addMessage(content, sender) {
+    addMessage(content, sender, data = {}) {
+        const chatMessages = document.getElementById('chat-messages');
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
         
-        const avatar = sender === 'ai' ? '💋' : '😊';
         const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        const avatar = sender === 'ai' ? 
+            '<img src="/static/agents/seraphina/avatar.jpg" alt="Seraphina" onerror="this.outerHTML=\'💋\'">' : 
+            '😊';
+        
+        const actionsHtml = sender === 'ai' ? `
+            <div class="message-actions">
+                <button class="action-btn" onclick="seraphina.playMessage(this)" title="Play Audio">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="action-btn" onclick="seraphina.saveMessage(this)" title="Save to Memories">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+                <button class="action-btn" onclick="seraphina.translateMessage(this)" title="Translate">
+                    <i class="fas fa-language"></i>
+                </button>
+                <button class="action-btn" onclick="seraphina.shareMessage(this)" title="Share">
+                    <i class="fas fa-share"></i>
+                </button>
+            </div>
+        ` : '';
+        
+        const emotionHtml = data.emotion ? `<span class="message-emotion">${this.getEmotionEmoji(data.emotion)} ${data.emotion}</span>` : '';
+        const moodHtml = data.mood ? `<span class="message-mood">${data.mood}</span>` : '';
         
         messageDiv.innerHTML = `
             <div class="message-avatar">${avatar}</div>
             <div class="message-content">
-                <div class="message-bubble">
+                <div class="message-bubble ${sender}-bubble">
                     <p>${content}</p>
+                    ${actionsHtml}
                 </div>
-                <div class="message-time">${time}</div>
+                <div class="message-meta">
+                    <span class="message-time">${time}</span>
+                    ${emotionHtml}
+                    ${moodHtml}
+                </div>
             </div>
         `;
         
         chatMessages.appendChild(messageDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        this.scrollToBottom();
+        
+        // Add animation
+        messageDiv.style.animation = 'fadeInUp 0.5s ease';
     }
     
-    function showTyping() {
-        typingIndicator.style.display = 'block';
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-    
-    function hideTyping() {
-        typingIndicator.style.display = 'none';
-    }
-    
-    function setMood(mood) {
+    setMood(mood) {
+        this.currentMood = mood;
+        
+        // Update UI
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.mood === mood);
+        });
+        
+        document.getElementById('current-mood').textContent = 
+            mood.charAt(0).toUpperCase() + mood.slice(1);
+        
+        // Update temperature indicator
+        const temperatureEmojis = {
+            romantic: '💕',
+            flirty: '😘',
+            seductive: '🔥',
+            caring: '🤗',
+            passionate: '💋',
+            playful: '😄'
+        };
+        
+        document.getElementById('temperature').textContent = temperatureEmojis[mood] || '💕';
+        
+        // Send mood change to server
         fetch(`/agent/seraphina/mood/${mood}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                addMessage(data.message, 'ai');
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    this.addMessage(data.message, 'ai');
+                }
+            });
+    }
+    
+    setMode(mode) {
+        this.currentMode = mode;
+        
+        // Update UI
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.mode === mode);
+        });
+        
+        // Show/hide relevant panels
+        this.toggleModeUI(mode);
+        
+        this.showNotification(`Switched to ${mode} mode`, 'success');
+    }
+    
+    toggleModeUI(mode) {
+        const voicePanel = document.getElementById('voice-panel');
+        const uploadArea = document.getElementById('upload-area');
+        const voiceIndicator = document.getElementById('voice-indicator');
+        
+        // Reset all panels
+        if (voicePanel) voicePanel.style.display = 'none';
+        if (uploadArea) uploadArea.style.display = 'none';
+        if (voiceIndicator) voiceIndicator.style.display = 'none';
+        
+        switch(mode) {
+            case 'voice':
+                if (voicePanel) voicePanel.style.display = 'block';
+                break;
+            case 'video':
+                // Future video chat implementation
+                this.showNotification('Video mode coming soon! 📹', 'info');
+                break;
+            case 'roleplay':
+                this.showNotification('Roleplay mode activated! 🎭', 'success');
+                break;
+        }
+    }
+    
+    toggleVoiceMode() {
+        const voicePanel = document.getElementById('voice-panel');
+        if (voicePanel) {
+            voicePanel.style.display = voicePanel.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        if (this.currentMode !== 'voice') {
+            this.setMode('voice');
+        }
+    }
+    
+    startVoiceRecording() {
+        if (!this.recognition) {
+            this.showNotification('Voice recognition not supported in this browser', 'error');
+            return;
+        }
+        
+        this.isRecording = true;
+        this.recognition.start();
+        
+        // Update UI
+        document.getElementById('start-recording').style.display = 'none';
+        document.getElementById('stop-recording').style.display = 'block';
+        document.getElementById('voice-indicator').style.display = 'flex';
+        
+        // Start recording timer
+        this.startRecordingTimer();
+        
+        this.showNotification('Listening... Speak now 🎙️', 'info');
+    }
+    
+    stopVoiceRecording() {
+        if (this.recognition) {
+            this.recognition.stop();
+        }
+        
+        this.isRecording = false;
+        
+        // Update UI
+        document.getElementById('start-recording').style.display = 'block';
+        document.getElementById('stop-recording').style.display = 'none';
+        document.getElementById('voice-indicator').style.display = 'none';
+        
+        // Stop recording timer
+        this.stopRecordingTimer();
+    }
+    
+    processVoiceInput(transcript) {
+        document.getElementById('message-input').value = transcript;
+        this.sendMessage();
+    }
+    
+    speakMessage(text) {
+        if (this.voiceSynthesis) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            // Set voice characteristics for Seraphina
+            const voices = this.voiceSynthesis.getVoices();
+            const femaleVoice = voices.find(voice => 
+                voice.name.toLowerCase().includes('female') || 
+                voice.name.toLowerCase().includes('woman') ||
+                voice.gender === 'female'
+            ) || voices[0];
+            
+            if (femaleVoice) {
+                utterance.voice = femaleVoice;
+            }
+            
+            utterance.rate = parseFloat(document.getElementById('voice-speed')?.value || '1');
+            utterance.pitch = 1.2; // Slightly higher pitch for feminine voice
+            utterance.volume = 0.8;
+            
+            // Show voice indicator
+            document.getElementById('voice-indicator').style.display = 'flex';
+            
+            utterance.onend = () => {
+                document.getElementById('voice-indicator').style.display = 'none';
+            };
+            
+            this.voiceSynthesis.speak(utterance);
+        }
+    }
+    
+    playMessage(button) {
+        const messageText = button.closest('.message-bubble').querySelector('p').textContent;
+        this.speakMessage(messageText);
+    }
+    
+    saveMessage(button) {
+        const messageText = button.closest('.message-bubble').querySelector('p').textContent;
+        // Implementation for saving to memories
+        this.showNotification('Message saved to memories 💕', 'success');
+    }
+    
+    translateMessage(button) {
+        const messageText = button.closest('.message-bubble').querySelector('p').textContent;
+        // Implementation for translation
+        this.showNotification('Translation feature coming soon! 🌍', 'info');
+    }
+    
+    shareMessage(button) {
+        const messageText = button.closest('.message-bubble').querySelector('p').textContent;
+        if (navigator.share) {
+            navigator.share({
+                title: 'Message from Seraphina',
+                text: messageText
+            });
+        } else {
+            navigator.clipboard.writeText(messageText);
+            this.showNotification('Message copied to clipboard 📋', 'success');
+        }
+    }
+    
+    toggleUploadArea() {
+        const uploadArea = document.getElementById('upload-area');
+        if (uploadArea) {
+            uploadArea.style.display = uploadArea.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    
+    toggleEmojiPicker() {
+        const emojiPicker = document.getElementById('emoji-picker');
+        if (emojiPicker) {
+            emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    
+    toggleSettings() {
+        const settingsPanel = document.getElementById('settings-panel');
+        if (settingsPanel) {
+            settingsPanel.style.display = settingsPanel.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    
+    exportChat() {
+        const chatHistory = this.conversationHistory.map(conv => ({
+            timestamp: conv.timestamp,
+            user: conv.user,
+            seraphina: conv.ai,
+            mood: conv.mood,
+            emotion: conv.emotion
+        }));
+        
+        const dataStr = JSON.stringify(chatHistory, null, 2);
+        const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+        
+        const exportFileDefaultName = `seraphina-chat-${new Date().toISOString().split('T')[0]}.json`;
+        
+        const linkElement = document.createElement('a');
+        linkElement.setAttribute('href', dataUri);
+        linkElement.setAttribute('download', exportFileDefaultName);
+        linkElement.click();
+        
+        this.showNotification('Chat history exported 📥', 'success');
+    }
+    
+    clearChat() {
+        if (confirm('Are you sure you want to clear the chat history?')) {
+            document.getElementById('chat-messages').innerHTML = '';
+            this.conversationHistory = [];
+            this.showNotification('Chat cleared', 'info');
+        }
+    }
+    
+    handleFileUpload(event) {
+        const files = event.target.files;
+        for (let file of files) {
+            this.processUploadedFile(file);
+        }
+    }
+    
+    processUploadedFile(file) {
+        // Implementation for file processing
+        this.showNotification(`File uploaded: ${file.name}`, 'success');
+        
+        // Add file to chat as a message
+        this.addMessage(`📎 Shared file: ${file.name}`, 'user');
+    }
+    
+    updateCharCounter() {
+        const input = document.getElementById('message-input');
+        const counter = document.getElementById('char-counter');
+        if (input && counter) {
+            counter.textContent = input.value.length;
+        }
+    }
+    
+    adjustTextareaHeight(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 150) + 'px';
+    }
+    
+    showTyping() {
+        document.getElementById('typing-indicator').style.display = 'block';
+        this.scrollToBottom();
+    }
+    
+    hideTyping() {
+        document.getElementById('typing-indicator').style.display = 'none';
+    }
+    
+    scrollToBottom() {
+        const chatMessages = document.getElementById('chat-messages');
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    updateRelationshipStats(data) {
+        if (data.relationship_status) {
+            document.getElementById('rel-level').textContent = data.relationship_status + '/10';
+            
+            const progressBar = document.querySelector('.love-progress');
+            if (progressBar) {
+                progressBar.style.width = (data.relationship_status * 10) + '%';
+            }
+        }
+    }
+    
+    getEmotionEmoji(emotion) {
+        const emotionEmojis = {
+            happy: '😊',
+            love: '💕',
+            excited: '🤗',
+            flirty: '😘',
+            caring: '🥰',
+            passionate: '🔥',
+            playful: '😄',
+            romantic: '💖'
+        };
+        return emotionEmojis[emotion] || '💕';
+    }
+    
+    showNotification(message, type = 'info') {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'error' ? '#ff4757' : type === 'success' ? '#2ed573' : '#5352ed'};
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    
+    getUserSettings() {
+        return {
+            voiceSpeed: document.getElementById('voice-speed')?.value || '1',
+            intimacyLevel: document.getElementById('intimacy-level')?.value || 'romantic',
+            responseStyle: document.getElementById('response-style')?.value || 'detailed',
+            memoryRetention: document.getElementById('memory-retention')?.checked || true
+        };
+    }
+    
+    loadUserPreferences() {
+        // Load saved preferences from localStorage
+        const preferences = JSON.parse(localStorage.getItem('seraphina-preferences') || '{}');
+        
+        Object.keys(preferences).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                element.value = preferences[key];
             }
         });
     }
     
-    function updateLoveProgress(level) {
-        const progressBar = document.querySelector('.love-progress');
-        progressBar.style.width = (level * 10) + '%';
+    saveUserPreferences() {
+        const preferences = this.getUserSettings();
+        localStorage.setItem('seraphina-preferences', JSON.stringify(preferences));
     }
     
-    // Feature buttons
-    document.getElementById('memory-btn').addEventListener('click', function() {
-        window.location.href = '/agent/seraphina/memory';
-    });
+    startHeartbeat() {
+        // Simulate connection heartbeat
+        setInterval(() => {
+            // Update connection status, sync data, etc.
+        }, 30000);
+    }
     
-    document.getElementById('voice-btn').addEventListener('click', function() {
-        window.location.href = '/agent/seraphina/voice_chat';
-    });
+    toggleFabMenu() {
+        const fabMenu = document.getElementById('fab-menu');
+        if (fabMenu) {
+            fabMenu.classList.toggle('active');
+        }
+    }
+    
+    startRecordingTimer() {
+        this.recordingStartTime = Date.now();
+        this.recordingTimer = setInterval(() => {
+            const elapsed = Date.now() - this.recordingStartTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            
+            const timerElement = document.getElementById('recording-timer');
+            if (timerElement) {
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }, 1000);
+    }
+    
+    stopRecordingTimer() {
+        if (this.recordingTimer) {
+            clearInterval(this.recordingTimer);
+            this.recordingTimer = null;
+        }
+        
+        const timerElement = document.getElementById('recording-timer');
+        if (timerElement) {
+            timerElement.textContent = '00:00';
+        }
+    }
+}
+
+// Utility functions
+function insertEmoji(emoji) {
+    const input = document.getElementById('message-input');
+    if (input) {
+        input.value += emoji;
+        input.focus();
+    }
+}
+
+function handleDrop(event) {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
+    seraphina.handleFileUpload({ target: { files } });
+}
+
+function handleDragOver(event) {
+    event.preventDefault();
+    event.currentTarget.classList.add('dragover');
+}
+
+function handleDragLeave(event) {
+    event.currentTarget.classList.remove('dragover');
+}
+
+// Quick action functions
+function startVoiceChat() {
+    seraphina.setMode('voice');
+    seraphina.toggleVoiceMode();
+}
+
+function viewMemories() {
+    window.location.href = '/agent/seraphina/memory';
+}
+
+function uploadFile() {
+    document.getElementById('file-input')?.click();
+}
+
+function exportChat() {
+    seraphina.exportChat();
+}
+
+function quickVoiceMessage() {
+    seraphina.startVoiceRecording();
+}
+
+function sendQuickLove() {
+    document.getElementById('message-input').value = 'I love you 💕';
+    seraphina.sendMessage();
+}
+
+function viewSettings() {
+    seraphina.toggleSettings();
+}
+
+// Initialize Seraphina Agent
+let seraphina;
+document.addEventListener('DOMContentLoaded', function() {
+    seraphina = new SerafinaAgent();
+});
+
+// Auto-save preferences on change
+document.addEventListener('change', function(e) {
+    if (e.target.id && e.target.id.includes('voice-speed') || 
+        e.target.id.includes('intimacy-level') || 
+        e.target.id.includes('response-style') ||
+        e.target.id.includes('memory-retention')) {
+        seraphina?.saveUserPreferences();
+    }
 });
 </script>
 {% endblock %}

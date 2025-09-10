@@ -1,0 +1,55 @@
+/* Advanced Zoe Agent Styles */
+:root {
+    --zoe_gaming-primary: #8b5cf6;
+    --zoe_gaming-secondary: #06b6d4;
+    --zoe_gaming-accent: #10b981;
+    --zoe_gaming-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #10b981 100%);
+    --zoe_gaming-shadow: 0 10px 30px #8b5cf630;
+    --zoe_gaming-glow: 0 0 20px #8b5cf650;
+}
+
+.zoe_gaming-hero {
+    background: var(--zoe_gaming-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.zoe_gaming-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="30" y="30" width="40" height="40" fill="white" opacity="0.2"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.zoe_gaming-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #8b5cf608, #06b6d405);
+}
+
+/* Agent-specific customizations */
+
+.zoe_gaming-mode .feature-btn:hover {
+    border-color: var(--zoe_gaming-primary);
+    background: var(--zoe_gaming-primary);
+    color: white;
+}
+
+.zoe_gaming-mode .send-btn {
+    background: var(--zoe_gaming-gradient);
+}
+
+.zoe_gaming-mode .mood-btn.active {
+    background: var(--zoe_gaming-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

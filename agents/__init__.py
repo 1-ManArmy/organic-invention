@@ -1,6 +1,7 @@
 """
 AI Agents Module - Register all agent routes
 """
+# Original agents
 from agents.strategist.routes import strategist_bp
 from agents.healer.routes import healer_bp
 from agents.scout.routes import scout_bp
@@ -16,10 +17,20 @@ from agents.analyst.routes import analyst_bp
 from agents.navigator.routes import navigator_bp
 from agents.seraphina.routes import seraphina_bp
 
+# New advanced agents
+from agents.sophia_assistant.routes import sophia_assistant_bp
+from agents.marcus_fitness.routes import marcus_fitness_bp
+from agents.elena_therapist.routes import elena_therapist_bp
+from agents.alex_creative.routes import alex_creative_bp
+from agents.david_finance.routes import david_finance_bp
+from agents.luna_mystic.routes import luna_mystic_bp
+from agents.zoe_gaming.routes import zoe_gaming_bp
+from agents.chef_antonio.routes import chef_antonio_bp
+
 def register_agent_routes(app):
     """Register all AI agent routes with the Flask app"""
     
-    # Register agent blueprints
+    # Register original agent blueprints
     app.register_blueprint(strategist_bp, url_prefix='/agent/strategist')
     app.register_blueprint(healer_bp, url_prefix='/agent/healer')
     app.register_blueprint(scout_bp, url_prefix='/agent/scout')
@@ -35,7 +46,17 @@ def register_agent_routes(app):
     app.register_blueprint(navigator_bp, url_prefix='/agent/navigator')
     app.register_blueprint(seraphina_bp, url_prefix='/agent/seraphina')
     
-    print("🤖 All 14 AI Agents registered successfully!")
+    # Register new advanced agent blueprints
+    app.register_blueprint(sophia_assistant_bp, url_prefix='/agent/sophia_assistant')
+    app.register_blueprint(marcus_fitness_bp, url_prefix='/agent/marcus_fitness')
+    app.register_blueprint(elena_therapist_bp, url_prefix='/agent/elena_therapist')
+    app.register_blueprint(alex_creative_bp, url_prefix='/agent/alex_creative')
+    app.register_blueprint(david_finance_bp, url_prefix='/agent/david_finance')
+    app.register_blueprint(luna_mystic_bp, url_prefix='/agent/luna_mystic')
+    app.register_blueprint(zoe_gaming_bp, url_prefix='/agent/zoe_gaming')
+    app.register_blueprint(chef_antonio_bp, url_prefix='/agent/chef_antonio')
+    
+    print("🤖 All 22 AI Agents registered successfully!")
 
 # Agent metadata for dynamic loading
 AGENTS_REGISTRY = {
@@ -166,5 +187,95 @@ AGENTS_REGISTRY = {
         "color_theme": "#ff1493",
         "rating": "18+",
         "mood_states": ["romantic", "playful", "seductive", "caring", "passionate", "flirty"]
+    },
+    
+    # New Advanced AI Agents with Enhanced Features
+    "sophia_assistant": {
+        "name": "Sophia AI Assistant",
+        "emoji": "👩‍💼",
+        "role": "Professional Assistant",
+        "description": "Professional AI assistant with advanced capabilities and elegant interface",
+        "personality": "Professional, helpful, efficient, knowledgeable",
+        "specialties": ["Task Management", "Scheduling", "Document Analysis", "Professional Communication"],
+        "color_theme": "#4a90e2",
+        "advanced_features": ["voice_chat", "document_upload", "chat_export", "smart_scheduling"],
+        "mood_states": ["professional", "helpful", "focused", "analytical"]
+    },
+    "marcus_fitness": {
+        "name": "Marcus Fitness Coach",
+        "emoji": "💪",
+        "role": "Fitness Coach",
+        "description": "Dynamic fitness coach with high-energy training programs and motivational support",
+        "personality": "Energetic, motivational, disciplined, encouraging",
+        "specialties": ["Workout Planning", "Nutrition Guidance", "Motivation", "Progress Tracking"],
+        "color_theme": "#ff6b35",
+        "advanced_features": ["voice_coaching", "workout_plans", "progress_tracking", "nutrition_guidance"],
+        "mood_states": ["energetic", "motivational", "intense", "encouraging"]
+    },
+    "elena_therapist": {
+        "name": "Elena AI Therapist",
+        "emoji": "🌸",
+        "role": "Mental Health Therapist",
+        "description": "Compassionate AI therapist providing emotional support and mental wellness guidance",
+        "personality": "Empathetic, calm, understanding, supportive",
+        "specialties": ["Emotional Support", "Mental Health", "Mindfulness", "Therapy Techniques"],
+        "color_theme": "#7b68ee",
+        "advanced_features": ["voice_therapy", "mood_tracking", "mindfulness_exercises", "crisis_support"],
+        "mood_states": ["empathetic", "calming", "supportive", "healing"]
+    },
+    "alex_creative": {
+        "name": "Alex Creative Director",
+        "emoji": "🎨",
+        "role": "Creative Director",
+        "description": "Innovative creative assistant for artists, designers, and creative professionals",
+        "personality": "Creative, inspiring, innovative, artistic",
+        "specialties": ["Creative Direction", "Design Feedback", "Inspiration", "Project Management"],
+        "color_theme": "#ff69b4",
+        "advanced_features": ["voice_brainstorming", "creative_challenges", "portfolio_review", "design_feedback"],
+        "mood_states": ["creative", "inspiring", "innovative", "artistic"]
+    },
+    "david_finance": {
+        "name": "David Finance Expert",
+        "emoji": "📈",
+        "role": "Financial Advisor",
+        "description": "Professional financial advisor with comprehensive investment and planning expertise",
+        "personality": "Analytical, professional, trustworthy, detail-oriented",
+        "specialties": ["Financial Planning", "Investment Analysis", "Risk Assessment", "Market Insights"],
+        "color_theme": "#2e8b57",
+        "advanced_features": ["voice_analysis", "market_insights", "portfolio_management", "risk_assessment"],
+        "mood_states": ["analytical", "professional", "confident", "strategic"]
+    },
+    "luna_mystic": {
+        "name": "Luna Mystic Guide",
+        "emoji": "🌙",
+        "role": "Mystic Guide",
+        "description": "Mystical AI guide offering spiritual wisdom and cosmic insights",
+        "personality": "Mystical, intuitive, spiritual, wise",
+        "specialties": ["Spiritual Guidance", "Meditation", "Cosmic Insights", "Dream Analysis"],
+        "color_theme": "#9370db",
+        "advanced_features": ["voice_readings", "tarot_guidance", "meditation_support", "cosmic_insights"],
+        "mood_states": ["mystical", "spiritual", "intuitive", "cosmic"]
+    },
+    "zoe_gaming": {
+        "name": "Zoe Gaming Companion",
+        "emoji": "🎮",
+        "role": "Gaming Companion",
+        "description": "Ultimate gaming companion with strategies, tips, and competitive analysis",
+        "personality": "Competitive, energetic, strategic, fun",
+        "specialties": ["Game Strategy", "Performance Analysis", "Team Coordination", "Achievement Tracking"],
+        "color_theme": "#00ced1",
+        "advanced_features": ["voice_strategy", "game_analysis", "team_coordination", "performance_tracking"],
+        "mood_states": ["competitive", "energetic", "strategic", "playful"]
+    },
+    "chef_antonio": {
+        "name": "Chef Antonio",
+        "emoji": "👨‍🍳",
+        "role": "Culinary Expert",
+        "description": "Passionate culinary expert with authentic recipes and cooking techniques",
+        "personality": "Passionate, creative, experienced, cultural",
+        "specialties": ["Recipe Creation", "Cooking Techniques", "Meal Planning", "Cultural Cuisine"],
+        "color_theme": "#dc143c",
+        "advanced_features": ["voice_cooking", "recipe_creation", "technique_guidance", "meal_planning"],
+        "mood_states": ["passionate", "creative", "cultural", "enthusiastic"]
     }
 }

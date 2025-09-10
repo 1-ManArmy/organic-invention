@@ -1,0 +1,55 @@
+/* Advanced Chef Antonio Agent Styles */
+:root {
+    --chef_antonio-primary: #f97316;
+    --chef_antonio-secondary: #eab308;
+    --chef_antonio-accent: #ef4444;
+    --chef_antonio-gradient: linear-gradient(135deg, #f97316 0%, #eab308 50%, #ef4444 100%);
+    --chef_antonio-shadow: 0 10px 30px #f9731630;
+    --chef_antonio-glow: 0 0 20px #f9731650;
+}
+
+.chef_antonio-hero {
+    background: var(--chef_antonio-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.chef_antonio-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="none" stroke="white" opacity="0.3"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.chef_antonio-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f9731608, #eab30805);
+}
+
+/* Agent-specific customizations */
+
+.chef_antonio-mode .feature-btn:hover {
+    border-color: var(--chef_antonio-primary);
+    background: var(--chef_antonio-primary);
+    color: white;
+}
+
+.chef_antonio-mode .send-btn {
+    background: var(--chef_antonio-gradient);
+}
+
+.chef_antonio-mode .mood-btn.active {
+    background: var(--chef_antonio-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

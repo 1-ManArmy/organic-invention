@@ -1,0 +1,55 @@
+/* Advanced Marcus Agent Styles */
+:root {
+    --marcus_fitness-primary: #ef4444;
+    --marcus_fitness-secondary: #f97316;
+    --marcus_fitness-accent: #eab308;
+    --marcus_fitness-gradient: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%);
+    --marcus_fitness-shadow: 0 10px 30px #ef444430;
+    --marcus_fitness-glow: 0 0 20px #ef444450;
+}
+
+.marcus_fitness-hero {
+    background: var(--marcus_fitness-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.marcus_fitness-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="40" width="80" height="20" fill="white" opacity="0.3"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.marcus_fitness-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #ef444408, #f9731605);
+}
+
+/* Agent-specific customizations */
+
+.marcus_fitness-mode .feature-btn:hover {
+    border-color: var(--marcus_fitness-primary);
+    background: var(--marcus_fitness-primary);
+    color: white;
+}
+
+.marcus_fitness-mode .send-btn {
+    background: var(--marcus_fitness-gradient);
+}
+
+.marcus_fitness-mode .mood-btn.active {
+    background: var(--marcus_fitness-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

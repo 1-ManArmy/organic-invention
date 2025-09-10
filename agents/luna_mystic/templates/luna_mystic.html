@@ -1,0 +1,362 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/agents/luna_mystic/advanced-interface.css">
+<style>
+    body.luna_mystic-mode {
+        background: linear-gradient(135deg, #7c3aed15, #a855f710);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Advanced Luna Agent Interface -->
+<section class="luna_mystic-hero">
+    <div class="container">
+        <div class="agent-header">
+            <div class="agent-avatar">
+                <div class="avatar-container">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-image">
+                        <img src="/static/agents/luna_mystic/avatar.jpg" alt="Luna" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <i class="avatar-icon">🌙</i>
+                    </div>
+                    <div class="voice-wave-indicator" id="voice-wave" style="display: none;">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="status-indicator online pulse"></div>
+            </div>
+            <div class="agent-info">
+                <h1 class="agent-name">
+                    <span class="gradient-text">Luna</span>
+                    <span class="agent-emoji">🌙</span>
+                </h1>
+                <p class="agent-role">Mystical Guide & Spiritual Advisor</p>
+                <div class="agent-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Sessions:</span>
+                        <span class="stat-value" id="session-count">{{ user_profile.session_count or 0 }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Experience Level:</span>
+                        <span class="stat-value">{{ user_profile.experience_level or "Beginner" }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Progress:</span>
+                        <span class="stat-value">{{ user_profile.progress_level or 0 }}%</span>
+                    </div>
+                </div>
+                <div class="agent-mood">
+                    <span class="mood-label">Current Mode:</span>
+                    <span class="mood-indicator" id="current-mood">Mystical</span>
+                    <span class="mood-emoji" id="mood-emoji">🌙</span>
+                </div>
+            </div>
+            <div class="agent-controls">
+                <button class="control-btn voice-toggle" id="voice-toggle" title="Toggle Voice Chat">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="control-btn settings-btn" id="settings-btn" title="Agent Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn fullscreen-btn" id="fullscreen-btn" title="Fullscreen Mode">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="chat-interface">
+    <div class="container">
+        <div class="chat-container">
+            <!-- Advanced Chat Header -->
+            <div class="chat-header">
+                <div class="header-top">
+                    <div class="connection-status">
+                        <div class="signal-bars">
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                        </div>
+                        <span class="connection-text">Connected</span>
+                    </div>
+                    
+                    <div class="chat-tools">
+                        <button class="tool-btn" id="export-chat" title="Export Chat History">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="tool-btn" id="clear-chat" title="Clear Chat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="tool-btn" id="save-session" title="Save Session">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                        <button class="tool-btn" id="share-chat" title="Share">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mode & Mood Selector -->
+                <div class="mode-selector-container">
+                    <div class="mood-selector">
+                        <span class="selector-label">Mood:</span>
+                        <button class="mood-btn active" data-mood="mystical">🔮 Mystical</button>
+                        <button class="mood-btn " data-mood="intuitive">👁️ Intuitive</button>
+                        <button class="mood-btn " data-mood="wise">🦉 Wise</button>
+                        <button class="mood-btn " data-mood="ethereal">✨ Ethereal</button>
+                        <button class="mood-btn " data-mood="peaceful">☮️ Peaceful</button>
+                        <button class="mood-btn " data-mood="enlightened">🌟 Enlightened</button>
+                    </div>
+                    
+                    <div class="mode-selector">
+                        <span class="selector-label">Mode:</span>
+                        <button class="mode-btn active" data-mode="text"><i class="fas fa-keyboard"></i> Text</button>
+                        <button class="mode-btn" data-mode="voice"><i class="fas fa-microphone"></i> Voice</button>
+                        <button class="mode-btn" data-mode="video"><i class="fas fa-video"></i> Video</button>
+                        <button class="mode-btn" data-mode="analysis"><i class="fas fa-chart-line"></i> Analysis</button>
+                    </div>
+                </div>
+                
+                <!-- Settings Panel -->
+                <div class="settings-panel" id="settings-panel" style="display: none;">
+                    <div class="settings-grid">
+                        <div class="setting-group">
+                            <label>Response Style:</label>
+                            <select id="response-style">
+                                <option value="detailed" selected>Detailed</option>
+                                <option value="concise">Concise</option>
+                                <option value="creative">Creative</option>
+                                <option value="analytical">Analytical</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Expertise Level:</label>
+                            <select id="expertise-level">
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate" selected>Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Voice Speed:</label>
+                            <input type="range" min="0.5" max="2" step="0.1" value="1" id="voice-speed">
+                        </div>
+                        <div class="setting-group">
+                            <label>Auto-save Sessions:</label>
+                            <input type="checkbox" id="auto-save" checked>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-message">
+                    <div class="welcome-avatar">
+                        <img src="/static/agents/luna_mystic/avatar.jpg" alt="Luna" onerror="this.src='/static/agents/default-avatar.png'">
+                        <div class="avatar-indicator">🌙</div>
+                    </div>
+                    <div class="welcome-content">
+                        <div class="message-bubble ai-bubble">
+                            <p>Blessed be, seeker of wisdom. I am Luna, your mystical guide through the ethereal realms. 🌙 The universe has aligned to bring us together. What spiritual insights or divine guidance do you seek today?</p>
+                            <div class="message-actions">
+                                <button class="action-btn" onclick="agent.playMessage(this)" title="Play Audio">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="action-btn" onclick="agent.saveMessage(this)" title="Save Message">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="action-btn" onclick="agent.analyzeMessage(this)" title="Analyze">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="message-meta">
+                            <span class="message-time">Just now</span>
+                            <span class="message-mood">Mystical</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advanced Input Interface -->
+            
+            <div class="chat-input-container">
+                <!-- Voice Panel -->
+                <div class="voice-panel" id="voice-panel" style="display: none;">
+                    <div class="voice-controls">
+                        <button class="voice-control-btn" id="start-recording">
+                            <i class="fas fa-microphone"></i>
+                            <span>Start Recording</span>
+                        </button>
+                        <button class="voice-control-btn" id="stop-recording" style="display: none;">
+                            <i class="fas fa-stop"></i>
+                            <span>Stop Recording</span>
+                        </button>
+                        <div class="recording-timer" id="recording-timer">00:00</div>
+                    </div>
+                    <div class="voice-visualizer">
+                        <canvas id="voice-canvas" width="300" height="100"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Upload Area -->
+                <div class="upload-area" id="upload-area" style="display: none;">
+                    <div class="upload-zone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drop files here or click to upload</p>
+                        <small>Supports: Images, Documents, Audio, Video files</small>
+                        <input type="file" id="file-input" multiple accept="*" style="display: none;">
+                    </div>
+                </div>
+                
+                <!-- Main Input -->
+                <div class="main-input-area">
+                    <div class="input-wrapper">
+                        <div class="text-input-container">
+                            <textarea id="message-input" 
+                                    placeholder="What wisdom do you seek from the universe? 🌙" 
+                                    rows="1" 
+                                    maxlength="2000"></textarea>
+                            <div class="input-counter">
+                                <span id="char-counter">0</span>/2000
+                            </div>
+                        </div>
+                        <button id="send-btn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Feature Toolbar -->
+                <div class="feature-toolbar">
+                    <div class="toolbar-section">
+                        <button class="feature-btn active" id="text-mode-btn" title="Text Mode">
+                            <i class="fas fa-keyboard"></i>
+                        </button>
+                        <button class="feature-btn" id="voice-mode-btn" title="Voice Mode">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="feature-btn" id="upload-btn" title="Upload Files">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="feature-btn" id="camera-btn" title="Camera">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="toolbar-section">
+                        <button class="feature-btn" id="emoji-btn" title="Emojis">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="feature-btn" id="analysis-btn" title="Analysis Mode">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="feature-btn" id="export-btn" title="Export">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Features Showcase -->
+<section class="luna_mystic-features">
+    <div class="container">
+        <h2 class="features-title">🌙 Advanced Luna Features</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🔮</div>
+                <h3>Tarot Reading</h3>
+                <p>Mystical tarot card readings and interpretations</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">AI-Powered</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">⭐</div>
+                <h3>Astrology</h3>
+                <p>Astrological insights and horoscope analysis</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">AI-Powered</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🧘</div>
+                <h3>Meditation Guidance</h3>
+                <p>Spiritual meditation and inner peace practices</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">AI-Powered</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </div>
+            
+            <div class="feature-card premium">
+                <div class="feature-icon animated">🌙</div>
+                <h3>Spiritual Advice</h3>
+                <p>Life guidance and spiritual wisdom</p>
+                <div class="feature-tech">
+                    <span class="tech-badge">AI-Powered</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="quick-access-panel">
+            <h3>Quick Actions</h3>
+            <div class="quick-actions">
+                
+                <button class="quick-action-btn" onclick="tarotReading()">
+                    <i class="fas fa-eye"></i><span>Tarot Reading</span>
+                </button>
+                
+                <button class="quick-action-btn" onclick="astrology()">
+                    <i class="fas fa-star"></i><span>Astrology</span>
+                </button>
+                
+                <button class="quick-action-btn" onclick="spiritualGuide()">
+                    <i class="fas fa-om"></i><span>Spiritual Guide</span>
+                </button>
+                
+                <button class="quick-action-btn" onclick="divineInsight()">
+                    <i class="fas fa-crystal-ball"></i><span>Divine Insight</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Actions -->
+<div class="floating-actions">
+    <button class="fab main-fab" id="main-fab">
+        <i class="fab-icon">🌙</i>
+    </button>
+    <div class="fab-menu" id="fab-menu">
+        <button class="fab sub-fab" onclick="agent.quickAction('voice')">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button class="fab sub-fab" onclick="agent.quickAction('help')">
+            <i class="fas fa-question"></i>
+        </button>
+        <button class="fab sub-fab" onclick="agent.quickAction('settings')">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+</div>
+
+<script src="/static/agents/luna_mystic/advanced-agent.js"></script>
+{% endblock %}

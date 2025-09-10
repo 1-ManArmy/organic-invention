@@ -1,0 +1,55 @@
+/* Advanced Elena Agent Styles */
+:root {
+    --elena_therapist-primary: #10b981;
+    --elena_therapist-secondary: #06b6d4;
+    --elena_therapist-accent: #8b5cf6;
+    --elena_therapist-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%);
+    --elena_therapist-shadow: 0 10px 30px #10b98130;
+    --elena_therapist-glow: 0 0 20px #10b98150;
+}
+
+.elena_therapist-hero {
+    background: var(--elena_therapist-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.elena_therapist-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,80 Q30,60 40,80 Q50,60 60,80" stroke="white" fill="none"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.elena_therapist-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #10b98108, #06b6d405);
+}
+
+/* Agent-specific customizations */
+
+.elena_therapist-mode .feature-btn:hover {
+    border-color: var(--elena_therapist-primary);
+    background: var(--elena_therapist-primary);
+    color: white;
+}
+
+.elena_therapist-mode .send-btn {
+    background: var(--elena_therapist-gradient);
+}
+
+.elena_therapist-mode .mood-btn.active {
+    background: var(--elena_therapist-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');

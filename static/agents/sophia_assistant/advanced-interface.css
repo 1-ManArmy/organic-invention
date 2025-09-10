@@ -1,0 +1,55 @@
+/* Advanced Sophia Agent Styles */
+:root {
+    --sophia_assistant-primary: #4f46e5;
+    --sophia_assistant-secondary: #7c3aed;
+    --sophia_assistant-accent: #06b6d4;
+    --sophia_assistant-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+    --sophia_assistant-shadow: 0 10px 30px #4f46e530;
+    --sophia_assistant-glow: 0 0 20px #4f46e550;
+}
+
+.sophia_assistant-hero {
+    background: var(--sophia_assistant-gradient);
+    padding: 60px 0 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.sophia_assistant-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="2" fill="white"/><circle cx="70" cy="20" r="1.5" fill="white"/></svg>');
+    animation: float 20s infinite linear;
+    opacity: 0.1;
+}
+
+.sophia_assistant-features {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #4f46e508, #7c3aed05);
+}
+
+/* Agent-specific customizations */
+
+.sophia_assistant-mode .feature-btn:hover {
+    border-color: var(--sophia_assistant-primary);
+    background: var(--sophia_assistant-primary);
+    color: white;
+}
+
+.sophia_assistant-mode .send-btn {
+    background: var(--sophia_assistant-gradient);
+}
+
+.sophia_assistant-mode .mood-btn.active {
+    background: var(--sophia_assistant-primary);
+}
+
+
+/* Import common advanced styles */
+@import url('/static/agents/common/advanced-base.css');
