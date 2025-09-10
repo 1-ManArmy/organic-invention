@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-layer-group" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">AI Platform</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Enterprise AI Platform
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                A comprehensive, cloud-native AI platform that empowers enterprises to build, deploy, and scale intelligent applications with ease. From data ingestion to model deployment, everything you need in one unified ecosystem.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Start Free Trial
+                </a>
+                <a href="#platform-features" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-info-circle"></i>
+                    Explore Features
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Platform Features -->
+    <section id="platform-features" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Platform Features
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Everything you need to build, train, deploy, and manage AI models at enterprise scale
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Data Management -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-database" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Data Management</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Centralized data lake with automated ingestion, cleaning, and transformation pipelines for structured and unstructured data.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Multi-source data ingestion
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Automated data cleaning
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time data streaming
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Data versioning & lineage
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Model Development -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-brain" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Model Development</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Collaborative development environment with pre-built models, custom training capabilities, and automated hyperparameter tuning.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Jupyter notebook integration
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Pre-trained model library
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            AutoML capabilities
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Model versioning
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Deployment & Scaling -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Deployment & Scaling</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        One-click deployment with auto-scaling, load balancing, and multi-cloud support for maximum performance and reliability.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            One-click deployment
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Auto-scaling infrastructure
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Multi-cloud support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            A/B testing framework
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Monitoring & Governance -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-chart-line" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Monitoring & Governance</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Comprehensive monitoring, performance tracking, and governance tools to ensure model accuracy and compliance.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time monitoring
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Model drift detection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Compliance reporting
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Audit trails
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Architecture Overview -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Platform Architecture
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Built on modern cloud-native architecture for maximum scalability, security, and performance
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Microservices -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-cubes" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Microservices</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Modular, containerized services that can be scaled independently based on demand and usage patterns.
+                    </p>
+                </div>
+                
+                <!-- API Gateway -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-network-wired" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">API Gateway</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Centralized API management with authentication, rate limiting, and request routing for secure access.
+                    </p>
+                </div>
+                
+                <!-- Event Streaming -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-stream" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Event Streaming</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Real-time data processing and event-driven architecture for instant insights and rapid response.
+                    </p>
+                </div>
+                
+                <!-- Security Layer -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Security Layer</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        End-to-end encryption, identity management, and compliance frameworks for enterprise security.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Tiers -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Platform Pricing
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Flexible pricing tiers designed to scale with your business needs
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                
+                <!-- Starter Tier -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; position: relative;">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Starter</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">$99</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">per month</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Up to 10 models
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            100GB data storage
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Basic monitoring
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Email support
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Professional Tier -->
+                <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(68, 160, 141, 0.2) 100%); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 2px solid #4ECDC4; text-align: center; position: relative; transform: scale(1.05);">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #4ECDC4; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">
+                        Most Popular
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Professional</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">$299</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">per month</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Unlimited models
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            1TB data storage
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Advanced monitoring
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            24/7 support
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Enterprise Tier -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; position: relative;">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enterprise</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">Custom</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">pricing</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Unlimited everything
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Custom integrations
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Dedicated support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            On-premise options
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        Contact Sales
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Build the Future?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Join thousands of enterprises already using our AI platform to transform their business operations and drive innovation.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-play"></i>
+                    Start Free Trial
+                </a>
+                <a href="/products/apis" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-code"></i>
+                    Explore APIs
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .popular-tier {
+        transform: none !important;
+    }
+}
+</style>
+{% endblock %}

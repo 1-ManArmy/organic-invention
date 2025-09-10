@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-lightbulb" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">AI Solutions</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Intelligent Solutions
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Transform your business with our comprehensive AI solutions portfolio. From enterprise automation to advanced analytics, we deliver tailored AI solutions that drive real results and sustainable growth.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Get Started
+                </a>
+                <a href="#solutions-overview" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-info-circle"></i>
+                    Explore Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Solutions Overview -->
+    <section id="solutions-overview" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Our Solution Categories
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Comprehensive AI solutions designed to address your unique business challenges and opportunities
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Enterprise AI -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-building" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enterprise AI</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Scalable AI infrastructure and intelligent automation for large-scale enterprise operations and digital transformation initiatives.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            AI-powered workflows
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Enterprise integration
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Scalable architecture
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            24/7 support
+                        </li>
+                    </ul>
+                    <a href="/solutions/enterprise" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- Process Automation -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-magic" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Process Automation</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Intelligent automation solutions that streamline workflows, reduce manual tasks, and optimize operational efficiency across your organization.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Workflow optimization
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Robotic Process Automation
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Smart scheduling
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Process intelligence
+                        </li>
+                    </ul>
+                    <a href="/solutions/automation" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- Smart Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-chart-line" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Advanced analytics and business intelligence powered by AI to uncover insights, predict trends, and drive data-driven decisions.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Predictive analytics
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time dashboards
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Business intelligence
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Custom reporting
+                        </li>
+                    </ul>
+                    <a href="/solutions/analytics" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- AI Security -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">AI Security</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Comprehensive AI-powered security solutions including threat detection, anomaly analysis, and intelligent response systems.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Threat detection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Anomaly analysis
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Intelligent response
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Compliance monitoring
+                        </li>
+                    </ul>
+                    <a href="/solutions/security" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Solution Benefits -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Why Choose Our Solutions
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Our AI solutions deliver measurable results and competitive advantages
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- ROI Focused -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-chart-bar" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">ROI Focused</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Every solution is designed to deliver measurable returns on investment with clear KPIs and success metrics.
+                    </p>
+                </div>
+                
+                <!-- Scalable Architecture -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-expand-arrows-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Scalable Architecture</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Built to grow with your business from startup to enterprise scale with flexible, modular architecture.
+                    </p>
+                </div>
+                
+                <!-- Industry Expertise -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-users-cog" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Industry Expertise</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Deep domain knowledge across industries with solutions tailored to specific business challenges.
+                    </p>
+                </div>
+                
+                <!-- 24/7 Support -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-headset" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">24/7 Support</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Round-the-clock support and monitoring to ensure your AI solutions perform optimally at all times.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Our Implementation Process
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Proven methodology that ensures successful AI solution deployment and adoption
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                
+                <!-- Step 1 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">1</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Discovery & Assessment</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Comprehensive analysis of your current processes, challenges, and AI readiness to identify optimal solution fit.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">2</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Solution Design</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Custom solution architecture and implementation roadmap tailored to your specific requirements and goals.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">3</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Pilot & Validation</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Small-scale pilot implementation to validate solution effectiveness and refine before full deployment.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">4</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Full Deployment</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Enterprise-wide rollout with comprehensive training, change management, and ongoing support systems.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Transform Your Business?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Let's discuss how our AI solutions can drive innovation, efficiency, and growth for your organization. Start your transformation journey today.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule Consultation
+                </a>
+                <a href="/services" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-cogs"></i>
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-cogs" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Process Automation</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Intelligent Process Automation
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Transform your business operations with AI-driven automation. Streamline workflows, eliminate manual tasks, and unlock new levels of efficiency across your entire organization.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Start Automation
+                </a>
+                <a href="#automation-features" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-play-circle"></i>
+                    See How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Automation Features -->
+    <section id="automation-features" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Automation Capabilities
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Comprehensive automation solutions that adapt and learn from your business processes
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Workflow Automation -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-project-diagram" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Workflows</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Intelligent workflow orchestration that adapts to changing business requirements and optimizes process flows automatically.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Dynamic routing
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Exception handling
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Process optimization
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time monitoring
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Document Processing -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-file-invoice" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Document Intelligence</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        AI-powered document processing with optical character recognition, data extraction, and intelligent classification.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            OCR & text extraction
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Data validation
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Auto-classification
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Digital archiving
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- RPA Integration -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-robot" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">RPA & Bots</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Robotic Process Automation with intelligent bots that handle repetitive tasks and complex business processes.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Bot orchestration
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Screen automation
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            API integration
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Error recovery
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Decision Engine -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-brain" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Intelligent Decisions</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        AI-powered decision engine that makes intelligent choices based on business rules, data patterns, and predictive models.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Rules engine
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Predictive logic
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Risk assessment
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Adaptive learning
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Automation Areas -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Process Automation Areas
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Key business processes that benefit from intelligent automation
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Finance & Accounting -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-calculator" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Finance & Accounting</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Invoice processing, expense management, financial reporting, and compliance automation.
+                    </p>
+                </div>
+                
+                <!-- Human Resources -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-user-friends" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">HR Operations</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Employee onboarding, payroll processing, performance tracking, and benefits administration.
+                    </p>
+                </div>
+                
+                <!-- Customer Service -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-headset" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Customer Service</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Ticket routing, response automation, case management, and customer communication workflows.
+                    </p>
+                </div>
+                
+                <!-- Supply Chain -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-shipping-fast" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Supply Chain</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-headcset: 1.6; font-size: 1rem;">
+                        Order processing, inventory management, vendor communication, and logistics coordination.
+                    </p>
+                </div>
+                
+                <!-- IT Operations -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-server" style="font-size: 3rem; color: #f39c12; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">IT Operations</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        System monitoring, incident response, backup management, and maintenance scheduling.
+                    </p>
+                </div>
+                
+                <!-- Sales & Marketing -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Sales & Marketing</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Lead qualification, campaign management, proposal generation, and CRM updates.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Automation Benefits -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Automation Impact
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Measurable improvements with process automation implementation
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: center;">
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">80%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Time Savings</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Reduction in manual processing time</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">95%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Accuracy</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Improvement in data accuracy</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">24/7</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Operation</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Continuous process execution</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">60%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Cost Reduction</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Lower operational expenses</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Automation Implementation
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Structured approach to implementing process automation in your organization
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                
+                <!-- Step 1 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">1</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Process Analysis</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Comprehensive analysis of current processes, identifying automation opportunities and bottlenecks.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">2</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Solution Design</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Custom automation solution design with workflow mapping, integration planning, and technology selection.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">3</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Development & Testing</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Automation bot development, rigorous testing, and validation in controlled environments.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">4</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Deploy & Monitor</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Production deployment with continuous monitoring, performance optimization, and ongoing support.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Automate Your Processes?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Transform your business operations with intelligent process automation. Let's identify automation opportunities and design a solution that delivers immediate ROI.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-calendar-alt"></i>
+                    Schedule Consultation
+                </a>
+                <a href="/solutions" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-lightbulb"></i>
+                    Explore Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

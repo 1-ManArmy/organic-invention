@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; text-align: center; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Contact Us</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Get in touch with our team. We're here to help you succeed with AI.</p>
+    </div>
+</div>
+
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div>
+                <h2 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 2rem; color: #2c3e50;">Let's Start a Conversation</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #6c757d; margin-bottom: 3rem;">Whether you're looking to implement AI solutions, need technical support, or want to explore partnership opportunities, our team is ready to help.</p>
+                
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 15px; margin-bottom: 1rem;">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: #667eea;"></i>
+                        <div>
+                            <div style="font-weight: 600; color: #2c3e50;">Email Us</div>
+                            <div style="color: #6c757d;">hello@aiagents.com</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 15px; margin-bottom: 1rem;">
+                        <i class="fas fa-phone" style="font-size: 1.5rem; color: #667eea;"></i>
+                        <div>
+                            <div style="font-weight: 600; color: #2c3e50;">Call Us</div>
+                            <div style="color: #6c757d;">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 15px;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #667eea;"></i>
+                        <div>
+                            <div style="font-weight: 600; color: #2c3e50;">Visit Us</div>
+                            <div style="color: #6c757d;">123 AI Street, Tech Valley, CA 94000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                <form action="/contact" method="POST" style="display: grid; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">First Name</label>
+                            <input type="text" name="first_name" required style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Last Name</label>
+                            <input type="text" name="last_name" required style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Email Address</label>
+                        <input type="email" name="email" required style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'">
+                    </div>
+                    
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Company</label>
+                        <input type="text" name="company" style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'">
+                    </div>
+                    
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Subject</label>
+                        <select name="subject" required style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; background: white; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'">
+                            <option value="">Select a topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="sales">Sales & Pricing</option>
+                            <option value="support">Technical Support</option>
+                            <option value="partnership">Partnership Opportunities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Message</label>
+                        <textarea name="message" rows="4" required placeholder="Tell us about your project or how we can help..." style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; resize: vertical; font-family: inherit; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e9ecef'"></textarea>
+                    </div>
+                    
+                    <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 4rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">Quick Support</h2>
+        <p style="font-size: 1.1rem; color: #6c757d; margin-bottom: 3rem;">Need immediate assistance? Try these options</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-life-ring" style="font-size: 3rem; color: #28a745; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #2c3e50;">Help Center</h3>
+                <p style="color: #6c757d; margin-bottom: 1.5rem;">Browse our comprehensive documentation and FAQs</p>
+                <a href="/support" style="display: inline-block; background: #28a745; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Visit Help Center</a>
+            </div>
+            
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-comments" style="font-size: 3rem; color: #007bff; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #2c3e50;">Live Chat</h3>
+                <p style="color: #6c757d; margin-bottom: 1.5rem;">Chat with our AI agents for instant support</p>
+                <a href="/chat/strategist" style="display: inline-block; background: #007bff; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Start Chat</a>
+            </div>
+            
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-calendar" style="font-size: 3rem; color: #ffc107; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #2c3e50;">Schedule Demo</h3>
+                <p style="color: #6c757d; margin-bottom: 1.5rem;">Book a personalized demonstration of our platform</p>
+                <a href="#" style="display: inline-block; background: #ffc107; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Book Demo</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

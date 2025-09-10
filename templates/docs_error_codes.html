@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+
+{% block title %}Error Codes - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"30\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"60\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"50\" cy=\"90\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"90\" cy=\"25\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"75\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Error Codes Reference
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Complete reference guide for all API error codes, their meanings, and resolution steps.
+            </p>
+            <nav style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#http-errors" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; text-decoration: none; color: white; backdrop-filter: blur(10px);">
+                    <i class="fas fa-globe" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">HTTP Errors</span>
+                </a>
+                <a href="#api-errors" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; text-decoration: none; color: white; backdrop-filter: blur(10px);">
+                    <i class="fas fa-code" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">API Errors</span>
+                </a>
+                <a href="#validation-errors" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; text-decoration: none; color: white; backdrop-filter: blur(10px);">
+                    <i class="fas fa-check-circle" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Validation</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- HTTP Status Codes -->
+<div id="http-errors" style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                HTTP Status Codes
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Standard HTTP status codes returned by our API and their meanings.
+            </p>
+        </div>
+
+        <div style="display: grid; gap: 2rem;">
+            <!-- 4xx Client Errors -->
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #f59e0b; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-user-times"></i>
+                    4xx Client Errors
+                </h3>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #fffbeb; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                        <div style="font-weight: 700; color: #f59e0b; font-size: 1.1rem;">400</div>
+                        <div style="font-weight: 600; color: #1a202c;">Bad Request</div>
+                        <div style="color: #64748b;">The request was invalid or cannot be served</div>
+                        <div style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Client</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #fef2f2; border-radius: 10px; border-left: 4px solid #ef4444;">
+                        <div style="font-weight: 700; color: #ef4444; font-size: 1.1rem;">401</div>
+                        <div style="font-weight: 600; color: #1a202c;">Unauthorized</div>
+                        <div style="color: #64748b;">Authentication credentials are missing or invalid</div>
+                        <div style="background: #ef4444; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Auth</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #fdf4ff; border-radius: 10px; border-left: 4px solid #8b5cf6;">
+                        <div style="font-weight: 700; color: #8b5cf6; font-size: 1.1rem;">403</div>
+                        <div style="font-weight: 600; color: #1a202c;">Forbidden</div>
+                        <div style="color: #64748b;">Request understood but server refuses to authorize</div>
+                        <div style="background: #8b5cf6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Access</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #f0f9ff; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                        <div style="font-weight: 700; color: #3b82f6; font-size: 1.1rem;">404</div>
+                        <div style="font-weight: 600; color: #1a202c;">Not Found</div>
+                        <div style="color: #64748b;">The requested resource could not be found</div>
+                        <div style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Resource</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #ecfccb; border-radius: 10px; border-left: 4px solid #84cc16;">
+                        <div style="font-weight: 700; color: #84cc16; font-size: 1.1rem;">429</div>
+                        <div style="font-weight: 600; color: #1a202c;">Too Many Requests</div>
+                        <div style="color: #64748b;">Rate limit exceeded - too many requests in a given time</div>
+                        <div style="background: #84cc16; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Rate Limit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5xx Server Errors -->
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #ef4444; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-server"></i>
+                    5xx Server Errors
+                </h3>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #fef2f2; border-radius: 10px; border-left: 4px solid #ef4444;">
+                        <div style="font-weight: 700; color: #ef4444; font-size: 1.1rem;">500</div>
+                        <div style="font-weight: 600; color: #1a202c;">Internal Server Error</div>
+                        <div style="color: #64748b;">An unexpected error occurred on our servers</div>
+                        <div style="background: #ef4444; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Server</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #f0fdfa; border-radius: 10px; border-left: 4px solid #06b6d4;">
+                        <div style="font-weight: 700; color: #06b6d4; font-size: 1.1rem;">502</div>
+                        <div style="font-weight: 600; color: #1a202c;">Bad Gateway</div>
+                        <div style="color: #64748b;">Invalid response from an upstream server</div>
+                        <div style="background: #06b6d4; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Gateway</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 100px 200px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #f0fdf4; border-radius: 10px; border-left: 4px solid #10b981;">
+                        <div style="font-weight: 700; color: #10b981; font-size: 1.1rem;">503</div>
+                        <div style="font-weight: 600; color: #1a202c;">Service Unavailable</div>
+                        <div style="color: #64748b;">Server temporarily overloaded or under maintenance</div>
+                        <div style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">Maintenance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Error Codes -->
+<div id="api-errors" style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                API-Specific Error Codes
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Custom error codes specific to our AI platform and their resolution steps.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-robot" style="color: #ef4444;"></i>
+                    AI Agent Errors (1000-1099)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <div style="font-weight: 600; color: #ef4444; margin-bottom: 0.25rem;">1001 - Agent Not Found</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The specified AI agent does not exist or has been deleted.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <div style="font-weight: 600; color: #f59e0b; margin-bottom: 0.25rem;">1002 - Agent Busy</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The AI agent is currently processing another request.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                        <div style="font-weight: 600; color: #8b5cf6; margin-bottom: 0.25rem;">1003 - Agent Disabled</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The AI agent has been disabled by the owner.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-key" style="color: #3b82f6;"></i>
+                    Authentication Errors (2000-2099)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <div style="font-weight: 600; color: #3b82f6; margin-bottom: 0.25rem;">2001 - Invalid API Key</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The provided API key is not valid or has expired.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #06b6d4;">
+                        <div style="font-weight: 600; color: #06b6d4; margin-bottom: 0.25rem;">2002 - Token Expired</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The authentication token has expired and needs renewal.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <div style="font-weight: 600; color: #10b981; margin-bottom: 0.25rem;">2003 - Insufficient Permissions</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Your account doesn't have permission for this operation.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-tachometer-alt" style="color: #10b981;"></i>
+                    Rate Limit Errors (3000-3099)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <div style="font-weight: 600; color: #10b981; margin-bottom: 0.25rem;">3001 - Rate Limit Exceeded</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">You have exceeded your API rate limit. Wait before retrying.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #84cc16;">
+                        <div style="font-weight: 600; color: #84cc16; margin-bottom: 0.25rem;">3002 - Quota Exceeded</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Monthly API usage quota has been exceeded.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                        <div style="font-weight: 600; color: #f59e0b; margin-bottom: 0.25rem;">3003 - Concurrent Limit</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">Too many concurrent requests. Reduce parallel calls.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135def, #fdf4ff 0%, #fae8ff 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-database" style="color: #8b5cf6;"></i>
+                    Data Processing Errors (4000-4099)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                        <div style="font-weight: 600; color: #8b5cf6; margin-bottom: 0.25rem;">4001 - Invalid Input Format</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The input data format is not supported or malformed.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #ec4899;">
+                        <div style="font-weight: 600; color: #ec4899; margin-bottom: 0.25rem;">4002 - File Too Large</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The uploaded file exceeds the maximum size limit.</div>
+                    </div>
+                    <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #06b6d4;">
+                        <div style="font-weight: 600; color: #06b6d4; margin-bottom: 0.25rem;">4003 - Processing Timeout</div>
+                        <div style="color: #64748b; font-size: 0.9rem;">The request timed out during processing.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Validation Errors -->
+<div id="validation-errors" style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Input Validation Errors
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Common validation errors and how to fix them in your API requests.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-exclamation-circle" style="color: #fbbf24;"></i>
+                    Required Fields
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: rgba(251, 191, 36, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #fbbf24;">
+                        <div style="font-weight: 600; color: #fbbf24; margin-bottom: 0.25rem;">Missing Required Field</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">Ensure all required fields are included in your request.</div>
+                    </div>
+                    <div style="background: rgba(239, 68, 68, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <div style="font-weight: 600; color: #ef4444; margin-bottom: 0.25rem;">Empty Required Field</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">Required fields cannot be empty or null.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-ruler" style="color: #06b6d4;"></i>
+                    Length Validation
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: rgba(6, 182, 212, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #06b6d4;">
+                        <div style="font-weight: 600; color: #06b6d4; margin-bottom: 0.25rem;">String Too Long</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">Text exceeds maximum allowed length.</div>
+                    </div>
+                    <div style="background: rgba(139, 92, 246, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                        <div style="font-weight: 600; color: #8b5cf6; margin-bottom: 0.25rem;">String Too Short</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">Text is below minimum required length.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-check-double" style="color: #10b981;"></i>
+                    Format Validation
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: rgba(16, 185, 129, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <div style="font-weight: 600; color: #10b981; margin-bottom: 0.25rem;">Invalid Email Format</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">Email address format is not valid.</div>
+                    </div>
+                    <div style="background: rgba(236, 72, 153, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #ec4899;">
+                        <div style="font-weight: 600; color: #ec4899; margin-bottom: 0.25rem;">Invalid URL Format</div>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">URL format is not valid or accessible.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Resolution Tips -->
+        <div style="margin-top: 4rem; background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+            <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 2rem; text-align: center;">
+                Error Resolution Tips
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Check Error Details</h4>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">Always read the error message and check the error_details field for specific information.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Implement Retry Logic</h4>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">For temporary errors (5xx), implement exponential backoff retry logic.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Log Errors</h4>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">Log error responses with request IDs for easier debugging and support.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Contact Support</h4>
+                    <p style="opacity: 0.8; font-size: 0.9rem;">If errors persist, contact our support team with the request ID and error details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Reference -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+            Need More Help?
+        </h2>
+        <p style="font-size: 1.2rem; color: #64748b; margin-bottom: 3rem;">
+            Can't find the error code you're looking for? Check our troubleshooting guide or contact support.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/docs/troubleshooting" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(239, 68, 68, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <i class="fas fa-tools"></i>
+                Troubleshooting Guide
+            </a>
+            <a href="/support" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #ef4444; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid #ef4444; transition: all 0.3s ease;" onmouseover="this.style.background='#ef4444'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#ef4444'">
+                <i class="fas fa-headset"></i>
+                Contact Support
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

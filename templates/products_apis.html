@@ -1,0 +1,477 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-code" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Developer APIs</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Powerful AI APIs
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Integrate cutting-edge AI capabilities into your applications with our comprehensive REST and GraphQL APIs. Built for developers, designed for scale, optimized for performance.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-key"></i>
+                    Get API Key
+                </a>
+                <a href="#api-endpoints" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-book"></i>
+                    View Documentation
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- API Categories -->
+    <section id="api-endpoints" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    API Endpoints
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Comprehensive APIs for every AI use case, from natural language processing to computer vision
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Natural Language Processing -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-comments" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Natural Language</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Advanced text analysis, sentiment detection, language translation, and conversational AI capabilities.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Text Summarization
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Sentiment Analysis
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Language Translation
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Entity Extraction
+                        </li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; color: #4ECDC4;">
+                        POST /api/v1/nlp/sentiment
+                    </div>
+                </div>
+                
+                <!-- Computer Vision -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-eye" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Computer Vision</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Image recognition, object detection, facial analysis, and document processing powered by deep learning.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Image Classification
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Object Detection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Facial Recognition
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            OCR & Document AI
+                        </li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; color: #4ECDC4;">
+                        POST /api/v1/vision/detect
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-brain" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Machine Learning</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Predictive analytics, anomaly detection, recommendation engines, and custom model deployment services.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Predictive Models
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Anomaly Detection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Recommendations
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Model Inference
+                        </li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; color: #4ECDC4;">
+                        POST /api/v1/ml/predict
+                    </div>
+                </div>
+                
+                <!-- Speech & Audio -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-microphone" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Speech & Audio</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Speech recognition, text-to-speech synthesis, audio analysis, and voice biometrics for seamless interaction.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Speech-to-Text
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Text-to-Speech
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Voice Recognition
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Audio Analysis
+                        </li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; color: #4ECDC4;">
+                        POST /api/v1/speech/transcribe
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Code Examples -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Quick Start Examples
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Get started quickly with our simple, well-documented API examples
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem;">
+                
+                <!-- Python Example -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <i class="fab fa-python" style="font-size: 2rem; color: #4ECDC4;"></i>
+                        <h3 style="font-size: 1.6rem; font-weight: 600; color: white;">Python SDK</h3>
+                    </div>
+                    <div style="background: #1e1e1e; border-radius: 12px; padding: 2rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto;">
+                        <div style="color: #569cd6;">import</div> <span style="color: #ffffff;">requests</span><br><br>
+                        <div style="color: #9cdcfe;">response</div> <span style="color: #ffffff;">=</span> <span style="color: #dcdcaa;">requests</span><span style="color: #ffffff;">.</span><span style="color: #dcdcaa;">post</span><span style="color: #ffffff;">(</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ce9178;">"https://api.aidigitalfriend.com/v1/nlp/sentiment"</span><span style="color: #ffffff;">,</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">headers</span><span style="color: #ffffff;">=</span><span style="color: #ffffff;">{</span><span style="color: #ce9178;">"Authorization"</span><span style="color: #ffffff;">:</span> <span style="color: #ce9178;">"Bearer YOUR_API_KEY"</span><span style="color: #ffffff;">},</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">json</span><span style="color: #ffffff;">=</span><span style="color: #ffffff;">{</span><span style="color: #ce9178;">"text"</span><span style="color: #ffffff;">:</span> <span style="color: #ce9178;">"I love this product!"</span><span style="color: #ffffff;">}</span><br>
+                        <span style="color: #ffffff;">)</span><br><br>
+                        <div style="color: #608b4e;"># Get sentiment score</div><br>
+                        <div style="color: #9cdcfe;">sentiment</div> <span style="color: #ffffff;">=</span> <span style="color: #dcdcaa;">response</span><span style="color: #ffffff;">.</span><span style="color: #dcdcaa;">json</span><span style="color: #ffffff;">()</span>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Example -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <i class="fab fa-js-square" style="font-size: 2rem; color: #f7df1e;"></i>
+                        <h3 style="font-size: 1.6rem; font-weight: 600; color: white;">JavaScript SDK</h3>
+                    </div>
+                    <div style="background: #1e1e1e; border-radius: 12px; padding: 2rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto;">
+                        <div style="color: #569cd6;">const</div> <span style="color: #9cdcfe;">response</span> <span style="color: #d4d4d4;">=</span> <span style="color: #569cd6;">await</span> <span style="color: #dcdcaa;">fetch</span><span style="color: #d4d4d4;">(</span><br>
+                        &nbsp;&nbsp;<span style="color: #ce9178;">'https://api.aidigitalfriend.com/v1/vision/detect'</span><span style="color: #d4d4d4;">,</span> <span style="color: #d4d4d4;">{</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">'POST'</span><span style="color: #d4d4d4;">,</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">headers</span><span style="color: #d4d4d4;">:</span> <span style="color: #d4d4d4;">{</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ce9178;">'Authorization'</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">'Bearer YOUR_API_KEY'</span><span style="color: #d4d4d4;">,</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ce9178;">'Content-Type'</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">'application/json'</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #d4d4d4;">},</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">body</span><span style="color: #d4d4d4;">:</span> <span style="color: #dcdcaa;">JSON</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">stringify</span><span style="color: #d4d4d4;">({</span> <span style="color: #9cdcfe;">image_url</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">'...'</span> <span style="color: #d4d4d4;">})</span><br>
+                        &nbsp;&nbsp;<span style="color: #d4d4d4;">}</span><br>
+                        <span style="color: #d4d4d4;">);</span><br><br>
+                        <div style="color: #608b4e;">// Process detected objects</div><br>
+                        <div style="color: #569cd6;">const</div> <span style="color: #9cdcfe;">objects</span> <span style="color: #d4d4d4;">=</span> <span style="color: #569cd6;">await</span> <span style="color: #dcdcaa;">response</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">json</span><span style="color: #d4d4d4;">();</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- API Features -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Developer Experience
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Built with developers in mind, our APIs are fast, reliable, and easy to integrate
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Fast Response Times -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-bolt" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Lightning Fast</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Sub-second response times with global CDN and edge computing for optimal performance worldwide.
+                    </p>
+                </div>
+                
+                <!-- 99.9% Uptime -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">99.9% Uptime</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Enterprise-grade reliability with redundant infrastructure and automatic failover systems.
+                    </p>
+                </div>
+                
+                <!-- RESTful Design -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-code-branch" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">RESTful APIs</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Clean, intuitive REST and GraphQL APIs following industry standards and best practices.
+                    </p>
+                </div>
+                
+                <!-- Comprehensive Docs -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-book-open" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Rich Documentation</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Interactive docs, code examples, SDKs, and tutorials to get you started in minutes.
+                    </p>
+                </div>
+                
+                <!-- Rate Limiting -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-tachometer-alt" style="font-size: 3rem; color: #f39c12; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Throttling</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Intelligent rate limiting and auto-scaling to handle traffic spikes without interruption.
+                    </p>
+                </div>
+                
+                <!-- Webhook Support -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-link" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Webhooks</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Real-time notifications and event-driven integrations with customizable webhook endpoints.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    API Pricing
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Pay per use with transparent, predictable pricing and generous free tiers
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                
+                <!-- Free Tier -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Free Tier</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">$0</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">per month</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            1,000 API calls/month
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Basic endpoints
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Community support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Rate limited
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        Get Started Free
+                    </a>
+                </div>
+                
+                <!-- Pay-as-you-go -->
+                <div style="background: linear-gradient(135deg, rgba(78, 205, 196, 0.2) 0%, rgba(68, 160, 141, 0.2) 100%); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 2px solid #4ECDC4; text-align: center; position: relative; transform: scale(1.05);">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #4ECDC4; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">
+                        Most Popular
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Pay-as-you-go</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">$0.001</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">per API call</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Unlimited API calls
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            All endpoints
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Priority support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Higher rate limits
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        Start Building
+                    </a>
+                </div>
+                
+                <!-- Enterprise -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enterprise</h3>
+                    <div style="font-size: 3rem; font-weight: 700; color: #4ECDC4; margin-bottom: 0.5rem;">Custom</div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">pricing</p>
+                    <ul style="color: rgba(255,255,255,0.8); list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Volume discounts
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Custom endpoints
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Dedicated support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            SLA guarantees
+                        </li>
+                    </ul>
+                    <a href="/contact" style="display: block; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        Contact Sales
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Start Building with AI Today
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Join thousands of developers already building amazing AI-powered applications with our APIs. Get started in minutes with our comprehensive documentation and SDKs.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-key"></i>
+                    Get Your API Key
+                </a>
+                <a href="/products/platform" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-layer-group"></i>
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .code-example {
+        font-size: 0.8rem !important;
+        padding: 1rem !important;
+    }
+    
+    .popular-tier {
+        transform: none !important;
+    }
+}
+
+/* Syntax highlighting improvements */
+.code-block {
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+</style>
+{% endblock %}

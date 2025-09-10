@@ -1,0 +1,377 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: #333;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.3); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.4);">
+                <i class="fas fa-book" style="font-size: 1.2rem; color: #333;"></i>
+                <span style="font-weight: 600; color: #333;">Technical Reference</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #333 0%, #555 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Documentation
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(51,51,51,0.8); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Comprehensive technical documentation, API references, and implementation guides to help you build, deploy, and optimize AI solutions with our platform.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#getting-started" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Getting Started
+                </a>
+                <a href="#api-reference" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                    <i class="fas fa-code"></i>
+                    API Reference
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Start Guide -->
+    <section id="getting-started" style="padding: 4rem 0; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Quick Start Guide
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Get up and running with AI Digital Friend in minutes
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Step 1 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #333 0%, #555 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.5rem; font-weight: 700;">
+                        1
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">Authentication</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">
+                        Sign up for an account and obtain your API credentials to access our services.
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 2px solid #333; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                            View Guide →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #333 0%, #555 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.5rem; font-weight: 700;">
+                        2
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">SDK Installation</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">
+                        Install our SDK for your preferred programming language and platform.
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 2px solid #333; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                            View Guide →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #333 0%, #555 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.5rem; font-weight: 700;">
+                        3
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">First Agent</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">
+                        Create and deploy your first AI agent using our simple configuration tools.
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 2px solid #333; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                            View Guide →
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Documentation Categories -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Documentation Library
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Comprehensive guides and references organized by topic and expertise level
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem;">
+                
+                <!-- API Reference -->
+                <div id="api-reference" style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-code" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">API Reference</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Complete endpoint documentation</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Detailed documentation for all REST API endpoints, including request/response schemas, authentication methods, and code examples in multiple languages.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">150+</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Endpoints</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">8</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Languages</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-book"></i> Browse
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-download"></i> OpenAPI
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- SDK Documentation -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-cube" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">SDK Documentation</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Language-specific libraries</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Comprehensive guides for our SDKs in Python, JavaScript, Java, C#, Go, and other popular languages with installation, configuration, and usage examples.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">8</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">SDKs</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">500+</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Examples</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-book"></i> Browse
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Integration Guides -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-plug" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">Integration Guides</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Platform-specific implementations</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Step-by-step guides for integrating with popular platforms, frameworks, and tools including Slack, Teams, Salesforce, and cloud services.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">25+</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Platforms</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">100+</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Guides</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-book"></i> Browse
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Architecture Guides -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-sitemap" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">Architecture Guides</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Design patterns and best practices</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Advanced architectural patterns, scalability considerations, security best practices, and performance optimization strategies for enterprise deployments.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">15</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Patterns</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 1rem; background: rgba(255,255,255,0.3); border-radius: 8px;">
+                            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">50+</div>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Diagrams</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-book"></i> Browse
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-download"></i> PDF
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Popular Resources -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Popular Resources
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Most accessed documentation and guides from our community
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                
+                <!-- Popular Doc 1 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; flex: 1; line-height: 1.4;">Getting Started with AI Agents</h3>
+                        <div style="background: rgba(51,51,51,0.1); color: #333; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; margin-left: 1rem;">
+                            POPULAR
+                        </div>
+                    </div>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Complete walkthrough for creating your first AI agent, from setup to deployment.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: rgba(51,51,51,0.6); font-size: 0.9rem;"><i class="fas fa-eye"></i> 12,486 views</span>
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Popular Doc 2 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; flex: 1; line-height: 1.4;">Python SDK Quick Reference</h3>
+                        <div style="background: rgba(51,51,51,0.1); color: #333; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; margin-left: 1rem;">
+                            POPULAR
+                        </div>
+                    </div>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Essential Python SDK methods and examples for rapid development.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: rgba(51,51,51,0.6); font-size: 0.9rem;"><i class="fas fa-eye"></i> 8,732 views</span>
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Popular Doc 3 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; flex: 1; line-height: 1.4;">Authentication & Security</h3>
+                        <div style="background: rgba(51,51,51,0.1); color: #333; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; margin-left: 1rem;">
+                            POPULAR
+                        </div>
+                    </div>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Best practices for secure API integration and credential management.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: rgba(51,51,51,0.6); font-size: 0.9rem;"><i class="fas fa-eye"></i> 7,249 views</span>
+                        <a href="#" style="color: #333; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Support Section -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: #333;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Need Additional Help?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); margin-bottom: 3rem; line-height: 1.6;">
+                Can't find what you're looking for? Our technical support team and community are here to help you succeed with your AI implementations.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-headset"></i>
+                    Contact Support
+                </a>
+                <a href="/resources" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}Getting Started - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-play" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Getting Started
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Get up and running with AI Digital Friend in minutes. This guide will walk you through everything you need to start building intelligent AI applications.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-clock" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">5 Min Setup</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-rocket" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Easy Setup</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-code" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Code Examples</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Setup Steps -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                3 Simple Steps to Get Started
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Follow these steps to set up your account and make your first API call.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">1</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-user-plus" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Create Account</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Sign up for free access</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Create your free AI Digital Friend account to get access to our platform and receive your API keys.
+                </p>
+                <div style="background: #f0f9ff; padding: 1rem; border-radius: 10px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #1a202c;"><strong>Free Tier Includes:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1rem; color: #64748b; font-size: 0.9rem;">
+                        <li>1,000 API calls per month</li>
+                        <li>Basic AI models access</li>
+                        <li>Community support</li>
+                    </ul>
+                </div>
+                <a href="/signup" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    Sign Up Now
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">2</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fas fa-key" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Get API Key</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Secure authentication</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Generate your API key from the dashboard to authenticate your requests securely.
+                </p>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0; margin-bottom: 1.5rem;">
+                    <div style="color: #64748b; margin-bottom: 0.5rem;">Your API Key:</div>
+                    <div style="color: #1a202c; word-break: break-all;">adf_sk_1234567890abcdef...</div>
+                </div>
+                <div style="background: #fef3c7; padding: 1rem; border-radius: 10px; border-left: 4px solid #f59e0b; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #92400e;"><i class="fas fa-exclamation-triangle"></i> <strong>Keep it secure:</strong> Never expose your API key in client-side code.</p>
+                </div>
+                <a href="/docs/authentication" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-shield-alt"></i>
+                    Learn Authentication
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">3</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-code" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Make First Call</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Test your setup</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Test your setup with a simple API call to create your first AI agent.
+                </p>
+                <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem; overflow-x: auto;">
+                    <div style="color: #10b981;">curl -X POST https://api.aidigitalfriend.com/v1/agents</div>
+                    <div style="color: #60a5fa;">  -H "Authorization: Bearer YOUR_API_KEY"</div>
+                    <div style="color: #f59e0b;">  -H "Content-Type: application/json"</div>
+                    <div style="color: #e5e7eb;">  -d '{"name": "My First Agent"}'</div>
+                </div>
+                <a href="/docs/api" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-book"></i>
+                    View API Docs
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Installation Guide -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Installation & Setup
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Choose your preferred programming language and get started with our SDKs.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <!-- Python SDK -->
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fab fa-python" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Python SDK</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Most popular choice</p>
+                    </div>
+                </div>
+                <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Install the SDK</div>
+                    <div>pip install aidigitalfriend</div>
+                    <br>
+                    <div style="color: #10b981;"># Basic usage</div>
+                    <div style="color: #f59e0b;">from</div> <div style="color: #e5e7eb;">aidigitalfriend</div> <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">Client</div>
+                    <br>
+                    <div style="color: #e5e7eb;">client = Client(api_key="your_key")</div>
+                    <div style="color: #e5e7eb;">agent = client.agents.create(</div>
+                    <div style="color: #e5e7eb;">    name="My Agent"</div>
+                    <div style="color: #e5e7eb;">)</div>
+                </div>
+                <a href="/docs/python-sdk" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fab fa-python"></i>
+                    Python Documentation
+                </a>
+            </div>
+
+            <!-- JavaScript SDK -->
+            <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fab fa-js" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">JavaScript SDK</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">For web applications</p>
+                    </div>
+                </div>
+                <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;">// Install via npm</div>
+                    <div>npm install @aidigitalfriend/sdk</div>
+                    <br>
+                    <div style="color: #10b981;">// Basic usage</div>
+                    <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">{ Client } </div><div style="color: #f59e0b;">from</div> <div style="color: #60a5fa;">'@aidigitalfriend/sdk'</div>
+                    <br>
+                    <div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">client = </div><div style="color: #f59e0b;">new</div> <div style="color: #e5e7eb;">Client(</div><div style="color: #60a5fa;">'your_key'</div><div style="color: #e5e7eb;">)</div>
+                    <div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">agent = </div><div style="color: #f59e0b;">await</div> <div style="color: #e5e7eb;">client.agents.create({</div>
+                    <div style="color: #e5e7eb;">  name: </div><div style="color: #60a5fa;">'My Agent'</div>
+                    <div style="color: #e5e7eb;">})</div>
+                </div>
+                <a href="/docs/javascript-sdk" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fab fa-js"></i>
+                    JavaScript Documentation
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Next Steps -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                What's Next?
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Now that you're set up, explore these resources to build amazing AI applications.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Follow Tutorials</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Step-by-step guides to build your first AI applications</p>
+                <a href="/docs/tutorials" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Browse Tutorials
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">API Reference</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Complete documentation for all endpoints and features</p>
+                <a href="/docs/api" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View API Docs
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Join Community</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Connect with other developers and get help</p>
+                <a href="/community" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Join Discord
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Explore Integrations</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Connect with your favorite tools and platforms</p>
+                <a href="/docs/integrations" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View Integrations
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

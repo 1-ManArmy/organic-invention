@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-book" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Knowledge Hub</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                AI Resources & Knowledge Center
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Explore our comprehensive collection of insights, guides, case studies, and educational content to accelerate your AI journey and stay ahead of the curve.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/resources/blog" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-blog"></i>
+                    Latest Blog Posts
+                </a>
+                <a href="#resource-categories" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-compass"></i>
+                    Explore Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resource Categories -->
+    <section id="resource-categories" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Resource Categories
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Discover valuable insights and practical knowledge across all areas of AI implementation
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Blog & News -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-blog" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Blog & News</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Stay updated with the latest AI trends, industry insights, product updates, and thought leadership articles from our experts.
+                    </p>
+                    <a href="/resources/blog" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        Read Latest Posts <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Case Studies -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-file-alt" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Case Studies</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Explore real-world success stories and detailed implementation examples from our clients across various industries.
+                    </p>
+                    <a href="/resources/case-studies" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        View Case Studies <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Whitepapers -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-file-pdf" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Whitepapers</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Download comprehensive research papers, technical guides, and in-depth analysis of AI technologies and strategies.
+                    </p>
+                    <a href="/resources/whitepapers" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        Download Papers <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Webinars -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-video" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Webinars</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Join live and on-demand webinars featuring industry experts, product demonstrations, and educational sessions.
+                    </p>
+                    <a href="/resources/webinars" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        Watch Webinars <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Documentation -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-book-open" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Documentation</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Access comprehensive technical documentation, API references, and implementation guides for our AI platform.
+                    </p>
+                    <a href="/resources/documentation" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        View Documentation <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Tutorials -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-play-circle" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Tutorials</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Learn with step-by-step tutorials, video guides, and hands-on examples to master our AI platform and tools.
+                    </p>
+                    <a href="/resources/tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #4ECDC4; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#44A08D'" onmouseout="this.style.color='#4ECDC4'">
+                        Start Learning <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Resources -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Featured Resources
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Most popular and recently updated content from our resource library
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Featured Blog Post -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="color: #4ECDC4; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">LATEST BLOG POST</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">The Future of AI Agents: Transforming Business Operations in 2025</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Explore how AI agents are revolutionizing business processes and what to expect in the coming year...</p>
+                    <a href="/resources/blog" style="color: #4ECDC4; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Read More →</a>
+                </div>
+                
+                <!-- Featured Case Study -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="color: #667eea; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">FEATURED CASE STUDY</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Healthcare AI Implementation: 40% Improvement in Diagnostic Accuracy</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Learn how a leading hospital network leveraged our AI platform to enhance patient care...</p>
+                    <a href="/resources/case-studies" style="color: #4ECDC4; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View Case Study →</a>
+                </div>
+                
+                <!-- Featured Whitepaper -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="color: #FF6B6B; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">POPULAR WHITEPAPER</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Enterprise AI Strategy: A Complete Implementation Guide</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Comprehensive 50-page guide covering strategy, implementation, and best practices...</p>
+                    <a href="/resources/whitepapers" style="color: #4ECDC4; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Download PDF →</a>
+                </div>
+                
+                <!-- Featured Webinar -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="color: #9b59b6; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;">UPCOMING WEBINAR</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">AI-Powered Customer Experience: Live Demo & Q&A</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Join us for a live demonstration of customer experience automation tools...</p>
+                    <a href="/resources/webinars" style="color: #4ECDC4; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Register Now →</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Get Started?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Explore our resources to accelerate your AI implementation, or connect with our experts for personalized guidance and support.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-comments"></i>
+                    Talk to an Expert
+                </a>
+                <a href="/resources/documentation" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-book-open"></i>
+                    Start with Docs
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

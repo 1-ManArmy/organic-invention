@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-chart-bar" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Smart Analytics</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                AI-Powered Analytics
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Transform raw data into actionable insights with advanced AI analytics. Predict trends, optimize performance, and make data-driven decisions with confidence.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-chart-line"></i>
+                    Get Analytics Demo
+                </a>
+                <a href="#analytics-features" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-eye"></i>
+                    See Capabilities
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Analytics Features -->
+    <section id="analytics-features" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Advanced Analytics Capabilities
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Comprehensive analytics platform powered by cutting-edge AI and machine learning
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Predictive Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-crystal-ball" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Predictive Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Advanced machine learning models that forecast future trends, behaviors, and outcomes with high accuracy.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Time series forecasting
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Behavioral prediction
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Risk modeling
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Demand forecasting
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Real-time Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-tachometer-alt" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Real-Time Processing</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Live data processing and analytics with instant insights and alerts for immediate decision-making.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Stream processing
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Live dashboards
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Alert systems
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Event correlation
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Data Visualization -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Visualization</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Interactive dashboards and visualizations that automatically adapt to your data and reveal hidden patterns.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Interactive dashboards
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Custom charts
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            3D visualizations
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Mobile responsive
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Business Intelligence -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-lightbulb" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Business Intelligence</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Comprehensive BI platform with automated insights generation and intelligent recommendations.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            KPI monitoring
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Automated reporting
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Trend analysis
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Performance insights
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Analytics Solutions -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Industry Analytics Solutions
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Specialized analytics solutions tailored for different industries and use cases
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Customer Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-user-chart" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Customer Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Customer segmentation, churn prediction, lifetime value analysis, and personalization insights.
+                    </p>
+                </div>
+                
+                <!-- Financial Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-coins" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Financial Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Risk assessment, fraud detection, portfolio optimization, and regulatory compliance monitoring.
+                    </p>
+                </div>
+                
+                <!-- Marketing Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-bullhorn" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Marketing Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Campaign performance, attribution modeling, audience insights, and ROI optimization.
+                    </p>
+                </div>
+                
+                <!-- Operations Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-cogs" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Operations Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Process optimization, capacity planning, quality control, and efficiency improvement.
+                    </p>
+                </div>
+                
+                <!-- Sales Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: #f39c12; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Sales Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Sales forecasting, pipeline analysis, performance tracking, and territory optimization.
+                    </p>
+                </div>
+                
+                <!-- Supply Chain Analytics -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-truck" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Supply Chain Analytics</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Demand planning, inventory optimization, supplier performance, and logistics analytics.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Analytics Impact -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Analytics Impact
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Measurable business improvements with our AI-powered analytics platform
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; text-align: center;">
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">10x</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Faster Insights</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Speed of data analysis and reporting</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">85%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Prediction Accuracy</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Average accuracy of predictive models</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">50%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Better Decisions</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Improvement in decision quality</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">25%</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Revenue Growth</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Average revenue increase</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Analytics Implementation
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Systematic approach to implementing AI-powered analytics in your organization
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                
+                <!-- Step 1 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">1</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Data Assessment</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Comprehensive data audit, quality assessment, and infrastructure evaluation to ensure analytics readiness.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">2</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Analytics Strategy</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Development of analytics roadmap, KPI definition, and use case prioritization aligned with business goals.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">3</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Platform Setup</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Analytics platform deployment, model development, and dashboard creation with comprehensive testing.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div style="text-align: center; position: relative;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; z-index: 2;">
+                        <span style="font-size: 2rem; font-weight: 700; color: white;">4</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Scale & Optimize</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        User training, adoption support, continuous model improvement, and expansion to new use cases.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Unlock the Power of Your Data
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Transform your data into competitive advantage with AI-powered analytics. Let's explore how smart analytics can drive your business forward.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-chart-bar"></i>
+                    Request Analytics Demo
+                </a>
+                <a href="/solutions" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-lightbulb"></i>
+                    Explore All Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

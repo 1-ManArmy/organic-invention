@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; text-align: center; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Blog & News</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Stay updated with the latest insights, trends, and announcements from the world of AI.</p>
+    </div>
+</div>
+
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;">
+            <!-- Main Content -->
+            <div>
+                <!-- Featured Article -->
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px; padding: 3rem; color: white; margin-bottom: 3rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -100px; right: -100px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.9rem; font-weight: 600;">Featured</span>
+                    <h2 style="font-size: 2.5rem; font-weight: 600; margin: 1.5rem 0 1rem; line-height: 1.2;">The Future of AI Agents: Beyond Chatbots</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.7; margin-bottom: 2rem;">Discover how AI agents are evolving from simple conversational tools to sophisticated business partners that can understand context, make decisions, and drive real business outcomes.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; opacity: 0.8;">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Author">
+                            <div>
+                                <p style="font-size: 0.9rem; margin: 0; font-weight: 600;">Dr. Sarah Chen</p>
+                                <p style="font-size: 0.8rem; margin: 0; opacity: 0.8;">December 15, 2024</p>
+                            </div>
+                        </div>
+                        <a href="#article-1" style="background: white; color: #667eea; padding: 0.8rem 1.5rem; border-radius: 15px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Read Full Article</a>
+                    </div>
+                </div>
+                
+                <!-- Recent Articles Grid -->
+                <div style="display: grid; gap: 2rem;">
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease; display: grid; grid-template-columns: 200px 1fr; gap: 2rem;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=140&fit=crop" style="width: 100%; height: 140px; border-radius: 15px; object-fit: cover;" alt="AI in Healthcare">
+                        <div>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                <span style="background: #e8f4fd; color: #1976d2; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">AI in Healthcare</span>
+                                <span style="background: #f3e5f5; color: #7b1fa2; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">Case Study</span>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #2c3e50;">How AI Agents Reduced Hospital Readmissions by 35%</h3>
+                            <p style="color: #6c757d; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">A comprehensive case study of how intelligent AI agents transformed patient care and operational efficiency at Memorial Healthcare.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #6c757d; font-size: 0.85rem;">December 12, 2024 • 8 min read</span>
+                                <a href="#article-2" style="color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease; display: grid; grid-template-columns: 200px 1fr; gap: 2rem;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=140&fit=crop" style="width: 100%; height: 140px; border-radius: 15px; object-fit: cover;" alt="Business Intelligence">
+                        <div>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                <span style="background: #fff3e0; color: #f57c00; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">Business Intelligence</span>
+                                <span style="background: #e8f5e8; color: #388e3c; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">Tutorial</span>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #2c3e50;">Building Your First AI Analytics Dashboard</h3>
+                            <p style="color: #6c757d; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">Step-by-step guide to creating powerful analytics dashboards that provide real-time insights into your business performance.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #6c757d; font-size: 0.85rem;">December 10, 2024 • 12 min read</span>
+                                <a href="#article-3" style="color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease; display: grid; grid-template-columns: 200px 1fr; gap: 2rem;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="https://images.unsplash.com/photo-1518709414624-727cddf5f3c2?w=200&h=140&fit=crop" style="width: 100%; height: 140px; border-radius: 15px; object-fit: cover;" alt="Industry Trends">
+                        <div>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                                <span style="background: #fce4ec; color: #c2185b; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">Industry Trends</span>
+                                <span style="background: #e3f2fd; color: #1565c0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">Research</span>
+                            </div>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #2c3e50;">2025 AI Predictions: What's Coming Next</h3>
+                            <p style="color: #6c757d; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">Our research team analyzes emerging trends and technologies that will shape the AI landscape in the coming year.</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="color: #6c757d; font-size: 0.85rem;">December 8, 2024 • 15 min read</span>
+                                <a href="#article-4" style="color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#load-more" style="background: #667eea; color: white; padding: 1rem 2rem; border-radius: 15px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">Load More Articles</a>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div>
+                <!-- Newsletter Signup -->
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 20px; padding: 2.5rem; color: white; text-align: center; margin-bottom: 2rem;">
+                    <i class="fas fa-envelope" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Stay Updated</h3>
+                    <p style="opacity: 0.9; margin-bottom: 2rem; line-height: 1.6;">Get the latest AI insights and updates delivered to your inbox.</p>
+                    <form style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="email" placeholder="Your email address" style="padding: 1rem; border: none; border-radius: 12px; font-size: 1rem; outline: none;">
+                        <button type="submit" style="background: white; color: #f5576c; padding: 1rem; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Subscribe Now</button>
+                    </form>
+                </div>
+                
+                <!-- Popular Articles -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #2c3e50;">Popular This Week</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="background: #667eea; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; flex-shrink: 0;">1</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 0.3rem; color: #2c3e50;">10 AI Tools Every Business Needs</h4>
+                                <p style="font-size: 0.8rem; color: #6c757d; margin: 0;">2.4k views</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="background: #28a745; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; flex-shrink: 0;">2</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 0.3rem; color: #2c3e50;">AI Ethics: Building Responsible Systems</h4>
+                                <p style="font-size: 0.8rem; color: #6c757d; margin: 0;">1.8k views</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="background: #ffc107; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; flex-shrink: 0;">3</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 0.3rem; color: #2c3e50;">Scaling AI Across Organizations</h4>
+                                <p style="font-size: 0.8rem; color: #6c757d; margin: 0;">1.5k views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categories -->
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #2c3e50;">Categories</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <a href="#ai-trends" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: #f8f9fa; border-radius: 10px; text-decoration: none; color: #2c3e50; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <span>AI Trends</span>
+                            <span style="background: #667eea; color: white; padding: 0.2rem 0.6rem; border-radius: 8px; font-size: 0.8rem;">12</span>
+                        </a>
+                        <a href="#case-studies" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: #f8f9fa; border-radius: 10px; text-decoration: none; color: #2c3e50; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <span>Case Studies</span>
+                            <span style="background: #28a745; color: white; padding: 0.2rem 0.6rem; border-radius: 8px; font-size: 0.8rem;">8</span>
+                        </a>
+                        <a href="#tutorials" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: #f8f9fa; border-radius: 10px; text-decoration: none; color: #2c3e50; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <span>Tutorials</span>
+                            <span style="background: #ffc107; color: white; padding: 0.2rem 0.6rem; border-radius: 8px; font-size: 0.8rem;">15</span>
+                        </a>
+                        <a href="#industry-insights" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: #f8f9fa; border-radius: 10px; text-decoration: none; color: #2c3e50; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <span>Industry Insights</span>
+                            <span style="background: #dc3545; color: white; padding: 0.2rem 0.6rem; border-radius: 8px; font-size: 0.8rem;">6</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

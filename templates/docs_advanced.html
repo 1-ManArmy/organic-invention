@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Advanced Guide - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-brain" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Advanced Guide
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Master advanced AI Digital Friend features including custom models, enterprise integrations, and scalable architectures.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-crown" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Expert Level</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-cogs" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Custom Models</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-shield-alt" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Enterprise</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Advanced Topics -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Advanced Topics
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Deep dive into sophisticated AI implementations and enterprise-grade solutions.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-network-wired" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Custom Model Training</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Fine-tune models for your use case</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Learn to train custom AI models tailored to your specific domain, data, and requirements for optimal performance.
+                </p>
+                <div style="background: #faf5ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Custom model training</div>
+                    <div style="color: #f59e0b;">from</div> <div style="color: #1a202c;">aidigitalfriend.training</div> <div style="color: #f59e0b;">import</div> <div style="color: #1a202c;">ModelTrainer</div><br>
+                    <br>
+                    <div style="color: #1a202c;">trainer = ModelTrainer(</div>
+                    <div style="color: #1a202c;">    base_model='gpt-4',</div>
+                    <div style="color: #1a202c;">    training_data='./data.jsonl'</div>
+                    <div style="color: #1a202c;">)</div>
+                    <div style="color: #1a202c;">model = trainer.fine_tune()</div>
+                </div>
+                <a href="#custom-training" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-graduation-cap"></i>
+                    Learn Training
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 50%;">
+                        <i class="fas fa-cubes" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Microservices Architecture</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Scalable distributed systems</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Design and implement scalable microservices architectures for enterprise AI applications with high availability.
+                </p>
+                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Microservice deployment</div>
+                    <div style="color: #1a202c;">services:</div>
+                    <div style="color: #1a202c;">  ai-gateway:</div>
+                    <div style="color: #1a202c;">    image: aidf/gateway:latest</div>
+                    <div style="color: #1a202c;">    ports: ['8080:8080']</div>
+                    <div style="color: #1a202c;">  agent-service:</div>
+                    <div style="color: #1a202c;">    image: aidf/agents:latest</div>
+                    <div style="color: #1a202c;">    replicas: 3</div>
+                </div>
+                <a href="#microservices" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-sitemap"></i>
+                    Build Architecture
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%;">
+                        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Security & Compliance</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Enterprise security patterns</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Implement advanced security measures, compliance frameworks, and data protection for enterprise deployments.
+                </p>
+                <div style="background: #fef2f2; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Security configuration</div>
+                    <div style="color: #1a202c;">security_config = {</div>
+                    <div style="color: #1a202c;">    'encryption': 'AES-256',</div>
+                    <div style="color: #1a202c;">    'compliance': ['SOC2', 'GDPR'],</div>
+                    <div style="color: #1a202c;">    'audit_logging': True</div>
+                    <div style="color: #1a202c;">}</div>
+                </div>
+                <a href="#security" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-lock"></i>
+                    Secure Implementation
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Performance Optimization</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Scale for millions of users</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Advanced techniques for optimizing performance, reducing latency, and scaling AI applications efficiently.
+                </p>
+                <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Performance optimization</div>
+                    <div style="color: #1a202c;">optimizer = PerformanceOptimizer(</div>
+                    <div style="color: #1a202c;">    caching_strategy='redis',</div>
+                    <div style="color: #1a202c;">    load_balancing='round_robin',</div>
+                    <div style="color: #1a202c;">    auto_scaling=True</div>
+                    <div style="color: #1a202c;">)</div>
+                </div>
+                <a href="#performance" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Optimize Performance
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Enterprise Features -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Enterprise Features
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Advanced capabilities designed for enterprise-scale deployments.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-users-cog" style="color: #8b5cf6; margin-right: 0.5rem;"></i>
+                    Multi-Tenant Architecture
+                </h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Isolate data and resources across multiple organizations with secure tenant separation and resource allocation.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Data isolation per tenant</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Resource quota management</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Custom branding per tenant</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-chart-bar" style="color: #3b82f6; margin-right: 0.5rem;"></i>
+                    Advanced Analytics
+                </h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Comprehensive analytics and reporting with custom dashboards, real-time metrics, and AI insights.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Real-time dashboards</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Custom metric tracking</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Automated reporting</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-cogs" style="color: #10b981; margin-right: 0.5rem;"></i>
+                    Workflow Automation
+                </h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Build complex AI workflows with conditional logic, error handling, and integration orchestration.
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Visual workflow builder</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Conditional logic support</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Error recovery mechanisms</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

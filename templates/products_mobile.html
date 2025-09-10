@@ -1,0 +1,519 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-mobile-alt" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Mobile Apps</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                AI in Your Pocket
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Experience the power of AI wherever you go with our suite of mobile applications. Intelligent, intuitive, and designed for the mobile-first world.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+                <a href="#download-apps" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-download"></i>
+                    Download Apps
+                </a>
+                <a href="#app-features" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-info-circle"></i>
+                    Explore Features
+                </a>
+            </div>
+            
+            <!-- Phone Mockup -->
+            <div style="max-width: 400px; margin: 0 auto;">
+                <div style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 30px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                    <div style="background: #1a1a1a; border-radius: 20px; padding: 2rem; text-align: left; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                        <div style="color: #4ECDC4; margin-bottom: 1rem;">AI Digital Friend v2.1</div>
+                        <div style="color: #ffffff; margin-bottom: 0.5rem;">▸ Voice Assistant Ready</div>
+                        <div style="color: #ffffff; margin-bottom: 0.5rem;">▸ Real-time Translation</div>
+                        <div style="color: #ffffff; margin-bottom: 0.5rem;">▸ Smart Camera Analysis</div>
+                        <div style="color: #ffffff; margin-bottom: 0.5rem;">▸ Offline AI Processing</div>
+                        <div style="color: #4ECDC4; margin-top: 1rem;">🟢 Online • 24/7 Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Features -->
+    <section id="app-features" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Mobile App Suite
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    A complete ecosystem of AI-powered mobile applications for every aspect of your digital life
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- AI Assistant App -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-robot" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">AI Assistant</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Your personal AI companion for daily tasks, voice commands, smart scheduling, and intelligent suggestions.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Voice-activated commands
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Smart calendar integration
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Natural conversation
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Offline capability
+                        </li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">iOS</span>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-android" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">Android</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Smart Camera App -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-camera" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Camera</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        AI-powered camera with real-time object recognition, scene optimization, and automatic photo enhancement.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time object detection
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Scene optimization
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Auto photo enhancement
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            AR overlays
+                        </li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">iOS</span>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-android" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">Android</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language Translator App -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-language" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Universal Translator</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Break language barriers with real-time translation, voice interpretation, and cultural context awareness.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            100+ languages supported
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Real-time voice translation
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Camera text translation
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Cultural context
+                        </li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">iOS</span>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-android" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">Android</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Health Monitor -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <i class="fas fa-heartbeat" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Health Monitor</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        AI-driven health tracking with personalized insights, wellness recommendations, and emergency detection.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Vital signs monitoring
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Personalized insights
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Wellness recommendations
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4;"></i>
+                            Emergency alerts
+                        </li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-apple" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">iOS</span>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-android" style="color: white;"></i>
+                            <span style="color: white; font-size: 0.9rem;">Android</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Showcase -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Mobile Experience
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Designed for touch, optimized for performance, built for the future
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Cross-Platform -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-sync-alt" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Cross-Platform Sync</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Seamless synchronization across all your devices with real-time data sync and offline support.
+                    </p>
+                </div>
+                
+                <!-- Privacy First -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Privacy First</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        End-to-end encryption and on-device processing ensure your personal data stays private and secure.
+                    </p>
+                </div>
+                
+                <!-- Adaptive UI -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-palette" style="font-size: 3rem; color: #FF6B6B; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Adaptive Interface</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        AI-powered interface that adapts to your usage patterns and preferences for optimal user experience.
+                    </p>
+                </div>
+                
+                <!-- Offline Capable -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-wifi" style="font-size: 3rem; color: #9b59b6; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Offline Ready</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Core AI features work offline with on-device models, ensuring functionality anywhere, anytime.
+                    </p>
+                </div>
+                
+                <!-- Smart Notifications -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-bell" style="font-size: 3rem; color: #f39c12; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Smart Notifications</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Intelligent notification system that learns your preferences and delivers timely, relevant alerts.
+                    </p>
+                </div>
+                
+                <!-- Voice Control -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-microphone" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Voice Control</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 1rem;">
+                        Hands-free interaction with natural voice commands and conversational AI interface.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download-apps" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Download Our Apps
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Available on all major platforms with native performance and seamless integration
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                
+                <!-- iOS Download -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fab fa-apple" style="font-size: 4rem; color: white; margin-bottom: 2rem;"></i>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">iOS Apps</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Native iOS applications optimized for iPhone and iPad with full iOS integration and features.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; text-align: left; margin-bottom: 3rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            iPhone & iPad compatible
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Siri integration
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Apple Watch support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Face ID / Touch ID
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, #000000 0%, #333333 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fab fa-apple" style="font-size: 1.2rem;"></i>
+                        Download on App Store
+                    </a>
+                </div>
+                
+                <!-- Android Download -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fab fa-android" style="font-size: 4rem; color: #a4c639; margin-bottom: 2rem;"></i>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Android Apps</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Comprehensive Android applications with full Material Design and Google services integration.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; text-align: left; margin-bottom: 3rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Android 8.0+ support
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Google Assistant integration
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Wear OS compatibility
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Biometric authentication
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fab fa-google-play" style="font-size: 1.2rem;"></i>
+                        Get it on Google Play
+                    </a>
+                </div>
+                
+                <!-- PWA Download -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                    <i class="fas fa-globe" style="font-size: 4rem; color: #4ECDC4; margin-bottom: 2rem;"></i>
+                    <h3 style="font-size: 1.8rem; font-weight: 600; color: white; margin-bottom: 1rem;">Web App</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Progressive Web App that works on any device with a modern browser. No installation required.
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.7); list-style: none; padding: 0; text-align: left; margin-bottom: 3rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Cross-platform compatible
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            No installation needed
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Offline functionality
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-check" style="color: #4ECDC4;"></i>
+                            Instant updates
+                        </li>
+                    </ul>
+                    <a href="/products/platform" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; width: 100%; justify-content: center;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-external-link-alt" style="font-size: 1.2rem;"></i>
+                        Launch Web App
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">2M+</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Downloads</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Across all platforms</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">4.8★</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">App Rating</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Average user rating</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">150+</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Countries</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Global availability</p>
+                </div>
+                
+                <div style="color: white;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: #4ECDC4; margin-bottom: 1rem;">24/7</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">AI Availability</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem;">Always ready to help</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Experience AI Everywhere
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Join millions of users who have transformed their mobile experience with AI. Download now and discover the future of mobile computing.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://apps.apple.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fab fa-apple"></i>
+                    Download for iOS
+                </a>
+                <a href="https://play.google.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fab fa-android"></i>
+                    Download for Android
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .phone-mockup {
+        max-width: 300px !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+/* App icon animations */
+.app-icon {
+    transition: transform 0.3s ease;
+}
+
+.app-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Download button effects */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+</style>
+{% endblock %}

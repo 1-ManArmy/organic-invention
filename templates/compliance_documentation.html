@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}Compliance Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d2d4a 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"15\" cy=\"25\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"85\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"35\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"75\" cy=\"15\" r=\"0.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"25\" cy=\"85\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                <i class="fas fa-book-open" style="font-size: 2rem; color: #4ade80;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Compliance Documentation
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Comprehensive guides covering our data handling practices, privacy policies, security measures, and regulatory compliance frameworks.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-search" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Searchable Guides</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-update" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Always Current</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-download" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">PDF Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Documentation Categories -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f172a 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Documentation Library
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+                Access detailed documentation across all aspects of our compliance and security practices.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <!-- Data Protection Guide -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2.5rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); border-radius: 15px; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin: 0;">Data Protection Guide</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 0.9rem;">Privacy & Security Framework</p>
+                    </div>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Comprehensive overview of how we collect, process, store, and protect personal data in compliance with global privacy regulations.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 0.75rem;">Covered Topics:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Data collection and consent mechanisms
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Encryption and storage security
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Data subject rights and procedures
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Cross-border data transfer protocols
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button style="flex: 1; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-eye"></i> Read Online
+                    </button>
+                    <button style="background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-download"></i> PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Security Framework -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2.5rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 15px; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);">
+                        <i class="fas fa-lock" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin: 0;">Security Framework</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 0.9rem;">Infrastructure & Access Controls</p>
+                    </div>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Detailed documentation of our security architecture, access controls, incident response procedures, and vulnerability management.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 0.75rem;">Key Sections:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Network security and monitoring
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Identity and access management
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Incident response protocols
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Business continuity planning
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button style="flex: 1; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-eye"></i> Read Online
+                    </button>
+                    <button style="background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-download"></i> PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Regulatory Compliance -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2.5rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #047857 100%); border-radius: 15px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);">
+                        <i class="fas fa-balance-scale" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin: 0;">Regulatory Compliance</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 0.9rem;">Global Standards & Requirements</p>
+                    </div>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Comprehensive guide to our compliance with GDPR, CCPA, HIPAA, PCI DSS, and other international regulatory requirements.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 0.75rem;">Regulations Covered:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            GDPR (General Data Protection Regulation)
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            CCPA (California Consumer Privacy Act)
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            HIPAA (Healthcare data protection)
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            PCI DSS (Payment card security)
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button style="flex: 1; background: linear-gradient(135deg, #10b981 0%, #047857 100%); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-eye"></i> Read Online
+                    </button>
+                    <button style="background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-download"></i> PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Privacy Policy Technical -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2.5rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); border-radius: 15px; box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);">
+                        <i class="fas fa-user-shield" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin: 0;">Privacy Implementation</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 0.9rem;">Technical Privacy Controls</p>
+                    </div>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Technical implementation details of privacy controls, data minimization practices, and automated compliance mechanisms.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 0.75rem;">Implementation Areas:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Privacy by design architecture
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Automated data retention policies
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Consent management systems
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <i class="fas fa-check" style="color: #4ade80; font-size: 0.8rem;"></i>
+                            Data subject request automation
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button style="flex: 1; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <i class="fas fa-eye"></i> Read Online
+                    </button>
+                    <button style="background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        <i class="fas fa-download"></i> PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technical Specifications -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Technical Specifications
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+                Detailed technical documentation for developers and security professionals.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(30,41,59,0.8); padding: 2rem; border-radius: 15px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #60a5fa;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">API Security Specs</h3>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">Authentication & Authorization</p>
+                <div style="display: inline-block; background: rgba(96, 165, 250, 0.2); color: #60a5fa; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(96, 165, 250, 0.3); margin-bottom: 1rem;">Technical Guide</div>
+                <button style="width: 100%; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-external-link-alt"></i> View Documentation
+                </button>
+            </div>
+
+            <div style="background: rgba(30,41,59,0.8); padding: 2rem; border-radius: 15px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Data Architecture</h3>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">Storage & Processing Models</p>
+                <div style="display: inline-block; background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(74, 222, 128, 0.3); margin-bottom: 1rem;">Architecture Guide</div>
+                <button style="width: 100%; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-external-link-alt"></i> View Documentation
+                </button>
+            </div>
+
+            <div style="background: rgba(30,41,59,0.8); padding: 2rem; border-radius: 15px; text-align: center; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #a78bfa;">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Network Security</h3>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">Infrastructure & Monitoring</p>
+                <div style="display: inline-block; background: rgba(167, 139, 250, 0.2); color: #a78bfa; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(167, 139, 250, 0.3); margin-bottom: 1rem;">Security Guide</div>
+                <button style="width: 100%; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-external-link-alt"></i> View Documentation
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Access & Support -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+            Need Assistance with Documentation?
+        </h2>
+        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem;">
+            Our compliance and technical teams are available to help you understand and implement our documented practices.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:compliance@aidigitalfriend.com" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(74, 222, 128, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(74, 222, 128, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(74, 222, 128, 0.3)'">
+                <i class="fas fa-envelope"></i>
+                Contact Documentation Team
+            </a>
+            <a href="/compliance" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.2); transition: all 0.3s ease; backdrop-filter: blur(20px);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fas fa-arrow-left"></i>
+                Back to Compliance
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

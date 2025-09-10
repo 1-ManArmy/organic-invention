@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; text-align: center; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Frequently Asked Questions</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Find answers to the most common questions about our AI agent platform.</p>
+    </div>
+</div>
+
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem;">
+            <!-- Categories Sidebar -->
+            <div>
+                <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: sticky; top: 2rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #2c3e50;">Categories</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <a href="#getting-started" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #667eea; color: white; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                            <i class="fas fa-rocket"></i>
+                            <span>Getting Started</span>
+                        </a>
+                        <a href="#features" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #f8f9fa; color: #2c3e50; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <i class="fas fa-cogs"></i>
+                            <span>Features</span>
+                        </a>
+                        <a href="#pricing" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #f8f9fa; color: #2c3e50; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Pricing & Billing</span>
+                        </a>
+                        <a href="#technical" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #f8f9fa; color: #2c3e50; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <i class="fas fa-code"></i>
+                            <span>Technical</span>
+                        </a>
+                        <a href="#security" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #f8f9fa; color: #2c3e50; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security & Privacy</span>
+                        </a>
+                        <a href="#support" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: #f8f9fa; color: #2c3e50; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#e9ecef'" onmouseout="this.style.background='#f8f9fa'">
+                            <i class="fas fa-life-ring"></i>
+                            <span>Support</span>
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 15px; color: white; text-align: center;">
+                        <i class="fas fa-question-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h4 style="margin-bottom: 1rem;">Still have questions?</h4>
+                        <a href="/contact" style="background: white; color: #f5576c; padding: 0.8rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Content -->
+            <div>
+                <!-- Getting Started Section -->
+                <section id="getting-started" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #667eea;"><i class="fas fa-rocket"></i> Getting Started</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #667eea;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq1')">
+                                <i class="fas fa-chevron-right" id="faq1-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                What is the AI Agents Platform?
+                            </h3>
+                            <div id="faq1" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>The AI Agents Platform is a comprehensive solution that allows businesses to deploy intelligent AI agents for various tasks including customer service, data analysis, workflow automation, and business intelligence. Our platform provides pre-built agents and tools to create custom AI solutions tailored to your specific needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #28a745;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq2')">
+                                <i class="fas fa-chevron-right" id="faq2-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                How do I get started?
+                            </h3>
+                            <div id="faq2" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>Getting started is easy! Simply sign up for a free account, choose your plan, and you can start deploying AI agents immediately. We provide:</p>
+                                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                                    <li>Step-by-step onboarding tutorials</li>
+                                    <li>Pre-configured agent templates</li>
+                                    <li>Integration guides for popular platforms</li>
+                                    <li>24/7 support during your first week</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #ffc107;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq3')">
+                                <i class="fas fa-chevron-right" id="faq3-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                Do I need technical knowledge to use the platform?
+                            </h3>
+                            <div id="faq3" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>No! Our platform is designed for both technical and non-technical users. We offer:</p>
+                                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                                    <li><strong>Visual Interface:</strong> Drag-and-drop agent builder</li>
+                                    <li><strong>Templates:</strong> Pre-built solutions for common use cases</li>
+                                    <li><strong>API Access:</strong> For developers who want custom integrations</li>
+                                    <li><strong>Documentation:</strong> Comprehensive guides and tutorials</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Features Section -->
+                <section id="features" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #667eea;"><i class="fas fa-cogs"></i> Features</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #667eea;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq4')">
+                                <i class="fas fa-chevron-right" id="faq4-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                What types of AI agents are available?
+                            </h3>
+                            <div id="faq4" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>We offer 13 specialized AI agents, each designed for specific business functions:</p>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
+                                        <strong>🎯 Strategist</strong><br>
+                                        <small>Strategic planning & decision making</small>
+                                    </div>
+                                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
+                                        <strong>💚 Healer</strong><br>
+                                        <small>Wellness & mental health support</small>
+                                    </div>
+                                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
+                                        <strong>🔍 Scout</strong><br>
+                                        <small>Research & information gathering</small>
+                                    </div>
+                                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
+                                        <strong>📊 Analyst</strong><br>
+                                        <small>Data analysis & insights</small>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1rem;">Plus 9 more specialized agents for various business needs!</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #28a745;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq5')">
+                                <i class="fas fa-chevron-right" id="faq5-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                Can I integrate with my existing tools?
+                            </h3>
+                            <div id="faq5" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>Absolutely! We support integrations with 100+ popular business tools including:</p>
+                                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                                    <li><strong>Communication:</strong> Slack, Microsoft Teams, Discord</li>
+                                    <li><strong>CRM:</strong> Salesforce, HubSpot, Pipedrive</li>
+                                    <li><strong>Productivity:</strong> Trello, Asana, Monday.com</li>
+                                    <li><strong>Cloud:</strong> AWS, Google Cloud, Azure</li>
+                                    <li><strong>Automation:</strong> Zapier, IFTTT, Microsoft Power Automate</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Pricing Section -->
+                <section id="pricing" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #667eea;"><i class="fas fa-dollar-sign"></i> Pricing & Billing</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #667eea;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq6')">
+                                <i class="fas fa-chevron-right" id="faq6-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                What are your pricing plans?
+                            </h3>
+                            <div id="faq6" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                                    <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                                        <h4 style="color: #1976d2; margin-bottom: 0.5rem;">Free Tier</h4>
+                                        <p style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 1rem;">$0/month</p>
+                                        <ul style="text-align: left; font-size: 0.9rem;">
+                                            <li>1 AI agent</li>
+                                            <li>100 conversations/month</li>
+                                            <li>Basic integrations</li>
+                                            <li>Community support</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                                        <h4 style="color: #28a745; margin-bottom: 0.5rem;">Pro Plan</h4>
+                                        <p style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 1rem;">$49/month</p>
+                                        <ul style="text-align: left; font-size: 0.9rem;">
+                                            <li>5 AI agents</li>
+                                            <li>Unlimited conversations</li>
+                                            <li>All integrations</li>
+                                            <li>Priority support</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: #fce4ec; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                                        <h4 style="color: #c2185b; margin-bottom: 0.5rem;">Enterprise</h4>
+                                        <p style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 1rem;">Custom</p>
+                                        <ul style="text-align: left; font-size: 0.9rem;">
+                                            <li>Unlimited agents</li>
+                                            <li>Custom solutions</li>
+                                            <li>Dedicated support</li>
+                                            <li>SLA guarantees</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-left: 4px solid #ffc107;">
+                            <h3 style="color: #2c3e50; margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ('faq7')">
+                                <i class="fas fa-chevron-right" id="faq7-icon" style="transition: transform 0.3s ease; margin-right: 0.5rem;"></i>
+                                Can I change my plan anytime?
+                            </h3>
+                            <div id="faq7" style="display: none; color: #6c757d; line-height: 1.7; margin-top: 1rem;">
+                                <p>Yes! You can upgrade or downgrade your plan at any time:</p>
+                                <ul style="margin-top: 1rem; padding-left: 2rem;">
+                                    <li><strong>Upgrades:</strong> Take effect immediately with prorated billing</li>
+                                    <li><strong>Downgrades:</strong> Take effect at the next billing cycle</li>
+                                    <li><strong>Cancellation:</strong> No cancellation fees, but no refunds for unused time</li>
+                                    <li><strong>Enterprise:</strong> Custom terms based on contract</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Support Section -->
+                <section id="support" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #667eea;"><i class="fas fa-life-ring"></i> Support</h2>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 3rem; text-align: center; color: white;">
+                        <h3 style="margin-bottom: 2rem;">Need More Help?</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                            <a href="/contact" style="background: white; color: #667eea; padding: 1.5rem; border-radius: 15px; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                <strong>Contact Support</strong><br>
+                                <small>Get help from our team</small>
+                            </a>
+                            <a href="/blog" style="background: rgba(255,255,255,0.1); color: white; padding: 1.5rem; border-radius: 15px; text-decoration: none; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.3);">
+                                <i class="fas fa-book" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                <strong>Documentation</strong><br>
+                                <small>Detailed guides & tutorials</small>
+                            </a>
+                            <a href="#community" style="background: rgba(255,255,255,0.1); color: white; padding: 1.5rem; border-radius: 15px; text-decoration: none; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.3);">
+                                <i class="fas fa-users" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                <strong>Community</strong><br>
+                                <small>Connect with other users</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleFAQ(faqId) {
+    const content = document.getElementById(faqId);
+    const icon = document.getElementById(faqId + '-icon');
+    
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(90deg)';
+    } else {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+</script>
+{% endblock %}

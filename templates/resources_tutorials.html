@@ -1,0 +1,450 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: #333;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.3); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.4);">
+                <i class="fas fa-graduation-cap" style="font-size: 1.2rem; color: #333;"></i>
+                <span style="font-weight: 600; color: #333;">Step-by-Step Learning</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #333 0%, #555 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Tutorials
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(51,51,51,0.8); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Interactive step-by-step tutorials, video guides, and hands-on exercises to help you master AI agent development and deployment using our platform.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#beginner-tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </a>
+                <a href="#video-tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                    <i class="fas fa-video"></i>
+                    Video Tutorials
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Learning Paths -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Learning Paths
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Structured learning journeys designed for different skill levels and use cases
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Beginner Path -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-seedling" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">Beginner Path</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">No prior AI experience required</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Start your AI journey with foundational concepts, platform basics, and your first AI agent. Perfect for complete beginners.
+                    </p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">Progress</span>
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">6 tutorials</span>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.3); border-radius: 3px;">
+                            <div style="width: 0%; height: 100%; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 3px; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-play"></i> Start Path
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Intermediate Path -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-rocket" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">Intermediate Path</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">Some programming experience helpful</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Build more sophisticated AI agents with advanced features, integrations, and custom workflows for real-world applications.
+                    </p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">Progress</span>
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">8 tutorials</span>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.3); border-radius: 3px;">
+                            <div style="width: 0%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 3px; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-play"></i> Start Path
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Advanced Path -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-crown" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">Advanced Path</h3>
+                            <div style="color: rgba(51,51,51,0.6); font-size: 0.9rem;">For experienced developers</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem;">
+                        Master enterprise-grade AI solutions with multi-agent systems, custom models, and advanced deployment strategies.
+                    </p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">Progress</span>
+                            <span style="color: rgba(51,51,51,0.7); font-size: 0.9rem;">10 tutorials</span>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.3); border-radius: 3px;">
+                            <div style="width: 0%; height: 100%; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 3px; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-play"></i> Start Path
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Tutorial -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Featured Tutorial
+                </h2>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 4rem 3rem; border: 1px solid rgba(255,255,255,0.5);">
+                <div style="display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: center;">
+                    <div>
+                        <div style="color: #333; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;">
+                            <i class="fas fa-star" style="color: #f1c40f;"></i> FEATURED TUTORIAL • 45 MINUTES
+                        </div>
+                        <h3 style="font-size: 2.5rem; font-weight: 700; color: #333; margin-bottom: 2rem; line-height: 1.3;">Build a Customer Service AI Agent from Scratch</h3>
+                        <p style="color: rgba(51,51,51,0.7); font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem;">
+                            Learn how to create an intelligent customer service agent that can handle inquiries, escalate complex issues, and integrate with existing support systems. Includes complete source code and deployment guide.
+                        </p>
+                        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(51,51,51,0.6);">
+                                <i class="fas fa-user"></i>
+                                <span>Alex Johnson, Senior Developer</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(51,51,51,0.6);">
+                                <i class="fas fa-code"></i>
+                                <span>Python, JavaScript</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <i class="fas fa-play"></i>
+                                Start Tutorial
+                            </a>
+                            <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                                <i class="fas fa-download"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="position: relative; background: linear-gradient(135deg, #333 0%, #555 100%); border-radius: 16px; height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-play" style="font-size: 4rem; color: white; opacity: 0.8;"></i>
+                            <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600;">
+                                45:32
+                            </div>
+                            <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem;">
+                                Interactive Code Examples
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem; color: rgba(51,51,51,0.6); font-size: 0.9rem;">
+                            <i class="fas fa-eye"></i> 3,247 views • <i class="fas fa-thumbs-up"></i> 94% liked
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Tutorials -->
+    <section id="video-tutorials" style="padding: 4rem 0; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Video Tutorial Library
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Learn at your own pace with our comprehensive video tutorial collection
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Video Tutorial 1 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 12px; height: 200px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.9;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            12:34
+                        </div>
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(241, 196, 15, 0.9); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">
+                            BEGINNER
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; line-height: 1.4;">AI Agents 101: Understanding the Basics</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Perfect introduction to AI agents, covering key concepts, capabilities, and real-world applications.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-user"></i> Sarah Chen</span>
+                        <span><i class="fas fa-eye"></i> 2,156 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Tutorial
+                    </a>
+                </div>
+                
+                <!-- Video Tutorial 2 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; height: 200px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.9;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            28:15
+                        </div>
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(52, 152, 219, 0.9); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">
+                            INTERMEDIATE
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; line-height: 1.4;">Advanced API Integration Techniques</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Deep dive into advanced API integration patterns, error handling, and performance optimization.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-user"></i> Michael Torres</span>
+                        <span><i class="fas fa-eye"></i> 1,843 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Tutorial
+                    </a>
+                </div>
+                
+                <!-- Video Tutorial 3 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 12px; height: 200px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.9;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            35:42
+                        </div>
+                        <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(231, 76, 60, 0.9); color: white; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">
+                            ADVANCED
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; line-height: 1.4;">Multi-Agent System Architecture</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Design and implement complex multi-agent systems with coordination, communication, and task distribution.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-user"></i> Dr. Lisa Wang</span>
+                        <span><i class="fas fa-eye"></i> 1,267 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Tutorial
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                    <i class="fas fa-th"></i>
+                    View All Videos
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Tutorials -->
+    <section id="beginner-tutorials" style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: #333; margin-bottom: 1.5rem;">
+                    Interactive Tutorials
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Hands-on exercises and projects to reinforce your learning
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Interactive Tutorial 1 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i class="fas fa-code" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">Code-Along: First Agent</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem; text-align: center; font-size: 0.95rem;">
+                        Build your first AI agent step-by-step with interactive code exercises and real-time feedback.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-clock"></i> 30 minutes</span>
+                        <span><i class="fas fa-users"></i> 1,456 completed</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="#" style="display: inline-block; padding: 0.8rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            Start Exercise
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Interactive Tutorial 2 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i class="fas fa-puzzle-piece" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">Integration Challenge</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem; text-align: center; font-size: 0.95rem;">
+                        Practice connecting your AI agent to external APIs and services with guided challenges.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-clock"></i> 45 minutes</span>
+                        <span><i class="fas fa-users"></i> 892 completed</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="#" style="display: inline-block; padding: 0.8rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            Start Challenge
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Interactive Tutorial 3 -->
+                <div style="background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.4)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i class="fas fa-rocket" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #333; margin-bottom: 1rem; text-align: center;">Deployment Lab</h3>
+                    <p style="color: rgba(51,51,51,0.7); line-height: 1.6; margin-bottom: 2rem; text-align: center; font-size: 0.95rem;">
+                        Learn to deploy your AI agents to production environments with best practices and monitoring.
+                    </p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(51,51,51,0.6);">
+                        <span><i class="fas fa-clock"></i> 60 minutes</span>
+                        <span><i class="fas fa-users"></i> 634 completed</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="#" style="display: inline-block; padding: 0.8rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            Start Lab
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community Section -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: #333;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Join the Learning Community
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(51,51,51,0.7); margin-bottom: 3rem; line-height: 1.6;">
+                Connect with fellow learners, share your projects, get help from experts, and contribute to our growing knowledge base.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #333 0%, #555 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-users"></i>
+                    Join Community
+                </a>
+                <a href="/resources" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.4); color: #333; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,528 @@
+{% extends "base.html" %}
+
+{% block title %}Tutorials - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-graduation-cap" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Tutorials & Guides
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Learn to build powerful AI applications with step-by-step tutorials, from beginner basics to advanced implementations.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-book-open" style="color: #c084fc;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Step-by-Step</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-code" style="color: #c084fc;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Code Examples</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-video" style="color: #c084fc;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Video Guides</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Learning Path -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Choose Your Learning Path
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Select tutorials based on your experience level and goals.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.8rem; font-weight: 600;">BEGINNER</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-seedling" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Getting Started</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">New to AI development</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Perfect for developers new to AI. Learn the fundamentals and build your first intelligent application.
+                </p>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">You'll Learn:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">AI basics and terminology</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Setting up your first agent</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Basic chat interactions</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Error handling and debugging</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#beginner-tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.8rem; font-weight: 600;">INTERMEDIATE</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fas fa-cogs" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Building Applications</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Ready to build real apps</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Build sophisticated AI applications with advanced features like memory, integrations, and custom workflows.
+                </p>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">You'll Learn:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Advanced agent configurations</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Memory and context management</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Third-party integrations</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Performance optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#intermediate-tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-rocket"></i>
+                    Continue Learning
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -15px; left: 2.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.8rem; font-weight: 600;">ADVANCED</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-brain" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Enterprise Solutions</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Scale for production</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Master enterprise-grade AI solutions with custom models, advanced security, and scalable architectures.
+                </p>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">You'll Learn:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Custom model training</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Enterprise security patterns</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Scalable architectures</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Advanced analytics</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#advanced-tutorials" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-crown"></i>
+                    Master Level
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Beginner Tutorials -->
+<div id="beginner-tutorials" style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                <i class="fas fa-seedling" style="font-size: 1.2rem; color: white;"></i>
+            </div>
+            <div>
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin: 0;">Beginner Tutorials</h2>
+                <p style="color: #64748b; margin: 0; font-size: 1.1rem;">Start your AI development journey</p>
+            </div>
+        </div>
+
+        <div style="display: grid; gap: 2rem;">
+            <!-- Tutorial 1 -->
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <div style="display: flex; align-items: start; gap: 2rem;">
+                    <div style="flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 15px;">
+                            <span style="font-size: 2rem; font-weight: bold; color: white;">1</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Your First AI Agent</h3>
+                            <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">15 MIN</span>
+                        </div>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Create your first AI agent from scratch. Learn the basics of agent creation, configuration, and your first conversation.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Setup</span>
+                            <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">API Keys</span>
+                            <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">First Chat</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <a href="/docs/tutorials/first-agent" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-play"></i>
+                                Start Tutorial
+                            </a>
+                            <a href="/docs/tutorials/first-agent/video" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #3b82f6; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-video"></i>
+                                Watch Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial 2 -->
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <div style="display: flex; align-items: start; gap: 2rem;">
+                    <div style="flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 15px;">
+                            <span style="font-size: 2rem; font-weight: bold; color: white;">2</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Building a Chatbot</h3>
+                            <span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">30 MIN</span>
+                        </div>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Build an interactive chatbot with personality, memory, and conversation flow. Perfect for customer support or personal assistants.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Personality</span>
+                            <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Memory</span>
+                            <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Web Interface</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <a href="/docs/chatbot-tutorial" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-play"></i>
+                                Start Tutorial
+                            </a>
+                            <a href="/docs/tutorials/chatbot/video" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #10b981; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-video"></i>
+                                Watch Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial 3 -->
+            <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <div style="display: flex; align-items: start; gap: 2rem;">
+                    <div style="flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 15px;">
+                            <span style="font-size: 2rem; font-weight: bold; color: white;">3</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Understanding SDKs</h3>
+                            <span style="background: #8b5cf6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">20 MIN</span>
+                        </div>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Learn how to use our Python and JavaScript SDKs effectively. Understand error handling, best practices, and optimization tips.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Python SDK</span>
+                            <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">JavaScript SDK</span>
+                            <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Best Practices</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <a href="/docs/tutorials/sdks" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-play"></i>
+                                Start Tutorial
+                            </a>
+                            <a href="/docs/python-sdk" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #f59e0b; text-decoration: none; font-weight: 600;">
+                                <i class="fas fa-book"></i>
+                                SDK Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Intermediate Tutorials -->
+<div id="intermediate-tutorials" style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                <i class="fas fa-cogs" style="font-size: 1.2rem; color: white;"></i>
+            </div>
+            <div>
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin: 0;">Intermediate Tutorials</h2>
+                <p style="color: #64748b; margin: 0; font-size: 1.1rem;">Build more sophisticated applications</p>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-memory" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Memory Management</h3>
+                        <span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">45 MIN</span>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Learn to implement persistent memory for your AI agents. Store conversation history, user preferences, and context across sessions.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Topics Covered:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Short-term vs long-term memory</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Context window management</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #8b5cf6; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">User preference storage</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/docs/tutorials/memory" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-brain"></i>
+                    Learn Memory
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-plug" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">API Integrations</h3>
+                        <span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">60 MIN</span>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Connect your AI agents to external services. Learn to integrate with popular APIs like weather services, databases, and third-party tools.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Topics Covered:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">REST API integration patterns</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Authentication handling</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Error handling & retries</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/docs/integrations" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-puzzle-piece"></i>
+                    View Integrations
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%;">
+                        <i class="fas fa-mobile-alt" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Mobile Applications</h3>
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">90 MIN</span>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Build mobile applications with AI capabilities. Learn React Native and Flutter integration patterns for iOS and Android.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Topics Covered:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">React Native integration</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Flutter implementation</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Offline functionality</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/docs/tutorials/mobile" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-mobile-alt"></i>
+                    Build Mobile App
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fas fa-chart-line" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Analytics & Monitoring</h3>
+                        <span style="background: #8b5cf6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">30 MIN</span>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Monitor your AI agents' performance and user interactions. Set up analytics, logging, and performance optimization.
+                </p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Topics Covered:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #f59e0b; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Usage analytics setup</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check" style="color: #f59e0b; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Performance monitoring</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: #f59e0b; font-size: 0.8rem;"></i>
+                            <span style="font-size: 0.9rem; color: #64748b;">Cost optimization</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/docs/tutorials/analytics" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-chart-bar"></i>
+                    Setup Analytics
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Tutorials -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Video Tutorials
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Watch step-by-step video guides to master AI Digital Friend development.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">12:34</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Getting Started: First Steps</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 1rem;">Complete walkthrough of creating your first AI agent from account setup to first conversation.</p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-eye" style="opacity: 0.6;"></i>
+                        <span style="opacity: 0.6; font-size: 0.8rem;">15,234 views</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">24:15</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Building a Smart Chatbot</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 1rem;">Learn to build an intelligent chatbot with personality, memory, and custom responses.</p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-eye" style="opacity: 0.6;"></i>
+                        <span style="opacity: 0.6; font-size: 0.8rem;">8,567 views</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem;">18:42</div>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">API Integration Mastery</h3>
+                    <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 1rem;">Connect your agents to external services and APIs for enhanced functionality.</p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-eye" style="opacity: 0.6;"></i>
+                        <span style="opacity: 0.6; font-size: 0.8rem;">12,891 views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/docs/videos" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; backdrop-filter: blur(10px);">
+                <i class="fas fa-video"></i>
+                View All Videos
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-users" style="font-size: 1.2rem; color: #4ECDC4;"></i>
+                <span style="font-weight: 600;">Meet Our Team</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                The Minds Behind Innovation
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Our diverse team of AI experts, engineers, and visionaries work together to create intelligent digital companions that transform how people interact with technology.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Team Members Grid -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Team Member 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-brain" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Alex Chen</h3>
+                    <p style="color: #4ECDC4; font-weight: 600; margin-bottom: 1rem;">Chief AI Officer</p>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Leading AI research and development with 10+ years experience in machine learning and neural networks.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-twitter" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-code" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Sarah Johnson</h3>
+                    <p style="color: #667eea; font-weight: 600; margin-bottom: 1rem;">Lead Engineer</p>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Expert in scalable AI systems and cloud architecture, ensuring our platform performs at enterprise scale.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-twitter" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-palette" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Maria Rodriguez</h3>
+                    <p style="color: #FF6B6B; font-weight: 600; margin-bottom: 1rem;">UX/UI Designer</p>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Creating intuitive and beautiful interfaces that make AI interactions feel natural and engaging.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-dribbble" style="font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="#" style="color: rgba(255,255,255,0.8); transition: color 0.3s ease;" onmouseover="this.style.color='#FF6B6B'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                            <i class="fab fa-behance" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Join Our Team Section -->
+    <section style="padding: 4rem 0; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Want to Join Our Team?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                We're always looking for talented individuals who share our passion for AI innovation and creating meaningful digital experiences.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/careers" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-briefcase"></i>
+                    View Open Positions
+                </a>
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-envelope"></i>
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+{% endblock %}

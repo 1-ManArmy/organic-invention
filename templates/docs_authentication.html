@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+
+{% block title %}Authentication Guide - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Authentication Guide
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Secure your AI Digital Friend implementations with enterprise-grade authentication and authorization patterns.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-lock" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Military Grade</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-certificate" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">OAuth 2.0</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-key" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">JWT Tokens</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Authentication Methods -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Authentication Methods
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Choose the right authentication method for your application's security requirements.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); border-radius: 50%;">
+                        <i class="fas fa-key" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">API Key Authentication</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Simple and secure</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    The simplest authentication method using API keys for server-to-server communication and trusted applications.
+                </p>
+                <div style="background: #fef2f2; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># API Key authentication</div>
+                    <div style="color: #1a202c;">headers = {</div>
+                    <div style="color: #1a202c;">    'Authorization': 'Bearer YOUR_API_KEY',</div>
+                    <div style="color: #1a202c;">    'Content-Type': 'application/json'</div>
+                    <div style="color: #1a202c;">}</div><br>
+                    <div style="color: #1a202c;">response = requests.post(</div>
+                    <div style="color: #1a202c;">    'https://api.aidigitalfriend.com/chat',</div>
+                    <div style="color: #1a202c;">    headers=headers,</div>
+                    <div style="color: #1a202c;">    json={'message': 'Hello'}</div>
+                    <div style="color: #1a202c;">)</div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="background: rgba(220, 38, 38, 0.1); color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Simple</span>
+                    <span style="background: rgba(220, 38, 38, 0.1); color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Server-to-Server</span>
+                    <span style="background: rgba(220, 38, 38, 0.1); color: #dc2626; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">No Expiry</span>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%;">
+                        <i class="fas fa-certificate" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">OAuth 2.0</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Industry standard</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    OAuth 2.0 flow for secure user authentication with third-party providers like Google, GitHub, and Microsoft.
+                </p>
+                <div style="background: #eff6ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># OAuth 2.0 flow</div>
+                    <div style="color: #1a202c;">auth_url = aidf.oauth.authorize_url(</div>
+                    <div style="color: #1a202c;">    client_id='YOUR_CLIENT_ID',</div>
+                    <div style="color: #1a202c;">    redirect_uri='https://yourapp.com/callback',</div>
+                    <div style="color: #1a202c;">    scope='read write'</div>
+                    <div style="color: #1a202c;">)</div><br>
+                    <div style="color: #10b981;"># Exchange code for token</div>
+                    <div style="color: #1a202c;">token = aidf.oauth.exchange_code(code)</div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">User Auth</span>
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Secure</span>
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Third-party</span>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-id-card" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">JWT Tokens</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Stateless authentication</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    JSON Web Tokens for stateless authentication with built-in expiration and claim-based authorization.
+                </p>
+                <div style="background: #faf5ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># JWT authentication</div>
+                    <div style="color: #1a202c;">token = aidf.auth.create_jwt({</div>
+                    <div style="color: #1a202c;">    'user_id': 'user123',</div>
+                    <div style="color: #1a202c;">    'scope': ['read', 'write'],</div>
+                    <div style="color: #1a202c;">    'exp': datetime.utcnow() + timedelta(hours=1)</div>
+                    <div style="color: #1a202c;">})</div><br>
+                    <div style="color: #10b981;"># Verify token</div>
+                    <div style="color: #1a202c;">claims = aidf.auth.verify_jwt(token)</div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Stateless</span>
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Claims</span>
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Expiring</span>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-fingerprint" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Biometric Auth</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Next-generation security</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 2rem;">
+                    Advanced biometric authentication using WebAuthn for passwordless login with fingerprint, face ID, or hardware keys.
+                </p>
+                <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Biometric authentication</div>
+                    <div style="color: #1a202c;">credential = await navigator.credentials.create({</div>
+                    <div style="color: #1a202c;">    publicKey: {</div>
+                    <div style="color: #1a202c;">        challenge: challenge,</div>
+                    <div style="color: #1a202c;">        rp: {name: "AI Digital Friend"},</div>
+                    <div style="color: #1a202c;">        user: {id: userId, name: userName}</div>
+                    <div style="color: #1a202c;">    }</div>
+                    <div style="color: #1a202c;">})</div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Passwordless</span>
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Hardware</span>
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">Ultra-Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Security Best Practices -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Security Best Practices
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Follow these security guidelines to protect your AI applications and user data.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-shield-alt" style="color: #ef4444; margin-right: 0.5rem;"></i>
+                    Data Protection
+                </h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Encrypt data in transit and at rest</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Use HTTPS for all API communications</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Implement data anonymization</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #ef4444; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Regular security audits</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-key" style="color: #3b82f6; margin-right: 0.5rem;"></i>
+                    Access Control
+                </h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Role-based access control (RBAC)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Principle of least privilege</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Multi-factor authentication</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #3b82f6; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Session management</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                    <i class="fas fa-chart-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                    Monitoring
+                </h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Real-time threat detection</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Audit logging and compliance</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Anomaly detection</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-check" style="color: #10b981; font-size: 0.8rem;"></i>
+                        <span style="font-size: 0.9rem; color: #64748b;">Incident response procedures</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Implementation Guide -->
+        <div style="margin-top: 4rem; background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2);">
+            <h3 style="font-size: 1.8rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; text-align: center;">
+                <i class="fas fa-code" style="color: #8b5cf6; margin-right: 0.5rem;"></i>
+                Complete Implementation Example
+            </h3>
+            <div style="background: rgba(255,255,255,0.8); padding: 2rem; border-radius: 15px; font-family: monospace; font-size: 0.9rem;">
+                <div style="color: #10b981;"># Complete authentication setup</div>
+                <div style="color: #1a202c;">from aidigitalfriend.auth import AuthManager</div><br>
+                <div style="color: #1a202c;"># Initialize authentication</div>
+                <div style="color: #1a202c;">auth_manager = AuthManager({</div>
+                <div style="color: #1a202c;">    'methods': ['api_key', 'oauth2', 'jwt'],</div>
+                <div style="color: #1a202c;">    'encryption': 'AES-256-GCM',</div>
+                <div style="color: #1a202c;">    'mfa_required': True,</div>
+                <div style="color: #1a202c;">    'session_timeout': 3600,</div>
+                <div style="color: #1a202c;">    'audit_logging': True</div>
+                <div style="color: #1a202c;">})</div><br>
+                <div style="color: #10b981;"># Middleware for route protection</div>
+                <div style="color: #1a202c;">@auth_manager.require_auth(scopes=['read', 'write'])</div>
+                <div style="color: #1a202c;">def protected_endpoint():</div>
+                <div style="color: #1a202c;">    return {"message": "Secure data"}</div><br>
+                <div style="color: #10b981;"># Role-based access control</div>
+                <div style="color: #1a202c;">@auth_manager.require_role('admin')</div>
+                <div style="color: #1a202c;">def admin_endpoint():</div>
+                <div style="color: #1a202c;">    return {"admin": "data"}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

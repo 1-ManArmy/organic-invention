@@ -1,0 +1,485 @@
+{% extends "base.html" %}
+
+{% block title %}Python SDK - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"20\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"40\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"50\" cy=\"80\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"80\" cy=\"25\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"65\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fab fa-python" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Python SDK
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                The official Python SDK for AI Digital Friend. Build powerful AI applications with ease using our comprehensive Python library.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-download" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">pip install aidf</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fab fa-github" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Open Source</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-shield-alt" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Type Safe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Start -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Quick Start
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Get started with the Python SDK in just a few lines of code.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-download" style="color: #3b82f6;"></i>
+                    Installation
+                </h3>
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 1.5rem; border-radius: 10px; font-family: 'Courier New', monospace; margin-bottom: 1rem;">
+<pre style="margin: 0; color: #e2e8f0; line-height: 1.6;">
+<span style="color: #4ade80;"># Install via pip</span>
+pip install aidf
+
+<span style="color: #4ade80;"># Or with conda</span>
+conda install -c conda-forge aidf
+
+<span style="color: #4ade80;"># Install development version</span>
+pip install git+https://github.com/aidf/python-sdk.git
+</pre>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem;">Requires Python 3.8 or higher. Compatible with asyncio for asynchronous operations.</p>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-key" style="color: #10b981;"></i>
+                    Authentication
+                </h3>
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 1.5rem; border-radius: 10px; font-family: 'Courier New', monospace; margin-bottom: 1rem;">
+<pre style="margin: 0; color: #e2e8f0; line-height: 1.6;">
+<span style="color: #fbbf24;">import</span> <span style="color: #60a5fa;">aidf</span>
+
+<span style="color: #4ade80;"># Set your API key</span>
+client = aidf.Client(api_key=<span style="color: #a3e635;">"your-api-key"</span>)
+
+<span style="color: #4ade80;"># Or use environment variable</span>
+<span style="color: #4ade80;"># export AIDF_API_KEY="your-api-key"</span>
+client = aidf.Client()
+</pre>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem;">Get your API key from the <a href="/dashboard" style="color: #3b82f6; text-decoration: none;">dashboard</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Basic Usage -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Basic Usage Examples
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Common use cases and examples to get you started quickly.
+            </p>
+        </div>
+
+        <div style="display: grid; gap: 2rem;">
+            <!-- Chat Agent Example -->
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-comments" style="color: #3b82f6;"></i>
+                    Chat Agent
+                </h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Create a conversational AI agent with just a few lines of code.</p>
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem; border-radius: 15px; font-family: 'Courier New', monospace;">
+<pre style="margin: 0; color: #e2e8f0; line-height: 1.6;">
+<span style="color: #fbbf24;">import</span> <span style="color: #60a5fa;">aidf</span>
+
+<span style="color: #4ade80;"># Create a client</span>
+client = aidf.Client(api_key=<span style="color: #a3e635;">"your-api-key"</span>)
+
+<span style="color: #4ade80;"># Create a chat agent</span>
+agent = client.agents.create(
+    name=<span style="color: #a3e635;">"My Assistant"</span>,
+    description=<span style="color: #a3e635;">"A helpful AI assistant"</span>,
+    model=<span style="color: #a3e635;">"gpt-4"</span>,
+    system_prompt=<span style="color: #a3e635;">"You are a helpful assistant."</span>
+)
+
+<span style="color: #4ade80;"># Start a conversation</span>
+response = agent.chat(<span style="color: #a3e635;">"Hello! How can you help me today?"</span>)
+<span style="color: #fbbf24;">print</span>(response.message)
+
+<span style="color: #4ade80;"># Continue the conversation</span>
+response = agent.chat(<span style="color: #a3e635;">"Tell me about Python programming"</span>)
+<span style="color: #fbbf24;">print</span>(response.message)
+</pre>
+                </div>
+            </div>
+
+            <!-- Streaming Example -->
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-stream" style="color: #10b981;"></i>
+                    Streaming Responses
+                </h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Stream responses for real-time user experiences.</p>
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem; border-radius: 15px; font-family: 'Courier New', monospace;">
+<pre style="margin: 0; color: #e2e8f0; line-height: 1.6;">
+<span style="color: #4ade80;"># Stream chat responses</span>
+<span style="color: #fbbf24;">for</span> chunk <span style="color: #fbbf24;">in</span> agent.chat_stream(<span style="color: #a3e635;">"Write a story about AI"</span>):
+    <span style="color: #fbbf24;">print</span>(chunk.content, end=<span style="color: #a3e635;">""</span>)
+
+<span style="color: #4ade80;"># Async streaming</span>
+<span style="color: #fbbf24;">async def</span> <span style="color: #60a5fa;">stream_chat</span>():
+    <span style="color: #fbbf24;">async for</span> chunk <span style="color: #fbbf24;">in</span> agent.achat_stream(<span style="color: #a3e635;">"Hello!"</span>):
+        <span style="color: #fbbf24;">print</span>(chunk.content, end=<span style="color: #a3e635;">""</span>)
+
+<span style="color: #4ade80;"># Run async function</span>
+<span style="color: #fbbf24;">import</span> <span style="color: #60a5fa;">asyncio</span>
+asyncio.run(stream_chat())
+</pre>
+                </div>
+            </div>
+
+            <!-- Tool Usage Example -->
+            <div style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fas fa-tools" style="color: #8b5cf6;"></i>
+                    Tools and Functions
+                </h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Extend your agents with custom tools and functions.</p>
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem; border-radius: 15px; font-family: 'Courier New', monospace;">
+<pre style="margin: 0; color: #e2e8f0; line-height: 1.6;">
+<span style="color: #4ade80;"># Define a custom tool</span>
+<span style="color: #fbbf24;">def</span> <span style="color: #60a5fa;">get_weather</span>(location: <span style="color: #fb7185;">str</span>) -> <span style="color: #fb7185;">str</span>:
+    <span style="color: #a3e635;">"""Get current weather for a location."""</span>
+    <span style="color: #4ade80;"># Your weather API logic here</span>
+    <span style="color: #fbbf24;">return</span> <span style="color: #a3e635;">f"Weather in {location}: Sunny, 72°F"</span>
+
+<span style="color: #4ade80;"># Create agent with tools</span>
+agent = client.agents.create(
+    name=<span style="color: #a3e635;">"Weather Assistant"</span>,
+    tools=[get_weather],
+    system_prompt=<span style="color: #a3e635;">"You help users with weather information."</span>
+)
+
+<span style="color: #4ade80;"># Agent can now use the weather tool</span>
+response = agent.chat(<span style="color: #a3e635;">"What's the weather in New York?"</span>)
+<span style="color: #fbbf24;">print</span>(response.message)
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Advanced Features -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Advanced Features
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Unlock the full power of the SDK with these advanced capabilities.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-database" style="color: #4ade80;"></i>
+                    Memory Management
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Persistent conversation memory and context management.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Create agent with memory</span>
+agent = client.agents.create(
+    name=<span style="color: #a3e635;">"Memory Agent"</span>,
+    memory_type=<span style="color: #a3e635;">"persistent"</span>,
+    max_memory_size=<span style="color: #fbbf24;">1000</span>
+)
+</pre>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-cogs" style="color: #4ade80;"></i>
+                    Custom Models
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Use custom models and fine-tuned implementations.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Use custom model</span>
+agent = client.agents.create(
+    model=<span style="color: #a3e635;">"custom:my-model-v2"</span>,
+    temperature=<span style="color: #fbbf24;">0.7</span>
+)
+</pre>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-plug" style="color: #4ade80;"></i>
+                    Plugin System
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Extend functionality with the plugin ecosystem.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Load plugins</span>
+client.plugins.load(<span style="color: #a3e635;">"web-search"</span>)
+client.plugins.load(<span style="color: #a3e635;">"email-sender"</span>)
+</pre>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-chart-line" style="color: #4ade80;"></i>
+                    Analytics & Monitoring
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Built-in analytics and performance monitoring.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Enable analytics</span>
+client.config.analytics = <span style="color: #fbbf24;">True</span>
+stats = client.analytics.get_stats()
+</pre>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-shield-alt" style="color: #4ade80;"></i>
+                    Security Features
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Advanced security and content filtering options.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Enable content filtering</span>
+agent.config.content_filter = <span style="color: #fbbf24;">True</span>
+agent.config.safety_level = <span style="color: #a3e635;">"strict"</span>
+</pre>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-users" style="color: #4ade80;"></i>
+                    Multi-Agent Systems
+                </h3>
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Coordinate multiple agents for complex workflows.
+                </p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+<pre style="margin: 0; color: #e2e8f0;">
+<span style="color: #4ade80;"># Create agent team</span>
+team = client.teams.create([
+    agent1, agent2, agent3
+])
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Reference -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                API Reference
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Complete documentation of all classes, methods, and parameters.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #3b82f6; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-code" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Client Class</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Main client for API interactions</p>
+                <a href="#client-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #3b82f6; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #10b981; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-robot" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Agent Class</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">AI agent management and interactions</p>
+                <a href="#agent-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #10b981; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #8b5cf6; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-tools" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Tools Module</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Custom tools and function calling</p>
+                <a href="#tools-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #8b5cf6; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(249, 115, 22, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #f97316; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-stream" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Streaming</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Real-time response streaming</p>
+                <a href="#streaming-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #f97316; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(100, 116, 139, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #64748b; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-cog" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Configuration</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Settings and configuration options</p>
+                <a href="#config-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #64748b; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(239, 68, 68, 0.2); text-align: center;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #ef4444; border-radius: 50%; margin-bottom: 1rem;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Exceptions</h3>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Error handling and exceptions</p>
+                <a href="#exceptions-docs" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #ef4444; text-decoration: none; font-weight: 600;">
+                    <span>View Documentation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Resources -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Resources & Support
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Everything you need to be successful with the Python SDK.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <a href="/docs/tutorials" style="display: block; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #1a202c; margin: 0;">Tutorials</h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Step-by-step guides and examples</p>
+            </a>
+
+            <a href="https://github.com/aidf/python-sdk" style="display: block; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 10px;">
+                        <i class="fab fa-github" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #1a202c; margin: 0;">GitHub</h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Source code and issue tracking</p>
+            </a>
+
+            <a href="/community" style="display: block; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 10px;">
+                        <i class="fas fa-users" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #1a202c; margin: 0;">Community</h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Join our developer community</p>
+            </a>
+
+            <a href="/docs/examples" style="display: block; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 10px;">
+                        <i class="fas fa-code-branch" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #1a202c; margin: 0;">Examples</h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Ready-to-use code examples</p>
+            </a>
+        </div>
+
+        <!-- Get Started CTA -->
+        <div style="text-align: center; padding: 2.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 20px; color: white;">
+            <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">
+                Ready to Get Started?
+            </h3>
+            <p style="opacity: 0.9; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Install the Python SDK and start building intelligent applications today.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/docs/quick-start" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #3b82f6; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Quick Start Guide
+                </a>
+                <a href="/docs/api" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                    <i class="fas fa-book"></i>
+                    API Reference
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

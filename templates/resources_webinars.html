@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-video" style="font-size: 1.2rem; color: #f1c40f;"></i>
+                <span style="font-weight: 600;">Live Learning</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Webinars
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Join our live and on-demand educational sessions featuring expert presentations, product demonstrations, and interactive discussions on AI trends and technologies.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#upcoming-webinars" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-calendar-plus"></i>
+                    Upcoming Sessions
+                </a>
+                <a href="#on-demand" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-play"></i>
+                    On-Demand Library
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Next Webinar -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Next Live Session
+                </h2>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 4rem 3rem; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center;">
+                    <div>
+                        <div style="color: #f1c40f; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;">
+                            <i class="fas fa-broadcast-tower"></i> LIVE WEBINAR • SEPTEMBER 15, 2025 • 2:00 PM EST
+                        </div>
+                        <h3 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 2rem; line-height: 1.3;">Building AI Agents for Enterprise: From Concept to Production</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem;">
+                            Join our lead AI architect as she walks through the complete process of designing, developing, and deploying AI agents in enterprise environments. Includes live demos and Q&A session.
+                        </p>
+                        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7);">
+                                <i class="fas fa-user"></i>
+                                <span>Dr. Sarah Martinez, Lead AI Architect</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7);">
+                                <i class="fas fa-clock"></i>
+                                <span>90 minutes with Q&A</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                <i class="fas fa-calendar-plus"></i>
+                                Register Free
+                            </a>
+                            <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                <i class="fas fa-bell"></i>
+                                Set Reminder
+                            </a>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-video" style="font-size: 2.5rem; color: white;"></i>
+                            </div>
+                            <div style="color: white; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem;">Sep 15</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 1rem;">2:00 PM EST</div>
+                            <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">147 registered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Upcoming Webinars -->
+    <section id="upcoming-webinars" style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Upcoming Sessions
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Register for upcoming live sessions and interactive workshops
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                
+                <!-- Upcoming Webinar 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+                            UPCOMING
+                        </div>
+                        <div style="text-align: right; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <div>Sep 22, 2025</div>
+                            <div>1:00 PM EST</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">AI in Healthcare: Revolutionizing Patient Care</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Explore how AI is transforming healthcare delivery, from diagnostic assistance to personalized treatment plans. Features case studies from leading medical institutions.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Dr. Jennifer Adams</span>
+                        <span><i class="fas fa-clock"></i> 60 minutes</span>
+                        <span><i class="fas fa-users"></i> 89 registered</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-calendar-plus"></i> Register
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Webinar 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+                            UPCOMING
+                        </div>
+                        <div style="text-align: right; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <div>Sep 29, 2025</div>
+                            <div>3:00 PM EST</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">Financial AI: Fraud Detection and Risk Management</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Learn how leading financial institutions use AI for real-time fraud detection, risk assessment, and regulatory compliance. Interactive demo included.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Michael Chang</span>
+                        <span><i class="fas fa-clock"></i> 75 minutes</span>
+                        <span><i class="fas fa-users"></i> 156 registered</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-calendar-plus"></i> Register
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Webinar 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+                            WORKSHOP
+                        </div>
+                        <div style="text-align: right; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <div>Oct 6, 2025</div>
+                            <div>2:00 PM EST</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">Hands-On: Building Your First AI Agent</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Interactive workshop where you'll build and deploy your first AI agent using our platform. Includes step-by-step guidance and hands-on exercises.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Lisa Thompson</span>
+                        <span><i class="fas fa-clock"></i> 2 hours</span>
+                        <span><i class="fas fa-users"></i> 45 registered</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-calendar-plus"></i> Register
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Webinar 4 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+                            UPCOMING
+                        </div>
+                        <div style="text-align: right; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <div>Oct 13, 2025</div>
+                            <div>11:00 AM EST</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">AI for Retail: Personalization at Scale</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Discover how major retailers leverage AI for personalized customer experiences, inventory optimization, and demand forecasting.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Rachel Kim</span>
+                        <span><i class="fas fa-clock"></i> 60 minutes</span>
+                        <span><i class="fas fa-users"></i> 73 registered</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-calendar-plus"></i> Register
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-info"></i> Details
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- On-Demand Library -->
+    <section id="on-demand" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    On-Demand Library
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Access our complete library of recorded sessions available anytime
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- On-Demand 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 12px; height: 180px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            58:32
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Introduction to Large Language Models</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Comprehensive overview of LLM technology, applications, and implementation strategies for business use cases.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Dr. Alex Chen</span>
+                        <span><i class="fas fa-eye"></i> 1,247 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Now
+                    </a>
+                </div>
+                
+                <!-- On-Demand 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; height: 180px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            1:24:15
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">AI Ethics in Practice: Real-World Case Studies</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Deep dive into ethical considerations and practical frameworks for responsible AI implementation.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Prof. Maria Santos</span>
+                        <span><i class="fas fa-eye"></i> 892 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Now
+                    </a>
+                </div>
+                
+                <!-- On-Demand 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="position: relative; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 12px; height: 180px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+                        <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">
+                            45:22
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Platform Demo: Building Multi-Agent Systems</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Step-by-step demonstration of creating sophisticated multi-agent systems using our platform.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> David Kumar</span>
+                        <span><i class="fas fa-eye"></i> 1,567 views</span>
+                    </div>
+                    
+                    <a href="#" style="display: block; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <i class="fas fa-play"></i> Watch Now
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-th"></i>
+                    View All Recordings
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Join Our Learning Community
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Stay connected with our expert-led sessions and interactive learning opportunities. Subscribe to get notified about upcoming webinars and exclusive content.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-envelope"></i>
+                    Subscribe to Updates
+                </a>
+                <a href="/resources" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .next-webinar-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}

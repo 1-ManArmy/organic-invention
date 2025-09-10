@@ -1,0 +1,392 @@
+{% extends "base.html" %}
+
+{% block title %}Integrations - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-puzzle-piece" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Integrations
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Connect AI Digital Friend with your favorite tools and services. Seamlessly integrate with popular platforms and APIs.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-link" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">200+ Integrations</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-bolt" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Easy Setup</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-shield-alt" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Integration Categories -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Popular Integration Categories
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Browse integrations by category to find the perfect tools for your AI applications.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fas fa-comments" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Communication</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Chat & messaging platforms</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Connect your AI agents to popular messaging platforms and communication tools.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Slack</span>
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Discord</span>
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Teams</span>
+                    <span style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Telegram</span>
+                </div>
+                <a href="#communication" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-database" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Databases</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Data storage & retrieval</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Store and retrieve data from popular database systems and cloud storage services.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">PostgreSQL</span>
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">MongoDB</span>
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Redis</span>
+                    <span style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Supabase</span>
+                </div>
+                <a href="#databases" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-cloud" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Cloud Services</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">AWS, Azure, Google Cloud</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Integrate with major cloud providers for scalable infrastructure and services.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">AWS</span>
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Azure</span>
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">GCP</span>
+                    <span style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Vercel</span>
+                </div>
+                <a href="#cloud" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fas fa-tasks" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Productivity</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Task & project management</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Enhance productivity with integrations to popular task and project management tools.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Notion</span>
+                    <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Trello</span>
+                    <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Asana</span>
+                    <span style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Jira</span>
+                </div>
+                <a href="#productivity" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%;">
+                        <i class="fas fa-shopping-cart" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">E-commerce</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Online store platforms</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Build intelligent shopping assistants and automate e-commerce workflows.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Shopify</span>
+                    <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">WooCommerce</span>
+                    <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Stripe</span>
+                    <span style="background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">PayPal</span>
+                </div>
+                <a href="#ecommerce" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 50%;">
+                        <i class="fas fa-chart-bar" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Analytics</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Data & insights platforms</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Connect to analytics platforms to track performance and gain insights from your AI interactions.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <span style="background: rgba(6, 182, 212, 0.1); color: #06b6d4; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Google Analytics</span>
+                    <span style="background: rgba(6, 182, 212, 0.1); color: #06b6d4; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Mixpanel</span>
+                    <span style="background: rgba(6, 182, 212, 0.1); color: #06b6d4; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Amplitude</span>
+                    <span style="background: rgba(6, 182, 212, 0.1); color: #06b6d4; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Segment</span>
+                </div>
+                <a href="#analytics" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fas fa-arrow-right"></i>
+                    View All
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Start Integration -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Quick Start Integration
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Get started with popular integrations in just a few steps.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem;">
+            <!-- Slack Integration -->
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fab fa-slack" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; font-weight: 600; color: #1a202c; margin: 0;">Slack Integration</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 1rem;">Add AI agents to your Slack workspace</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Setup Steps:</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #3b82f6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">1</span>
+                            </div>
+                            <span style="color: #64748b;">Create a Slack app in your workspace</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #3b82f6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">2</span>
+                            </div>
+                            <span style="color: #64748b;">Configure webhook URL in AI Digital Friend</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #3b82f6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">3</span>
+                            </div>
+                            <span style="color: #64748b;">Install the app and start chatting with your AI agent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1a202c; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 2rem;">
+                    <div style="color: #10b981;"># Install via pip</div>
+                    <div>pip install aidigitalfriend[slack]</div>
+                    <br>
+                    <div style="color: #10b981;"># Configure integration</div>
+                    <div style="color: #f59e0b;">from</div> <div style="color: #e5e7eb;">aidigitalfriend.integrations</div> <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">SlackBot</div>
+                    <br>
+                    <div style="color: #e5e7eb;">bot = SlackBot(</div>
+                    <div style="color: #e5e7eb;">    api_key="your_api_key",</div>
+                    <div style="color: #e5e7eb;">    slack_token="xoxb-your-token"</div>
+                    <div style="color: #e5e7eb;">)</div>
+                    <div style="color: #e5e7eb;">bot.start()</div>
+                </div>
+
+                <a href="/docs/integrations/slack" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fab fa-slack"></i>
+                    Complete Slack Guide
+                </a>
+            </div>
+
+            <!-- Discord Integration -->
+            <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fab fa-discord" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; font-weight: 600; color: #1a202c; margin: 0;">Discord Integration</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 1rem;">Deploy AI bots to Discord servers</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Setup Steps:</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #8b5cf6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">1</span>
+                            </div>
+                            <span style="color: #64748b;">Create Discord application and bot</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #8b5cf6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">2</span>
+                            </div>
+                            <span style="color: #64748b;">Set up bot permissions and intents</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: #8b5cf6; border-radius: 50%; flex-shrink: 0;">
+                                <span style="color: white; font-weight: bold; font-size: 0.9rem;">3</span>
+                            </div>
+                            <span style="color: #64748b;">Invite bot to server and configure commands</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1a202c; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 2rem;">
+                    <div style="color: #10b981;"># Install Discord integration</div>
+                    <div>pip install aidigitalfriend[discord]</div>
+                    <br>
+                    <div style="color: #10b981;"># Create Discord bot</div>
+                    <div style="color: #f59e0b;">from</div> <div style="color: #e5e7eb;">aidigitalfriend.integrations</div> <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">DiscordBot</div>
+                    <br>
+                    <div style="color: #e5e7eb;">bot = DiscordBot(</div>
+                    <div style="color: #e5e7eb;">    api_key="your_api_key",</div>
+                    <div style="color: #e5e7eb;">    discord_token="your_bot_token"</div>
+                    <div style="color: #e5e7eb;">)</div>
+                    <div style="color: #e5e7eb;">bot.run()</div>
+                </div>
+
+                <a href="/docs/integrations/discord" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; width: 100%; justify-content: center;">
+                    <i class="fab fa-discord"></i>
+                    Complete Discord Guide
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Integration Marketplace -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Integration Marketplace
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Explore our growing library of pre-built integrations and community contributions.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-puzzle-piece" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">200+</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Ready-to-use integrations available</p>
+                <a href="/integrations/browse" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Browse All
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-code" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Custom</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Build your own integrations with our SDK</p>
+                <a href="/docs/custom-integrations" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Learn How
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-users" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Community</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Share and discover community integrations</p>
+                <a href="/community/integrations" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Join Community
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-headset" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Enterprise</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Custom enterprise integrations available</p>
+                <a href="/contact" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

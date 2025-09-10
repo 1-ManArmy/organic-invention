@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-chart-line" style="font-size: 1.2rem; color: #f1c40f;"></i>
+                <span style="font-weight: 600;">Success Stories</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Case Studies
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Real-world success stories showcasing how AI Digital Friend transforms businesses across industries through innovative AI solutions and implementations.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#featured-case-study" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-star"></i>
+                    Featured Case Study
+                </a>
+                <a href="#all-case-studies" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-folder-open"></i>
+                    View All Studies
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Case Study -->
+    <section id="featured-case-study" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 4rem 3rem; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div style="color: #f1c40f; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;">FEATURED CASE STUDY</div>
+                    <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 2rem; line-height: 1.3;">Global Bank Achieves 85% Fraud Reduction with AI-Powered Detection</h2>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+                        How a leading international bank transformed their fraud detection capabilities using our AI agent platform, processing over 10 million transactions daily with 99.7% accuracy.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="text-align: center; padding: 2rem 1rem; background: rgba(255,255,255,0.05); border-radius: 16px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #f1c40f; margin-bottom: 0.5rem;">85%</div>
+                        <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Fraud Reduction</div>
+                    </div>
+                    <div style="text-align: center; padding: 2rem 1rem; background: rgba(255,255,255,0.05); border-radius: 16px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #f1c40f; margin-bottom: 0.5rem;">99.7%</div>
+                        <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Detection Accuracy</div>
+                    </div>
+                    <div style="text-align: center; padding: 2rem 1rem; background: rgba(255,255,255,0.05); border-radius: 16px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #f1c40f; margin-bottom: 0.5rem;">$50M</div>
+                        <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Annual Savings</div>
+                    </div>
+                    <div style="text-align: center; padding: 2rem 1rem; background: rgba(255,255,255,0.05); border-radius: 16px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #f1c40f; margin-bottom: 0.5rem;">6 Months</div>
+                        <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Implementation Time</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-book-open"></i>
+                        Read Full Case Study
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Case Studies Grid -->
+    <section id="all-case-studies" style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    All Case Studies
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Explore our comprehensive collection of success stories across various industries and use cases
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem;">
+                
+                <!-- Case Study 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-hospital" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">HEALTHCARE</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">Regional Medical Center</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">AI-Powered Patient Diagnosis Reduces Wait Times by 60%</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Implementation of AI diagnostic assistants streamlined patient intake and preliminary diagnosis, dramatically improving patient flow and satisfaction.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">60%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Wait Time Reduction</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">95%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Diagnostic Accuracy</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shopping-cart" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">RETAIL</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">Global Fashion Retailer</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">Personalized Shopping AI Increases Sales Conversion by 120%</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Advanced recommendation engine and virtual shopping assistant transformed customer experience and significantly boosted online sales performance.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">120%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Sales Increase</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">$25M</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Revenue Growth</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-industry" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">MANUFACTURING</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">Automotive Parts Manufacturer</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">Predictive Maintenance AI Cuts Downtime by 75%</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        IoT-integrated AI system predicts equipment failures before they occur, saving millions in production losses and maintenance costs.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">75%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Downtime Reduction</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">$15M</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Annual Savings</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+                <!-- Case Study 4 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-university" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">EDUCATION</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">State University System</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">AI Tutoring System Improves Student Success Rate by 45%</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Personalized learning AI adapts to individual student needs, providing customized support and significantly improving academic outcomes.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">45%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Success Rate Increase</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">50K</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Students Served</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+                <!-- Case Study 5 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-truck" style="color: #333; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">LOGISTICS</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">International Shipping Company</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">Route Optimization AI Reduces Delivery Costs by 35%</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Intelligent routing algorithms analyze traffic patterns, weather, and delivery constraints to optimize fleet operations and customer satisfaction.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">35%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Cost Reduction</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">92%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">On-Time Delivery</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+                <!-- Case Study 6 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-headset" style="color: #333; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600;">CUSTOMER SERVICE</div>
+                            <div style="color: white; font-weight: 600; font-size: 1.1rem;">Telecommunications Provider</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1.5rem; line-height: 1.4;">AI Customer Support Achieves 90% Issue Resolution Rate</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Intelligent chatbots and voice assistants handle complex customer inquiries with human-like understanding and problem-solving capabilities.
+                    </p>
+                    
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">90%</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Resolution Rate</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #f1c40f;">24/7</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Availability</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#f1c40f'">
+                        Read Case Study →
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industry Stats -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Impact Across Industries
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Consistent results across diverse sectors and business environments
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #f1c40f; margin-bottom: 1rem;">200+</div>
+                    <div style="color: white; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Successful Implementations</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Across 15 industries</div>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #f1c40f; margin-bottom: 1rem;">95%</div>
+                    <div style="color: white; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Client Satisfaction</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Based on post-implementation surveys</div>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #f1c40f; margin-bottom: 1rem;">$500M+</div>
+                    <div style="color: white; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Total Value Created</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Cumulative cost savings & revenue</div>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #f1c40f; margin-bottom: 1rem;">6 Months</div>
+                    <div style="color: white; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Average ROI Timeline</div>
+                    <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Time to positive return</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Ready to Create Your Success Story?
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Join hundreds of organizations that have transformed their operations with AI Digital Friend. Let's discuss how we can help you achieve similar results.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Project
+                </a>
+                <a href="/resources" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,438 @@
+{% extends "base.html" %}
+
+{% block title %}Troubleshooting - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-tools" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Troubleshooting Guide
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Find solutions to common issues, debugging tips, and expert guidance to get your AI applications running smoothly.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-search" style="color: #fca5a5;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Common Issues</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-bug" style="color: #fca5a5;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Debug Tips</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-life-ring" style="color: #fca5a5;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Expert Help</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Fixes -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Quick Fixes
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Start here for the most common issues and their immediate solutions.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); border-left: 4px solid #ef4444;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Authentication Failed</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">401 Unauthorized errors</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Most common cause: Invalid or missing API key in your requests.
+                </p>
+                <div style="background: #fef2f2; padding: 1rem; border-radius: 10px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #991b1b;"><strong>Quick Fix:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1rem; color: #7f1d1d; font-size: 0.9rem;">
+                        <li>Verify your API key is correct</li>
+                        <li>Check the Authorization header format</li>
+                        <li>Ensure key has proper permissions</li>
+                    </ul>
+                </div>
+                <a href="/docs/authentication" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-key"></i>
+                    Fix Authentication
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); border-left: 4px solid #f59e0b;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fas fa-tachometer-alt" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Rate Limit Exceeded</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">429 Too Many Requests</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    You've exceeded your API rate limits for the current time period.
+                </p>
+                <div style="background: #fefbeb; padding: 1rem; border-radius: 10px; border-left: 4px solid #f59e0b; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #92400e;"><strong>Quick Fix:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1rem; color: #a16207; font-size: 0.9rem;">
+                        <li>Implement exponential backoff</li>
+                        <li>Check rate limit headers</li>
+                        <li>Consider upgrading your plan</li>
+                    </ul>
+                </div>
+                <a href="/docs/rate-limits" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-clock"></i>
+                    Manage Rate Limits
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); border-left: 4px solid #3b82f6;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fas fa-network-wired" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Connection Timeout</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Request timeout errors</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Network issues or slow responses causing timeouts in your application.
+                </p>
+                <div style="background: #eff6ff; padding: 1rem; border-radius: 10px; border-left: 4px solid #3b82f6; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #1e40af;"><strong>Quick Fix:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1rem; color: #1d4ed8; font-size: 0.9rem;">
+                        <li>Increase timeout values</li>
+                        <li>Implement retry logic</li>
+                        <li>Check network connectivity</li>
+                    </ul>
+                </div>
+                <a href="#connection-issues" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-wifi"></i>
+                    Fix Connection
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); border-left: 4px solid #8b5cf6;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-robot" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Agent Not Responding</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Silent or broken responses</p>
+                    </div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Your AI agent is not providing responses or giving unexpected outputs.
+                </p>
+                <div style="background: #faf5ff; padding: 1rem; border-radius: 10px; border-left: 4px solid #8b5cf6; margin-bottom: 1.5rem;">
+                    <p style="margin: 0; font-size: 0.9rem; color: #6b21a8;"><strong>Quick Fix:</strong></p>
+                    <ul style="margin: 0.5rem 0 0 1rem; color: #7c3aed; font-size: 0.9rem;">
+                        <li>Check agent configuration</li>
+                        <li>Verify input format</li>
+                        <li>Review error logs</li>
+                    </ul>
+                </div>
+                <a href="#agent-issues" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-cog"></i>
+                    Debug Agent
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Common Issues -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Common Issues & Solutions
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Detailed solutions for frequently encountered problems.
+            </p>
+        </div>
+
+        <!-- API Issues -->
+        <div style="margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                    <i class="fas fa-code" style="font-size: 1.2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; font-weight: 600; color: #1a202c; margin: 0;">API Issues</h3>
+                    <p style="color: #64748b; margin: 0; font-size: 1rem;">Request and response problems</p>
+                </div>
+            </div>
+
+            <div style="display: grid; gap: 2rem;">
+                <!-- Issue 1 -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                        <i class="fas fa-exclamation-circle" style="color: #ef4444; margin-right: 0.5rem;"></i>
+                        400 Bad Request: Invalid JSON
+                    </h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Problem:</h5>
+                            <p style="color: #64748b; line-height: 1.6; margin-bottom: 1rem;">
+                                Your request contains malformed JSON or missing required fields.
+                            </p>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Common Causes:</h5>
+                            <ul style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>Missing quotes around string values</li>
+                                <li>Trailing commas in JSON objects</li>
+                                <li>Missing required fields</li>
+                                <li>Incorrect data types</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Solution:</h5>
+                            <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                                <div style="color: #10b981;">// ❌ Wrong</div>
+                                <div style="color: #ef4444;">{</div>
+                                <div style="color: #ef4444;">&nbsp;&nbsp;name: "My Agent",</div>
+                                <div style="color: #ef4444;">&nbsp;&nbsp;type: "chat",</div>
+                                <div style="color: #ef4444;">}</div>
+                                <br>
+                                <div style="color: #10b981;">// ✅ Correct</div>
+                                <div style="color: #e5e7eb;">{</div>
+                                <div style="color: #e5e7eb;">&nbsp;&nbsp;"name": "My Agent",</div>
+                                <div style="color: #e5e7eb;">&nbsp;&nbsp;"type": "chat"</div>
+                                <div style="color: #e5e7eb;">}</div>
+                            </div>
+                            <div style="background: #dcfce7; padding: 1rem; border-radius: 10px; border-left: 4px solid #10b981;">
+                                <p style="margin: 0; font-size: 0.9rem; color: #166534;"><strong>Pro Tip:</strong> Use a JSON validator before sending requests.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issue 2 -->
+                <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                        <i class="fas fa-clock" style="color: #f59e0b; margin-right: 0.5rem;"></i>
+                        Request Timeout Issues
+                    </h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Problem:</h5>
+                            <p style="color: #64748b; line-height: 1.6; margin-bottom: 1rem;">
+                                Requests are timing out before receiving a response from the API.
+                            </p>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Common Causes:</h5>
+                            <ul style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">
+                                <li>Complex AI processing taking too long</li>
+                                <li>Network connectivity issues</li>
+                                <li>Default timeout too short</li>
+                                <li>Server overload</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Solution:</h5>
+                            <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                                <div style="color: #10b981;"># Python example</div>
+                                <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">requests</div><br>
+                                <br>
+                                <div style="color: #e5e7eb;">response = requests.post(</div>
+                                <div style="color: #e5e7eb;">&nbsp;&nbsp;url,</div>
+                                <div style="color: #e5e7eb;">&nbsp;&nbsp;json=data,</div>
+                                <div style="color: #e5e7eb;">&nbsp;&nbsp;timeout=30  </div><div style="color: #10b981;"># Increase timeout</div>
+                                <div style="color: #e5e7eb;">)</div>
+                            </div>
+                            <div style="background: #fef3c7; padding: 1rem; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                                <p style="margin: 0; font-size: 0.9rem; color: #92400e;"><strong>Recommendation:</strong> Set timeout to 30-60 seconds for AI requests.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SDK Issues -->
+        <div style="margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                    <i class="fas fa-box" style="font-size: 1.2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; font-weight: 600; color: #1a202c; margin: 0;">SDK Issues</h3>
+                    <p style="color: #64748b; margin: 0; font-size: 1rem;">Python and JavaScript SDK problems</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 2rem;">
+                <!-- Python SDK -->
+                <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                    <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                        <i class="fab fa-python" style="color: #3776ab; margin-right: 0.5rem;"></i>
+                        Python SDK Issues
+                    </h4>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">ImportError: No module named 'aidigitalfriend'</h5>
+                        <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                            <div style="color: #10b981;"># Install the package</div>
+                            <div>pip install aidigitalfriend</div>
+                            <br>
+                            <div style="color: #10b981;"># For development version</div>
+                            <div>pip install --upgrade aidigitalfriend</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">SSL Certificate Verification Failed</h5>
+                        <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                            <div style="color: #f59e0b;">from</div> <div style="color: #e5e7eb;">aidigitalfriend</div> <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">Client</div><br>
+                            <br>
+                            <div style="color: #e5e7eb;">client = Client(</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;api_key="your_key",</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;verify_ssl=False  </div><div style="color: #10b981;"># Only for testing</div>
+                            <div style="color: #e5e7eb;">)</div>
+                        </div>
+                    </div>
+
+                    <div style="background: #dcfce7; padding: 1rem; border-radius: 10px; border-left: 4px solid #10b981;">
+                        <p style="margin: 0; font-size: 0.9rem; color: #166534;"><strong>Note:</strong> Always use SSL verification in production environments.</p>
+                    </div>
+                </div>
+
+                <!-- JavaScript SDK -->
+                <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">
+                        <i class="fab fa-js" style="color: #f7df1e; margin-right: 0.5rem;"></i>
+                        JavaScript SDK Issues
+                    </h4>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">CORS Policy Errors</h5>
+                        <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                            <div style="color: #10b981;">// Use server-side proxy</div>
+                            <div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">client = </div><div style="color: #f59e0b;">new</div> <div style="color: #e5e7eb;">Client({</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;apiKey: 'your_key',</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;baseURL: '/api/proxy'</div>
+                            <div style="color: #e5e7eb;">})</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Promise Rejection Errors</h5>
+                        <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1rem;">
+                            <div style="color: #f59e0b;">try</div> <div style="color: #e5e7eb;">{</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;</div><div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">response = </div><div style="color: #f59e0b;">await</div> <div style="color: #e5e7eb;">client.agents.create(data)</div>
+                            <div style="color: #e5e7eb;">} </div><div style="color: #f59e0b;">catch</div> <div style="color: #e5e7eb;">(error) {</div>
+                            <div style="color: #e5e7eb;">&nbsp;&nbsp;console.error('API Error:', error.message)</div>
+                            <div style="color: #e5e7eb;">}</div>
+                        </div>
+                    </div>
+
+                    <div style="background: #fef3c7; padding: 1rem; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                        <p style="margin: 0; font-size: 0.9rem; color: #92400e;"><strong>Tip:</strong> Always implement proper error handling for API calls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Debug Tools -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Debug Tools & Resources
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Use these tools and resources to diagnose and fix issues quickly.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-search" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">API Inspector</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Test API endpoints and inspect requests/responses in real-time</p>
+                <a href="/tools/api-inspector" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Open Inspector
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-list-alt" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Error Codes</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Complete reference of all API error codes and meanings</p>
+                <a href="/docs/error-codes" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View Error Codes
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-chart-line" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Status Page</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Check API status, uptime, and known issues</p>
+                <a href="https://status.aidigitalfriend.com" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Check Status
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-life-ring" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Support Chat</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Get help from our technical support team</p>
+                <a href="/support" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Contact Support
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-users" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Community</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Ask questions and share solutions with other developers</p>
+                <a href="/community" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Join Community
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    <i class="fas fa-bug" style="color: #4ade80;"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Bug Reports</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.9rem;">Report bugs and track issue resolution</p>
+                <a href="https://github.com/aidigitalfriend/issues" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    Report Issue
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

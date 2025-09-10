@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block title %}Quick Start - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Quick Start Guide
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Get your AI Digital Friend up and running in under 5 minutes with our rapid deployment guide.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-clock" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">5 Minutes</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-bolt" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Instant Results</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-check-circle" style="color: #fbbf24;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Production Ready</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Start Steps -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                3 Simple Steps
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Follow these steps to deploy your first AI agent in minutes.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 30px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">1</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-download" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Install & Setup</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">One command installation</p>
+                    </div>
+                </div>
+                <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Install AI Digital Friend</div>
+                    <div style="color: #1a202c;">npm install -g @aidf/cli</div><br>
+                    <div style="color: #10b981;"># Or using pip</div>
+                    <div style="color: #1a202c;">pip install aidigitalfriend</div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Install the AI Digital Friend CLI or Python package with a single command. No complex setup required.
+                </p>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 30px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">2</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%;">
+                        <i class="fas fa-key" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Configure API Key</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Secure authentication</p>
+                    </div>
+                </div>
+                <div style="background: #eff6ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Set your API key</div>
+                    <div style="color: #1a202c;">aidf config set-key YOUR_API_KEY</div><br>
+                    <div style="color: #10b981;"># Verify authentication</div>
+                    <div style="color: #1a202c;">aidf auth verify</div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Get your free API key from the dashboard and configure it with one command. Start with generous free limits.
+                </p>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); position: relative;">
+                <div style="position: absolute; top: -15px; left: 30px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">3</div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; margin-top: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-play" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin: 0;">Deploy & Test</h3>
+                        <p style="color: #64748b; margin: 0; font-size: 0.9rem;">Launch your first agent</p>
+                    </div>
+                </div>
+                <div style="background: #faf5ff; padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Create and deploy agent</div>
+                    <div style="color: #1a202c;">aidf create chatbot</div>
+                    <div style="color: #1a202c;">aidf deploy --name my-agent</div><br>
+                    <div style="color: #10b981;"># Test your agent</div>
+                    <div style="color: #1a202c;">aidf chat "Hello, world!"</div>
+                </div>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Create your first AI agent with templates and deploy instantly. Test it immediately with the built-in chat interface.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Examples -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Quick Examples
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Try these examples to see AI Digital Friend in action immediately.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem;">
+                    <i class="fas fa-comments" style="color: #3b82f6; margin-right: 0.5rem;"></i>
+                    Chat Agent
+                </h3>
+                <div style="background: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Create a chat agent</div>
+                    <div style="color: #1a202c;">from aidigitalfriend import ChatAgent</div><br>
+                    <div style="color: #1a202c;">agent = ChatAgent(</div>
+                    <div style="color: #1a202c;">    name="Assistant",</div>
+                    <div style="color: #1a202c;">    personality="helpful"</div>
+                    <div style="color: #1a202c;">)</div><br>
+                    <div style="color: #1a202c;">response = agent.chat("Hello!")</div>
+                    <div style="color: #1a202c;">print(response)</div>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <p style="color: #059669; margin: 0; font-weight: 500;">💡 Perfect for customer support, FAQ bots, and interactive assistants.</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem;">
+                    <i class="fas fa-chart-line" style="color: #8b5cf6; margin-right: 0.5rem;"></i>
+                    Data Analyzer
+                </h3>
+                <div style="background: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Analyze data with AI</div>
+                    <div style="color: #1a202c;">from aidigitalfriend import DataAnalyzer</div><br>
+                    <div style="color: #1a202c;">analyzer = DataAnalyzer()</div>
+                    <div style="color: #1a202c;">insights = analyzer.analyze(</div>
+                    <div style="color: #1a202c;">    data="sales_data.csv",</div>
+                    <div style="color: #1a202c;">    query="Find trends"</div>
+                    <div style="color: #1a202c;">)</div>
+                </div>
+                <div style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                    <p style="color: #7c3aed; margin: 0; font-weight: 500;">💡 Great for business intelligence, data insights, and automated reporting.</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1.5rem;">
+                    <i class="fas fa-robot" style="color: #10b981; margin-right: 0.5rem;"></i>
+                    Task Automation
+                </h3>
+                <div style="background: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Automate tasks</div>
+                    <div style="color: #1a202c;">from aidigitalfriend import TaskBot</div><br>
+                    <div style="color: #1a202c;">bot = TaskBot()</div>
+                    <div style="color: #1a202c;">bot.schedule_task(</div>
+                    <div style="color: #1a202c;">    "send_reports",</div>
+                    <div style="color: #1a202c;">    cron="0 9 * * 1"  # Monday 9AM</div>
+                    <div style="color: #1a202c;">)</div>
+                </div>
+                <div style="background: rgba(34, 197, 94, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <p style="color: #047857; margin: 0; font-weight: 500;">💡 Ideal for workflow automation, scheduling, and repetitive task management.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Test Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#" onclick="testQuickStart()" style="display: inline-flex; align-items: center; gap: 1rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); transition: all 0.3s ease;">
+                <i class="fas fa-play-circle" style="font-size: 1.2rem;"></i>
+                Test Live Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Next Steps -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                What's Next?
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Now that you're up and running, explore these advanced features.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <a href="/docs/tutorials" style="display: block; background: white; padding: 2rem; border-radius: 15px; text-decoration: none; border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%;">
+                        <i class="fas fa-graduation-cap" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Learn More</h3>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin: 0;">
+                    Follow comprehensive tutorials to build advanced AI applications.
+                </p>
+            </a>
+
+            <a href="/docs/api" style="display: block; background: white; padding: 2rem; border-radius: 15px; text-decoration: none; border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-code" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">API Reference</h3>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin: 0;">
+                    Explore the complete API documentation with examples.
+                </p>
+            </a>
+
+            <a href="/docs/integrations" style="display: block; background: white; padding: 2rem; border-radius: 15px; text-decoration: none; border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-puzzle-piece" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Integrations</h3>
+                </div>
+                <p style="color: #64748b; line-height: 1.6; margin: 0;">
+                    Connect with popular tools and platforms seamlessly.
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+function testQuickStart() {
+    // Demo interaction
+    alert('🚀 Quick Start Demo!\n\nThis would normally launch an interactive demo of AI Digital Friend. For now, check out our live examples at /examples');
+}
+</script>
+
+{% endblock %}

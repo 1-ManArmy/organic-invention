@@ -1,0 +1,375 @@
+{% extends "base.html" %}
+
+{% block title %}API Reference - Documentation - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"25\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"75\" cy=\"35\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"45\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"15\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"85\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-code" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                API Reference
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Complete documentation for AI Digital Friend API. Explore endpoints, request formats, responses, and examples.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-shield-alt" style="color: #60a5fa;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">REST API</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-bolt" style="color: #60a5fa;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Real-time</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-lock" style="color: #60a5fa;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Overview -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                API Overview
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Our REST API provides programmatic access to all AI Digital Friend features and capabilities.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                        <i class="fas fa-server" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Base URL</h3>
+                    </div>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0;">
+                    <div style="color: #3b82f6;">https://api.aidigitalfriend.com/v1</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fas fa-key" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Authentication</h3>
+                    </div>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0;">
+                    <div style="color: #64748b;">Bearer Token</div>
+                    <div style="color: #f59e0b;">Authorization: Bearer YOUR_API_KEY</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                        <i class="fas fa-file-code" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Content Type</h3>
+                    </div>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0;">
+                    <div style="color: #64748b;">JSON Only</div>
+                    <div style="color: #8b5cf6;">Content-Type: application/json</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rate Limits -->
+        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fef7cd 100%); padding: 2rem; border-radius: 15px; border-left: 4px solid #f59e0b; margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-tachometer-alt" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #92400e; margin: 0;">Rate Limits</h3>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+                    <div style="font-weight: 600; color: #92400e;">Free Tier</div>
+                    <div style="color: #a16207;">1,000 requests/month</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+                    <div style="font-weight: 600; color: #92400e;">Pro Tier</div>
+                    <div style="color: #a16207;">10,000 requests/month</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.7); padding: 1rem; border-radius: 10px;">
+                    <div style="font-weight: 600; color: #92400e;">Enterprise</div>
+                    <div style="color: #a16207;">Custom limits</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Endpoints -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                API Endpoints
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Explore all available endpoints organized by functionality.
+            </p>
+        </div>
+
+        <!-- Agents Endpoints -->
+        <div style="margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%;">
+                    <i class="fas fa-robot" style="font-size: 1.2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; font-weight: 600; color: #1a202c; margin: 0;">Agents</h3>
+                    <p style="color: #64748b; margin: 0; font-size: 1rem;">Create, manage, and interact with AI agents</p>
+                </div>
+            </div>
+
+            <div style="display: grid; gap: 1.5rem;">
+                <!-- Create Agent -->
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Create Agent</h4>
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">POST</span>
+                    </div>
+                    <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                        <div style="color: #10b981;">POST</div> <div style="color: #e5e7eb;">/agents</div>
+                    </div>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Create a new AI agent with custom personality and capabilities.</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Request Body:</h5>
+                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0;">
+{<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"name"</span>: <span style="color: #059669;">"My AI Assistant"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"personality"</span>: <span style="color: #059669;">"helpful and friendly"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"capabilities"</span>: [<span style="color: #059669;">"chat"</span>, <span style="color: #059669;">"analysis"</span>]<br>
+}
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Response:</h5>
+                        <div style="background: #f0f9ff; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid rgba(59, 130, 246, 0.2);">
+{<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"id"</span>: <span style="color: #059669;">"agent_12345"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"name"</span>: <span style="color: #059669;">"My AI Assistant"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"status"</span>: <span style="color: #059669;">"active"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"created_at"</span>: <span style="color: #059669;">"2024-01-15T10:00:00Z"</span><br>
+}
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            201 Created
+                        </div>
+                        <div style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            400 Bad Request
+                        </div>
+                        <div style="background: rgba(245, 158, 11, 0.1); color: #d97706; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            401 Unauthorized
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Get Agent -->
+                <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Get Agent</h4>
+                        <span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">GET</span>
+                    </div>
+                    <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                        <div style="color: #3b82f6;">GET</div> <div style="color: #e5e7eb;">/agents/{agent_id}</div>
+                    </div>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Retrieve details of a specific agent by ID.</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Path Parameters:</h5>
+                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                            <div style="font-family: monospace; color: #1a202c;"><strong>agent_id</strong> (string, required) - The unique identifier of the agent</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            200 OK
+                        </div>
+                        <div style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            404 Not Found
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List Agents -->
+                <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">List Agents</h4>
+                        <span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">GET</span>
+                    </div>
+                    <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                        <div style="color: #3b82f6;">GET</div> <div style="color: #e5e7eb;">/agents?limit=10&offset=0</div>
+                    </div>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Retrieve a paginated list of all your agents.</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Query Parameters:</h5>
+                        <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                            <div style="font-family: monospace; color: #1a202c; margin-bottom: 0.5rem;"><strong>limit</strong> (integer, optional) - Number of agents to return (default: 10, max: 100)</div>
+                            <div style="font-family: monospace; color: #1a202c;"><strong>offset</strong> (integer, optional) - Number of agents to skip (default: 0)</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            200 OK
+                        </div>
+                        <div style="background: rgba(245, 158, 11, 0.1); color: #d97706; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            401 Unauthorized
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Endpoints -->
+        <div style="margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 50%;">
+                    <i class="fas fa-comments" style="font-size: 1.2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; font-weight: 600; color: #1a202c; margin: 0;">Chat</h3>
+                    <p style="color: #64748b; margin: 0; font-size: 1rem;">Send messages and receive responses from agents</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                    <h4 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin: 0;">Send Message</h4>
+                    <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">POST</span>
+                </div>
+                <div style="background: #1a202c; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; color: #e5e7eb; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;">POST</div> <div style="color: #e5e7eb;">/agents/{agent_id}/chat</div>
+                </div>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Send a message to an agent and receive a response.</p>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h5 style="font-size: 1rem; font-weight: 600; color: #1a202c; margin-bottom: 0.5rem;">Request Body:</h5>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e2e8f0;">
+{<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"message"</span>: <span style="color: #059669;">"Hello, how can you help me today?"</span>,<br>
+&nbsp;&nbsp;<span style="color: #dc2626;">"stream"</span>: <span style="color: #2563eb;">false</span><br>
+}
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                        200 OK
+                    </div>
+                    <div style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                        404 Agent Not Found
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SDKs Section -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                SDKs & Libraries
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Use our official SDKs to integrate AI Digital Friend into your applications quickly.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 50%;">
+                        <i class="fab fa-python" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0;">Python SDK</h3>
+                        <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">pip install aidigitalfriend</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Quick example</div>
+                    <div style="color: #f59e0b;">from</div> <div style="color: #e5e7eb;">aidigitalfriend</div> <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">Client</div><br>
+                    <div style="color: #e5e7eb;">client = Client("your_api_key")</div><br>
+                    <div style="color: #e5e7eb;">response = client.agents.chat("Hello!")</div>
+                </div>
+                <a href="/docs/python-sdk" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View Python Docs
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%;">
+                        <i class="fab fa-js" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0;">JavaScript SDK</h3>
+                        <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">npm install @aidigitalfriend/sdk</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;">// Quick example</div>
+                    <div style="color: #f59e0b;">import</div> <div style="color: #e5e7eb;">{ Client } </div><div style="color: #f59e0b;">from</div> <div style="color: #60a5fa;">'@aidigitalfriend/sdk'</div><br>
+                    <div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">client = </div><div style="color: #f59e0b;">new</div> <div style="color: #e5e7eb;">Client('your_api_key')</div><br>
+                    <div style="color: #f59e0b;">const</div> <div style="color: #e5e7eb;">response = </div><div style="color: #f59e0b;">await</div> <div style="color: #e5e7eb;">client.agents.chat('Hello!')</div>
+                </div>
+                <a href="/docs/javascript-sdk" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View JS Docs
+                </a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%;">
+                        <i class="fas fa-terminal" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0;">cURL Examples</h3>
+                        <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">Direct HTTP requests</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    <div style="color: #10b981;"># Create agent</div>
+                    <div style="color: #e5e7eb;">curl -X POST \</div><br>
+                    <div style="color: #e5e7eb;">  https://api.aidigitalfriend.com/v1/agents \</div><br>
+                    <div style="color: #e5e7eb;">  -H "Authorization: Bearer $API_KEY"</div>
+                </div>
+                <a href="#curl-examples" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600;">
+                    View Examples
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

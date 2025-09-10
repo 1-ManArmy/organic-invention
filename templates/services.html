@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; text-align: center; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3);">Our Services</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Comprehensive AI solutions tailored to transform your business operations and drive innovation.</p>
+    </div>
+</div>
+
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-left: 5px solid #28a745; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <i class="fas fa-robot" style="font-size: 3.5rem; color: #28a745; margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">AI Agent Platform</h3>
+                <p style="color: #6c757d; line-height: 1.7; margin-bottom: 1.5rem;">Access our suite of 13 specialized AI agents, each designed for specific business functions from strategy to wellness coaching.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>13 Specialized Agents</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>Real-time Interactions</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #28a745; margin-right: 0.5rem;"></i>Custom Integration</li>
+                </ul>
+                <a href="/agents" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Explore Agents</a>
+            </div>
+            
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-left: 5px solid #007bff; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <i class="fas fa-handshake" style="font-size: 3.5rem; color: #007bff; margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">AI Consulting</h3>
+                <p style="color: #6c757d; line-height: 1.7; margin-bottom: 1.5rem;">Expert guidance to identify AI opportunities, develop implementation strategies, and maximize ROI from AI investments.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #007bff; margin-right: 0.5rem;"></i>Strategic AI Planning</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #007bff; margin-right: 0.5rem;"></i>ROI Assessment</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #007bff; margin-right: 0.5rem;"></i>Implementation Roadmap</li>
+                </ul>
+                <a href="/contact" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Get Consultation</a>
+            </div>
+            
+            <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-left: 5px solid #ffc107; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                <i class="fas fa-plug" style="font-size: 3.5rem; color: #ffc107; margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">System Integration</h3>
+                <p style="color: #6c757d; line-height: 1.7; margin-bottom: 1.5rem;">Seamlessly integrate our AI agents with your existing systems and workflows for maximum efficiency.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #ffc107; margin-right: 0.5rem;"></i>API Integration</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #ffc107; margin-right: 0.5rem;"></i>Custom Workflows</li>
+                    <li style="padding: 0.5rem 0; color: #6c757d;"><i class="fas fa-check" style="color: #ffc107; margin-right: 0.5rem;"></i>24/7 Support</li>
+                </ul>
+                <a href="/contact" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Start Integration</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 6rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; color: #2c3e50;">Why Choose Our Services?</h2>
+        <p style="font-size: 1.1rem; color: #6c757d; max-width: 600px; margin: 0 auto 3rem;">We deliver results that matter to your business</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-rocket" style="font-size: 2.5rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50;">Fast Implementation</h3>
+                <p style="color: #6c757d; font-size: 0.9rem;">Get up and running in days, not months</p>
+            </div>
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50;">Enterprise Security</h3>
+                <p style="color: #6c757d; font-size: 0.9rem;">Bank-level security for your data</p>
+            </div>
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50;">Measurable ROI</h3>
+                <p style="color: #6c757d; font-size: 0.9rem;">Track performance with detailed analytics</p>
+            </div>
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-users" style="font-size: 2.5rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50;">Expert Support</h3>
+                <p style="color: #6c757d; font-size: 0.9rem;">Dedicated team of AI specialists</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

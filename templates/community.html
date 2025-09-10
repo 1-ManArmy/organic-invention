@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}Community - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"25\" r=\"2\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"65\" cy=\"45\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"25\" cy=\"75\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"85\" cy=\"30\" r=\"1\" fill=\"rgba(255,255,255,0.1)\"/><circle cx=\"15\" cy=\"60\" r=\"1.5\" fill=\"rgba(255,255,255,0.1)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <i class="fas fa-users" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                Join Our Community
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Connect with developers, AI enthusiasts, and industry experts. Share knowledge, get support, and help shape the future of AI technology.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-users" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">50,000+ Members</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-comments" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">24/7 Support</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-globe" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Global Network</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Community Platforms -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Where to Find Us
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                Join our community across multiple platforms and engage with fellow AI enthusiasts, developers, and experts.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #5865f2 0%, #4752c4 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-discord" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Discord Server</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Real-time chat, voice channels, and instant help from our community moderators and AI experts.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">25K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Members</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">15</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Channels</div>
+                    </div>
+                </div>
+                <a href="https://discord.gg/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #5865f2 0%, #4752c4 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-discord"></i>
+                    Join Discord
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-twitter" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Twitter Community</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Follow us for updates, participate in discussions, and share your AI projects with the community.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">18K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Followers</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">Daily</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Updates</div>
+                    </div>
+                </div>
+                <a href="https://twitter.com/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-twitter"></i>
+                    Follow Us
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #333 0%, #000 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-github" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">GitHub Repository</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Contribute to our open-source projects, report issues, and collaborate on AI development.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">5K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Stars</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">200+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Contributors</div>
+                    </div>
+                </div>
+                <a href="https://github.com/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #333 0%, #000 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-github"></i>
+                    View Repository
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #0077b5 0%, #005885 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-linkedin" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">LinkedIn Group</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Professional networking, career opportunities, and industry insights from AI professionals.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">12K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Members</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">Pro</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Network</div>
+                    </div>
+                </div>
+                <a href="https://linkedin.com/groups/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #0077b5 0%, #005885 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-linkedin"></i>
+                    Join Group
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #ff4500 0%, #cc3600 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-reddit" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Reddit Community</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Discussions, AMAs, project showcases, and community-driven Q&A sessions.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">8K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Subscribers</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">Active</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Discussions</div>
+                    </div>
+                </div>
+                <a href="https://reddit.com/r/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ff4500 0%, #cc3600 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-reddit"></i>
+                    Join Subreddit
+                </a>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.8); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%); border-radius: 50%; margin-bottom: 1.5rem;">
+                    <i class="fab fa-telegram" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem;">Telegram Channel</h3>
+                <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Instant updates, announcements, and quick community support via our Telegram channel.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">6K+</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Members</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b5cf6;">Instant</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Updates</div>
+                    </div>
+                </div>
+                <a href="https://t.me/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fab fa-telegram"></i>
+                    Join Channel
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Community Guidelines -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+                Community Guidelines
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                To maintain a welcoming and productive environment, please follow these community guidelines.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-heart" style="color: #3b82f6;"></i>
+                    Be Respectful
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Treat all community members with respect and kindness. No harassment, discrimination, or inappropriate behavior will be tolerated.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-handshake" style="color: #10b981;"></i>
+                    Help Others
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Share your knowledge and experience. Help newcomers learn and grow in their AI journey. We're all here to learn together.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-search" style="color: #f59e0b;"></i>
+                    Stay On Topic
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Keep discussions relevant to AI, technology, and our platform. Use appropriate channels for different types of content.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-shield-alt" style="color: #8b5cf6;"></i>
+                    No Spam
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Avoid excessive self-promotion, spam, or off-topic content. Quality contributions are more valuable than quantity.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-exclamation-triangle" style="color: #ef4444;"></i>
+                    Report Issues
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    If you encounter any problems or violations, please report them to our moderators promptly. We take all reports seriously.
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h3 style="font-size: 1.3rem; font-weight: 600; color: #1a202c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-graduation-cap" style="color: #3b82f6;"></i>
+                    Keep Learning
+                </h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Stay curious and open to new ideas. The AI field evolves rapidly, and there's always something new to discover and learn.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Community Events -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                Community Events
+            </h2>
+            <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Join our regular events to connect with the community, learn new skills, and showcase your projects.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Weekly Webinars</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem;">Expert talks on AI trends, technical deep-dives, and Q&A sessions every Thursday.</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">
+                    <i class="fas fa-calendar"></i> Every Thursday 3PM PST
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Hackathons</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem;">Monthly AI hackathons with exciting challenges and prizes for innovative solutions.</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">
+                    <i class="fas fa-trophy"></i> $10K+ in prizes
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 1rem; color: #4ade80;">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Study Groups</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem;">Collaborative learning sessions on AI topics, research papers, and hands-on projects.</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">
+                    <i class="fas fa-users"></i> Small groups (5-10)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Involved -->
+<div style="padding: 6rem 0; background: white;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a202c; margin-bottom: 1rem;">
+            Ready to Get Involved?
+        </h2>
+        <p style="font-size: 1.2rem; color: #64748b; margin-bottom: 3rem;">
+            Join our vibrant community today and connect with AI enthusiasts, developers, and experts from around the world.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://discord.gg/aidigitalfriend" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(139, 92, 246, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <i class="fab fa-discord"></i>
+                Join Our Discord
+            </a>
+            <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #8b5cf6; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid #8b5cf6; transition: all 0.3s ease;" onmouseover="this.style.background='#8b5cf6'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#8b5cf6'">
+                <i class="fas fa-envelope"></i>
+                Contact Community Team
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

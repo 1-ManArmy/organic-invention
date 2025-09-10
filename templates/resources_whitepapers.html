@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); min-height: 100vh; padding: 0; margin: 0;">
+    
+    <!-- Hero Section -->
+    <section style="padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="fas fa-file-alt" style="font-size: 1.2rem; color: #f1c40f;"></i>
+                <span style="font-weight: 600;">Research & Analysis</span>
+            </div>
+            
+            <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;">
+                Whitepapers
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                In-depth research papers, technical guides, and comprehensive analysis of AI trends, methodologies, and best practices from our team of experts.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#latest-whitepapers" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-download"></i>
+                    Latest Papers
+                </a>
+                <a href="#research-topics" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-search"></i>
+                    Browse Topics
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Whitepaper -->
+    <section style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Featured Research
+                </h2>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 4rem 3rem; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center;">
+                    <div>
+                        <div style="color: #f1c40f; font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;">FEATURED WHITEPAPER • 45 PAGES</div>
+                        <h3 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 2rem; line-height: 1.3;">The State of Enterprise AI: 2025 Comprehensive Analysis</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem;">
+                            An exhaustive examination of AI adoption trends, challenges, and opportunities across enterprise environments, based on analysis of 500+ organizations and industry surveys.
+                        </p>
+                        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7);">
+                                <i class="fas fa-user"></i>
+                                <span>Dr. Sarah Chen, Chief Research Officer</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7);">
+                                <i class="fas fa-calendar"></i>
+                                <span>September 2025</span>
+                            </div>
+                        </div>
+                        <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <i class="fas fa-download"></i>
+                            Download PDF
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="width: 100px; height: 120px; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); border-radius: 12px; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-file-pdf" style="font-size: 3rem; color: white;"></i>
+                            </div>
+                            <div style="color: white; font-weight: 600; margin-bottom: 1rem;">45 Pages</div>
+                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">PDF Format</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Latest Whitepapers -->
+    <section id="latest-whitepapers" style="padding: 4rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Latest Research Papers
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Cutting-edge research and analysis from our team of AI experts and industry thought leaders
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                
+                <!-- Whitepaper 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 75px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">TECHNICAL GUIDE • 32 PAGES</div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Implementing Large Language Models in Enterprise Environments</h3>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Comprehensive guide covering architecture decisions, security considerations, cost optimization, and performance tuning for enterprise LLM deployments.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Dr. Michael Torres</span>
+                        <span><i class="fas fa-calendar"></i> August 2025</span>
+                        <span><i class="fas fa-download"></i> 2,847 downloads</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Whitepaper 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 75px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">RESEARCH PAPER • 28 PAGES</div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">AI Ethics Framework: Principles for Responsible AI Development</h3>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Detailed framework for implementing ethical AI practices, addressing bias, transparency, accountability, and fairness in AI system development and deployment.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Prof. Elena Rodriguez</span>
+                        <span><i class="fas fa-calendar"></i> July 2025</span>
+                        <span><i class="fas fa-download"></i> 3,294 downloads</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Whitepaper 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 75px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">MARKET ANALYSIS • 38 PAGES</div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">The Future of Work: AI Impact on Job Markets and Skills</h3>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Analysis of AI's impact on employment, emerging job categories, required skills transformation, and recommendations for workforce adaptation strategies.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Dr. James Park</span>
+                        <span><i class="fas fa-calendar"></i> June 2025</span>
+                        <span><i class="fas fa-download"></i> 4,156 downloads</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Whitepaper 4 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="width: 60px; height: 75px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 1.5rem; color: #333;"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="color: #f1c40f; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">TECHNICAL GUIDE • 24 PAGES</div>
+                            <h3 style="font-size: 1.6rem; font-weight: 600; color: white; margin-bottom: 1rem; line-height: 1.4;">Multi-Modal AI Systems: Design and Implementation Patterns</h3>
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem;">
+                        Architectural patterns and best practices for building AI systems that process multiple data types including text, images, audio, and video content.
+                    </p>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                        <span><i class="fas fa-user"></i> Lisa Chen</span>
+                        <span><i class="fas fa-calendar"></i> May 2025</span>
+                        <span><i class="fas fa-download"></i> 2,673 downloads</span>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="#" style="flex: 1; text-align: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Research Topics -->
+    <section id="research-topics" style="padding: 4rem 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.8rem; font-weight: 700; color: white; margin-bottom: 1.5rem;">
+                    Research Categories
+                </h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Explore our research organized by topic and area of focus
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                
+                <!-- Category 1 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-brain" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Machine Learning</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Deep learning architectures, neural networks, and advanced ML algorithms.</p>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem;">12 papers available</div>
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Browse Papers →</a>
+                </div>
+                
+                <!-- Category 2 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-robot" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">AI Agents</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Autonomous agents, multi-agent systems, and intelligent automation.</p>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem;">8 papers available</div>
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Browse Papers →</a>
+                </div>
+                
+                <!-- Category 3 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">AI Ethics</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Responsible AI, bias mitigation, and ethical frameworks.</p>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem;">6 papers available</div>
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Browse Papers →</a>
+                </div>
+                
+                <!-- Category 4 -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-industry" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 1rem;">Industry Applications</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Sector-specific AI implementations and use cases.</p>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem;">10 papers available</div>
+                    <a href="#" style="color: #f1c40f; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Browse Papers →</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Signup -->
+    <section style="padding: 4rem 0;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                Stay Informed
+            </h2>
+            
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem; line-height: 1.6;">
+                Get notified when new research papers and whitepapers are published. Join our research community for early access to cutting-edge AI insights.
+            </p>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-bell"></i>
+                    Subscribe to Updates
+                </a>
+                <a href="/resources" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Resources
+                </a>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+</style>
+{% endblock %}
