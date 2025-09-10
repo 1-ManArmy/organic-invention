@@ -1,0 +1,514 @@
+{% extends "base.html" %}
+
+{% block title %}Live AI Support - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Live Support Page -->
+<div style="background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d2d4a 100%); min-height: 100vh; padding: 0; margin: 0; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"10\" cy=\"20\" r=\"1\" fill=\"rgba(255,255,255,0.03)\"/><circle cx=\"90\" cy=\"40\" r=\"1.5\" fill=\"rgba(255,255,255,0.03)\"/><circle cx=\"30\" cy=\"80\" r=\"1\" fill=\"rgba(255,255,255,0.03)\"/><circle cx=\"80\" cy=\"10\" r=\"0.5\" fill=\"rgba(255,255,255,0.03)\"/><circle cx=\"20\" cy=\"90\" r=\"1\" fill=\"rgba(255,255,255,0.03)\"/></svg>') repeat; opacity: 0.3;"></div>
+    
+    <!-- Header Section -->
+    <div style="position: relative; z-index: 1; padding: 6rem 0 2rem; text-align: center; color: white;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                <i class="fas fa-robot" style="font-size: 2rem; color: #4ade80;"></i>
+            </div>
+            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Live AI Support
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+                Get instant help from our AI assistant. If our AI can't help, we'll connect you with a human expert.
+            </p>
+        </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div style="position: relative; z-index: 1; padding: 2rem; max-width: 1000px; margin: 0 auto;">
+        <div id="chatContainer" style="background: rgba(26,26,58,0.9); border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4); overflow: hidden; min-height: 600px; display: flex; flex-direction: column;">
+            
+            <!-- Chat Header -->
+            <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); border-radius: 50%; box-shadow: 0 4px 16px rgba(74, 222, 128, 0.3);">
+                            <i class="fas fa-robot" style="color: white; font-size: 1.2rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: white; margin: 0; font-size: 1.2rem; font-weight: 600;">AI Assistant</h3>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div id="statusIndicator" style="width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                <span id="statusText" style="color: #4ade80; font-size: 0.9rem;">Online & Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button id="clearChat" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-broom"></i> Clear
+                        </button>
+                        <button id="exportChat" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div id="chatMessages" style="flex: 1; padding: 1.5rem; overflow-y: auto; max-height: 500px; min-height: 400px;">
+                <!-- Welcome Message -->
+                <div class="message ai-message" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); border-radius: 50%; flex-shrink: 0;">
+                        <i class="fas fa-robot" style="color: white; font-size: 0.9rem;"></i>
+                    </div>
+                    <div style="background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 15px 15px 15px 5px; padding: 1rem 1.5rem; max-width: 80%; backdrop-filter: blur(10px);">
+                        <p style="color: white; margin: 0; line-height: 1.5;">
+                            👋 Hello! I'm your AI support assistant. I can help you with:
+                        </p>
+                        <ul style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0; padding-left: 1rem; font-size: 0.9rem;">
+                            <li>Technical questions and troubleshooting</li>
+                            <li>Account and billing inquiries</li>
+                            <li>Product features and usage guides</li>
+                            <li>API documentation and integration help</li>
+                        </ul>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0.5rem 0 0 0; font-size: 0.9rem; font-style: italic;">
+                            If I can't solve your issue, I'll connect you with our human support team at mail@intelcoreai.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div style="padding: 0 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div style="padding: 1rem 0;">
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0 0 0.75rem 0;">Quick Actions:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <button class="quickAction" data-message="How do I get started with the API?" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='rgba(255,255,255,0.9)'">
+                            🚀 Getting Started
+                        </button>
+                        <button class="quickAction" data-message="I'm having trouble with authentication" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='rgba(255,255,255,0.9)'">
+                            🔐 Auth Issues
+                        </button>
+                        <button class="quickAction" data-message="Tell me about pricing and billing" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='rgba(255,255,255,0.9)'">
+                            💳 Billing
+                        </button>
+                        <button class="quickAction" data-message="I need help with API integration" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='rgba(255,255,255,0.9)'">
+                            🔧 Integration
+                        </button>
+                        <button class="quickAction" data-message="Connect me with human support" style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.3); color: #f87171; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(239, 68, 68, 0.3)'; this.style.color='#fca5a5'" onmouseout="this.style.background='rgba(239, 68, 68, 0.2)'; this.style.color='#f87171'">
+                            👨‍💼 Human Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div style="padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,35,0.5);">
+                <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                    <div style="flex: 1; position: relative;">
+                        <textarea id="messageInput" placeholder="Type your message here... (Press Shift+Enter for new line, Enter to send)" style="width: 100%; padding: 1rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; resize: none; min-height: 50px; max-height: 120px; outline: none; backdrop-filter: blur(20px); transition: all 0.3s ease;" onkeydown="handleKeyPress(event)"></textarea>
+                        <div id="typingIndicator" style="position: absolute; bottom: -25px; left: 0; color: rgba(74, 222, 128, 0.8); font-size: 0.8rem; display: none;">
+                            <i class="fas fa-robot"></i> AI is typing...
+                        </div>
+                    </div>
+                    <button id="sendButton" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); color: white; border: none; padding: 1rem 1.5rem; border-radius: 15px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; min-width: 80px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(74, 222, 128, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; cursor: pointer;">
+                            <input type="file" id="fileInput" accept=".txt,.pdf,.doc,.docx,.png,.jpg,.jpeg" style="display: none;" onchange="handleFileUpload(event)">
+                            <i class="fas fa-paperclip"></i> Attach File
+                        </label>
+                        <button id="voiceButton" style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; font-size: 1rem; transition: all 0.3s ease;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">
+                        Powered by AI • Escalates to mail@intelcoreai.com
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div style="position: relative; z-index: 1; padding: 2rem; text-align: center; color: rgba(255,255,255,0.6);">
+        <p style="margin: 0; font-size: 0.9rem;">
+            Available 24/7 • AI responses are instant • Human escalation when needed •
+            <a href="mailto:mail@intelcoreai.com" style="color: #4ade80; text-decoration: none;">mail@intelcoreai.com</a>
+        </p>
+    </div>
+</div>
+
+<style>
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+#chatMessages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background: rgba(74, 222, 128, 0.5);
+    border-radius: 3px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 222, 128, 0.7);
+}
+
+@media (max-width: 768px) {
+    #chatContainer {
+        margin: 1rem;
+        min-height: 500px;
+    }
+    
+    .message {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .message > div:last-child {
+        max-width: 100%;
+    }
+}
+</style>
+
+<script>
+// WebSocket connection for real-time chat
+let ws = null;
+let isConnected = false;
+let messageHistory = [];
+let isAITyping = false;
+
+// Initialize WebSocket connection
+function initWebSocket() {
+    // In a real implementation, you would connect to your WebSocket server
+    // For demo purposes, we'll simulate the connection
+    console.log('Initializing WebSocket connection...');
+    
+    // Simulate connection
+    setTimeout(() => {
+        isConnected = true;
+        updateConnectionStatus('Connected', '#4ade80');
+    }, 1000);
+}
+
+// Update connection status
+function updateConnectionStatus(status, color) {
+    const statusText = document.getElementById('statusText');
+    const statusIndicator = document.getElementById('statusIndicator');
+    
+    if (statusText && statusIndicator) {
+        statusText.textContent = status;
+        statusText.style.color = color;
+        statusIndicator.style.background = color;
+    }
+}
+
+// Handle keyboard input
+function handleKeyPress(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+    }
+}
+
+// Add message to chat
+function addMessage(content, isUser = false, isSystem = false) {
+    const chatMessages = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message ' + (isUser ? 'user-message' : isSystem ? 'system-message' : 'ai-message');
+    
+    const avatar = isUser ? 
+        `<div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; flex-shrink: 0;">
+            <i class="fas fa-user" style="color: white; font-size: 0.9rem;"></i>
+         </div>` :
+        isSystem ?
+        `<div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 50%; flex-shrink: 0;">
+            <i class="fas fa-exclamation-triangle" style="color: white; font-size: 0.9rem;"></i>
+         </div>` :
+        `<div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); border-radius: 50%; flex-shrink: 0;">
+            <i class="fas fa-robot" style="color: white; font-size: 0.9rem;"></i>
+         </div>`;
+    
+    const messageColor = isUser ? 'rgba(102, 126, 234, 0.1)' : 
+                        isSystem ? 'rgba(245, 158, 11, 0.1)' :
+                        'rgba(74, 222, 128, 0.1)';
+    const borderColor = isUser ? 'rgba(102, 126, 234, 0.2)' : 
+                       isSystem ? 'rgba(245, 158, 11, 0.2)' :
+                       'rgba(74, 222, 128, 0.2)';
+    const borderRadius = isUser ? '15px 5px 15px 15px' : '15px 15px 15px 5px';
+    
+    messageDiv.innerHTML = `
+        <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; ${isUser ? 'flex-direction: row-reverse;' : ''}">
+            ${avatar}
+            <div style="background: ${messageColor}; border: 1px solid ${borderColor}; border-radius: ${borderRadius}; padding: 1rem 1.5rem; max-width: 80%; backdrop-filter: blur(10px);">
+                <div style="color: white; margin: 0; line-height: 1.5;">${content}</div>
+                <div style="color: rgba(255,255,255,0.5); font-size: 0.7rem; margin-top: 0.5rem;">
+                    ${new Date().toLocaleTimeString()}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    // Store in history
+    messageHistory.push({
+        content: content,
+        isUser: isUser,
+        isSystem: isSystem,
+        timestamp: new Date()
+    });
+}
+
+// Simulate AI typing
+function showAITyping() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+        typingIndicator.style.display = 'block';
+        isAITyping = true;
+    }
+}
+
+function hideAITyping() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+        typingIndicator.style.display = 'none';
+        isAITyping = false;
+    }
+}
+
+// Generate AI response
+function generateAIResponse(userMessage) {
+    showAITyping();
+    
+    // Simulate processing delay
+    setTimeout(() => {
+        hideAITyping();
+        
+        const lowerMessage = userMessage.toLowerCase();
+        let response = '';
+        
+        // Check for human support request
+        if (lowerMessage.includes('human') || lowerMessage.includes('person') || lowerMessage.includes('agent') || lowerMessage.includes('connect me')) {
+            response = `I'll connect you with our human support team right away! 👨‍💼
+            
+            <br><br><strong>Escalating to Human Support:</strong>
+            <br>• Your conversation has been sent to <a href="mailto:mail@intelcoreai.com" style="color: #4ade80;">mail@intelcoreai.com</a>
+            <br>• Expected response time: Within 2-4 hours
+            <br>• Reference ID: #SUP-${Date.now()}
+            
+            <br><br>In the meantime, you can also email us directly at <a href="mailto:mail@intelcoreai.com" style="color: #4ade80;">mail@intelcoreai.com</a> with your question.`;
+            
+            // Simulate sending email to support team
+            setTimeout(() => {
+                addMessage(`✅ Your conversation has been forwarded to our support team. They will contact you at your registered email address within 2-4 hours.`, false, true);
+            }, 2000);
+            
+        } else if (lowerMessage.includes('api') || lowerMessage.includes('integration')) {
+            response = `I can help you with API integration! 🔧
+            
+            <br><br><strong>API Documentation:</strong>
+            <br>• Base URL: <code>https://api.intelcoreai.com/v1</code>
+            <br>• Authentication: Bearer token required
+            <br>• Rate limits: 1000 requests/hour
+            
+            <br><br><strong>Quick Start:</strong>
+            <br>1. Get your API key from the dashboard
+            <br>2. Include it in headers: <code>Authorization: Bearer YOUR_KEY</code>
+            <br>3. Make requests to endpoints
+            
+            <br><br>Need specific help with an endpoint or integration issue?`;
+            
+        } else if (lowerMessage.includes('billing') || lowerMessage.includes('pricing') || lowerMessage.includes('payment')) {
+            response = `Let me help you with billing questions! 💳
+            
+            <br><br><strong>Current Plans:</strong>
+            <br>• Starter: $29/month - Up to 10,000 API calls
+            <br>• Professional: $99/month - Up to 100,000 API calls  
+            <br>• Enterprise: Custom pricing - Unlimited calls
+            
+            <br><br><strong>Billing Support:</strong>
+            <br>• View invoices in your dashboard
+            <br>• Payment methods: Credit card, ACH, wire transfer
+            <br>• Questions? Email <a href="mailto:mail@intelcoreai.com" style="color: #4ade80;">mail@intelcoreai.com</a>
+            
+            <br><br>What specific billing question can I help with?`;
+            
+        } else if (lowerMessage.includes('auth') || lowerMessage.includes('login') || lowerMessage.includes('password') || lowerMessage.includes('account')) {
+            response = `I can help with authentication issues! 🔐
+            
+            <br><br><strong>Common Solutions:</strong>
+            <br>• Reset password: Use "Forgot Password" on login page
+            <br>• API key issues: Generate new key in dashboard
+            <br>• 2FA problems: Contact support for reset
+            
+            <br><br><strong>Account Access:</strong>
+            <br>• Login at: <a href="/login" style="color: #4ade80;">Login Page</a>
+            <br>• Registration: <a href="/signup" style="color: #4ade80;">Sign Up</a>
+            <br>• Account locked? Email <a href="mailto:mail@intelcoreai.com" style="color: #4ade80;">mail@intelcoreai.com</a>
+            
+            <br><br>What specific authentication issue are you experiencing?`;
+            
+        } else if (lowerMessage.includes('getting started') || lowerMessage.includes('start') || lowerMessage.includes('begin')) {
+            response = `Welcome! Let me help you get started! 🚀
+            
+            <br><br><strong>Quick Setup Steps:</strong>
+            <br>1. <a href="/signup" style="color: #4ade80;">Create your account</a>
+            <br>2. Verify your email address
+            <br>3. Get your API key from the dashboard
+            <br>4. Test with our sandbox environment
+            
+            <br><br><strong>Resources:</strong>
+            <br>• <a href="/documentation" style="color: #4ade80;">Documentation</a> - Complete guides
+            <br>• <a href="/api-docs" style="color: #4ade80;">API Reference</a> - Technical specs
+            <br>• Code examples in Python, JavaScript, cURL
+            
+            <br><br>What would you like to build first?`;
+            
+        } else {
+            response = `I understand you're asking about: "${userMessage}"
+            
+            <br><br>I want to make sure I give you the most accurate information. Let me connect you with our human support team who can provide detailed assistance.
+            
+            <br><br><strong>Options:</strong>
+            <br>• Click "Human Support" below for immediate escalation
+            <br>• Email us directly at <a href="mailto:mail@intelcoreai.com" style="color: #4ade80;">mail@intelcoreai.com</a>
+            <br>• Try rephrasing your question with specific keywords like "API", "billing", or "authentication"
+            
+            <br><br>How else can I help you today?`;
+        }
+        
+        addMessage(response);
+    }, 1500 + Math.random() * 1000); // Random delay to seem more natural
+}
+
+// Send message function
+function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value.trim();
+    
+    if (message && !isAITyping) {
+        // Add user message
+        addMessage(message, true);
+        messageInput.value = '';
+        
+        // Generate AI response
+        generateAIResponse(message);
+    }
+}
+
+// Quick action handlers
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize WebSocket
+    initWebSocket();
+    
+    // Send button click handler
+    const sendButton = document.getElementById('sendButton');
+    if (sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+    }
+    
+    // Quick action buttons
+    const quickActions = document.querySelectorAll('.quickAction');
+    quickActions.forEach(button => {
+        button.addEventListener('click', function() {
+            const message = this.getAttribute('data-message');
+            document.getElementById('messageInput').value = message;
+            sendMessage();
+        });
+    });
+    
+    // Clear chat button
+    const clearButton = document.getElementById('clearChat');
+    if (clearButton) {
+        clearButton.addEventListener('click', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = `
+                <div class="message ai-message" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); border-radius: 50%; flex-shrink: 0;">
+                        <i class="fas fa-robot" style="color: white; font-size: 0.9rem;"></i>
+                    </div>
+                    <div style="background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 15px 15px 15px 5px; padding: 1rem 1.5rem; max-width: 80%; backdrop-filter: blur(10px);">
+                        <p style="color: white; margin: 0; line-height: 1.5;">Chat cleared! How can I help you today? 😊</p>
+                    </div>
+                </div>
+            `;
+            messageHistory = [];
+        });
+    }
+    
+    // Export chat button
+    const exportButton = document.getElementById('exportChat');
+    if (exportButton) {
+        exportButton.addEventListener('click', function() {
+            const chatData = {
+                timestamp: new Date().toISOString(),
+                messages: messageHistory,
+                sessionId: 'SUP-' + Date.now()
+            };
+            
+            const blob = new Blob([JSON.stringify(chatData, null, 2)], {
+                type: 'application/json'
+            });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `support-chat-${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    }
+    
+    // File upload handler
+    window.handleFileUpload = function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            addMessage(`📎 Uploaded file: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`, true);
+            
+            setTimeout(() => {
+                addMessage(`I see you've uploaded "${file.name}". I'll review this and get back to you, or I can connect you with our human support team who can better assist with file-related questions.
+                
+                <br><br>Would you like me to escalate this to human support for detailed file review?`);
+            }, 1000);
+        }
+    };
+    
+    // Voice input (placeholder)
+    const voiceButton = document.getElementById('voiceButton');
+    if (voiceButton) {
+        voiceButton.addEventListener('click', function() {
+            addMessage('🎤 Voice input feature coming soon! For now, please type your message or email us at mail@intelcoreai.com', false, true);
+        });
+    }
+});
+</script>
+
+{% endblock %}

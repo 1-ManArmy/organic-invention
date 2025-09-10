@@ -75,6 +75,11 @@ def support():
     """Help Center / Support Page"""
     return render_template("support.html", title="Help Center - AI Agents Platform")
 
+@app.route("/live-support")
+def live_support():
+    """Live AI Support Chat Page"""
+    return render_template("live_support.html", title="Live AI Support - AI Digital Friend")
+
 @app.route("/documentation")
 def documentation():
     """Documentation Page"""

@@ -93,41 +93,31 @@
                 Our support team is here to help you succeed with our AI platform.
             </p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
-                <!-- Live Chat -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-comments" style="font-size: 2.5rem; color: #4ECDC4; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Live Chat</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
-                        Get instant help from our support team
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 700px; margin: 0 auto;">
+                <!-- Live Support -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-comments" style="font-size: 3rem; color: #4ECDC4; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem;">Live AI Support</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Get instant help from our AI assistant with human escalation available 24/7
                     </p>
-                    <button style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%;">
-                        Start Chat
-                    </button>
+                    <a href="/live-support" style="display: inline-block; background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%; text-align: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(78, 205, 196, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-robot" style="margin-right: 0.5rem;"></i>
+                        Start Live Support
+                    </a>
                 </div>
                 
                 <!-- Email Support -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-envelope" style="font-size: 2.5rem; color: #667eea; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Email Support</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
-                        Send us a detailed message
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'">
+                    <i class="fas fa-envelope" style="font-size: 3rem; color: #667eea; margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem;">Email Support</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Send us detailed questions and get comprehensive responses from our team
                     </p>
-                    <button style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%;">
+                    <a href="mailto:mail@intelcoreai.com" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%; text-align: center; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(102, 126, 234, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
                         Send Email
-                    </button>
-                </div>
-                
-                <!-- Phone Support -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2);">
-                    <i class="fas fa-phone" style="font-size: 2.5rem; color: #FF6B6B; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">Phone Support</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
-                        Speak directly with our experts
-                    </p>
-                    <button style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%;">
-                        Call Now
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
