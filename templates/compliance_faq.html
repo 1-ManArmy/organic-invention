@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Compliance FAQ - AI Digital Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d2d4a 100%); padding: 6rem 0 4rem; color: white; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"20\" cy=\"20\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"80\" cy=\"40\" r=\"1.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"40\" cy=\"80\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"70\" cy=\"10\" r=\"0.5\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"30\" cy=\"90\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/></svg>') repeat; opacity: 0.3;"></div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 50%; margin-bottom: 2rem; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                <i class="fas fa-question-circle" style="font-size: 2rem; color: #4ade80;"></i>
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Compliance FAQ
+            </h1>
+            <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6; margin-bottom: 2rem;">
+                Find answers to the most commonly asked questions about our compliance practices, data protection policies, and regulatory adherence.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-clock" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Updated Weekly</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 25px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-comments" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; font-weight: 600;">Expert Answers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Categories -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f172a 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Frequently Asked Questions
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+                Browse questions by category or use the search function to find specific topics.
+            </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div style="max-width: 600px; margin: 0 auto 4rem; position: relative;">
+            <input type="text" placeholder="Search FAQ topics..." style="width: 100%; padding: 1rem 1rem 1rem 3rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; backdrop-filter: blur(20px); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+            <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.5);"></i>
+        </div>
+
+        <!-- FAQ Categories Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <!-- Data Protection -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); border-radius: 12px; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-shield-alt" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.3rem; font-weight: 600; margin: 0;">Data Protection</h3>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1rem;">Questions about how we collect, process, and protect your personal data.</p>
+                <div style="display: inline-block; background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(59, 130, 246, 0.3);">8 Questions</div>
+            </div>
+
+            <!-- Privacy Rights -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #047857 100%); border-radius: 12px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);">
+                        <i class="fas fa-user-shield" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.3rem; font-weight: 600; margin: 0;">Privacy Rights</h3>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1rem;">Understanding your rights regarding personal data access, correction, and deletion.</p>
+                <div style="display: inline-block; background: rgba(16, 185, 129, 0.2); color: #4ade80; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(16, 185, 129, 0.3);">6 Questions</div>
+            </div>
+
+            <!-- Security Measures -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 12px; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);">
+                        <i class="fas fa-lock" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.3rem; font-weight: 600; margin: 0;">Security Measures</h3>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1rem;">Information about our technical and organizational security safeguards.</p>
+                <div style="display: inline-block; background: rgba(239, 68, 68, 0.2); color: #f87171; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(239, 68, 68, 0.3);">7 Questions</div>
+            </div>
+
+            <!-- Regulatory Compliance -->
+            <div style="background: rgba(15,23,35,0.8); padding: 2rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); border-radius: 12px; box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);">
+                        <i class="fas fa-balance-scale" style="color: white; font-size: 1.2rem;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.3rem; font-weight: 600; margin: 0;">Regulatory Compliance</h3>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 1rem;">Questions about GDPR, CCPA, HIPAA, and other regulatory requirements.</p>
+                <div style="display: inline-block; background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(139, 92, 246, 0.3);">9 Questions</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Common Questions -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+                Most Common Questions
+            </h2>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7);">
+                Quick answers to our most frequently asked compliance questions.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div style="display: grid; gap: 1rem;">
+            <!-- Question 1 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">What personal data do you collect and why?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>We collect only the personal data necessary to provide our AI services, including account information, usage analytics, and communication preferences. This data helps us personalize your experience, improve our services, and ensure platform security. We operate under strict data minimization principles and never collect more information than required.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">How can I access or delete my personal data?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>You have full control over your personal data. Access your account settings to view, download, or modify your information. To request data deletion, contact our privacy team at privacy@aidigitalfriend.com. We'll process your request within 30 days and provide confirmation. Note that some data may be retained for legal compliance purposes.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">Is my data shared with third parties?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>We never sell your personal data. Limited sharing occurs only with trusted service providers who help us deliver our services (cloud hosting, analytics, customer support). All third parties are bound by strict data processing agreements and security requirements. We maintain a complete list of data processors available upon request.</p>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">What security measures protect my data?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>We employ enterprise-grade security including AES-256 encryption, multi-factor authentication, regular security audits, and SOC 2 Type II compliance. Our infrastructure uses zero-trust architecture with continuous monitoring and automated threat detection. All staff undergo regular security training and background checks.</p>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">How do you handle data breaches?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>We have a comprehensive incident response plan that includes immediate containment, forensic analysis, and stakeholder notification within 72 hours as required by GDPR. Our team conducts regular breach simulation exercises and maintains relationships with cybersecurity experts and law enforcement to ensure rapid, effective response.</p>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div style="background: rgba(30,41,59,0.8); border-radius: 15px; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                <div style="padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;" onclick="toggleFaq(this)" onmouseover="this.style.background='rgba(30,41,59,0.9)'" onmouseout="this.style.background='rgba(30,41,59,0.8)'">
+                    <h3 style="color: white; font-size: 1.2rem; font-weight: 600; margin: 0;">Which regulations do you comply with?</h3>
+                    <i class="fas fa-chevron-down" style="color: #4ade80; font-size: 1rem; transition: transform 0.3s ease;"></i>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem; color: rgba(255,255,255,0.8); line-height: 1.6; display: none;">
+                    <p>We comply with GDPR (EU), CCPA (California), PIPEDA (Canada), LGPD (Brazil), and other applicable data protection laws. Our compliance program is regularly audited by independent third parties. We maintain certifications for SOC 2 Type II, ISO 27001, and are working toward additional industry-specific compliance standards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Support -->
+<div style="padding: 6rem 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 1rem; text-shadow: 2px 4px 8px rgba(0,0,0,0.3);">
+            Didn't Find Your Answer?
+        </h2>
+        <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem;">
+            Our compliance team is here to help with any questions about our data protection practices and regulatory adherence.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:compliance@aidigitalfriend.com" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(74, 222, 128, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(74, 222, 128, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(74, 222, 128, 0.3)'">
+                <i class="fas fa-envelope"></i>
+                Ask Compliance Team
+            </a>
+            <a href="/compliance" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.2); transition: all 0.3s ease; backdrop-filter: blur(20px);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fas fa-arrow-left"></i>
+                Back to Compliance
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleFaq(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+</script>
+
+{% endblock %}
