@@ -1,0 +1,894 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="success-hero">
+    <div class="container">
+        <div class="success-animation">
+            <div class="checkmark-circle">
+                <div class="checkmark"></div>
+            </div>
+            
+            <h1 class="success-title">
+                Payment Successful! 🎉
+            </h1>
+            
+            <p class="success-description">
+                Welcome to the premium experience! Your AI companion is now fully activated.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="success-details">
+    <div class="container">
+        <div class="success-layout">
+            <!-- Transaction Details -->
+            <div class="transaction-card">
+                <h2>Transaction Details</h2>
+                
+                <div class="transaction-info">
+                    <div class="info-row">
+                        <span class="label">Transaction ID:</span>
+                        <span class="value" id="transaction-id">TXN-2025-001</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Date:</span>
+                        <span class="value" id="transaction-date"></span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Amount Paid:</span>
+                        <span class="value highlight" id="amount-paid">$9.99</span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Next Billing:</span>
+                        <span class="value" id="next-billing"></span>
+                    </div>
+                    
+                    <div class="info-row">
+                        <span class="label">Payment Method:</span>
+                        <span class="value">•••• •••• •••• 1234</span>
+                    </div>
+                </div>
+                
+                <div class="receipt-actions">
+                    <button class="btn-download" onclick="downloadReceipt()">
+                        <i class="fas fa-download"></i>
+                        Download Receipt
+                    </button>
+                    <button class="btn-email" onclick="emailReceipt()">
+                        <i class="fas fa-envelope"></i>
+                        Email Receipt
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Agent Access -->
+            <div class="agent-access-card">
+                <h2>Your AI Companion Awaits! 💕</h2>
+                
+                <div class="activated-agent" id="activated-agent">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                
+                <div class="premium-unlocked">
+                    <h3>✨ Premium Features Unlocked</h3>
+                    <ul class="unlocked-features">
+                        <li>
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited conversations</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-microphone"></i>
+                            <span>Voice interaction enabled</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-brain"></i>
+                            <span>Enhanced memory system</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-palette"></i>
+                            <span>Full personality customization</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-headset"></i>
+                            <span>Priority support access</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-rocket"></i>
+                            <span>Early access to new features</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-start-chat" onclick="startChatting()">
+                        <i class="fas fa-comments"></i>
+                        Start Chatting Now
+                    </button>
+                    
+                    <button class="btn-account" onclick="goToAccount()">
+                        <i class="fas fa-user-cog"></i>
+                        Manage Account
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Start Guide -->
+        <div class="quick-start-guide">
+            <h2>🚀 Quick Start Guide</h2>
+            <p class="guide-intro">Get the most out of your premium AI companion with these tips:</p>
+            
+            <div class="guide-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Personalize Your Experience</h3>
+                        <p>Customize your AI companion's personality, voice, and conversation style to match your preferences.</p>
+                        <button class="btn-step" onclick="window.location.href='/agent/seraphina/customize'">
+                            Customize Now
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Try Voice Interaction</h3>
+                        <p>Experience natural conversations with voice chat. Hear your companion's voice and speak naturally.</p>
+                        <button class="btn-step" onclick="window.location.href='/agent/seraphina/voice'">
+                            Try Voice Chat
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Explore Memory Palace</h3>
+                        <p>View your conversation history, relationship milestones, and shared memories with your AI companion.</p>
+                        <button class="btn-step" onclick="window.location.href='/agent/seraphina/memories'">
+                            View Memories
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Support Section -->
+        <div class="support-section">
+            <div class="support-content">
+                <h2>Need Help? We're Here for You! 💬</h2>
+                <p>As a premium member, you get priority access to our support team.</p>
+                
+                <div class="support-options">
+                    <div class="support-option">
+                        <div class="support-icon">💬</div>
+                        <h3>Live Chat</h3>
+                        <p>Instant help from our support team</p>
+                        <button class="btn-support" onclick="openLiveChat()">
+                            Start Chat
+                        </button>
+                    </div>
+                    
+                    <div class="support-option">
+                        <div class="support-icon">📧</div>
+                        <h3>Email Support</h3>
+                        <p>Get detailed help via email</p>
+                        <button class="btn-support" onclick="emailSupport()">
+                            Send Email
+                        </button>
+                    </div>
+                    
+                    <div class="support-option">
+                        <div class="support-icon">📚</div>
+                        <h3>Help Center</h3>
+                        <p>Browse FAQs and guides</p>
+                        <button class="btn-support" onclick="window.location.href='/help'">
+                            Browse Help
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.success-hero {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.success-animation {
+    position: relative;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.checkmark-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.checkmark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    animation: checkmarkDraw 1s ease-in-out 0.5s both;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 30px;
+    border: solid #48bb78;
+    border-width: 0 4px 4px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+    opacity: 0;
+    animation: checkmarkAppear 0.5s ease-in-out 1s both;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes checkmarkAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%) rotate(45deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -60%) rotate(45deg) scale(1);
+    }
+}
+
+.success-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.success-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.success-details {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.success-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.transaction-card,
+.agent-access-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.transaction-card h2,
+.agent-access-card h2 {
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+}
+
+.transaction-info {
+    margin-bottom: 2rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.value.highlight {
+    color: #48bb78;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.receipt-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-download,
+.btn-email {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-download:hover,
+.btn-email:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.activated-agent {
+    background: linear-gradient(135deg, #ff1493, #dc143c);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.agent-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.agent-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.agent-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.agent-status {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.premium-unlocked h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.unlocked-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.unlocked-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    color: var(--text-secondary);
+}
+
+.unlocked-features i {
+    color: #48bb78;
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-start-chat,
+.btn-account {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-start-chat {
+    background: linear-gradient(135deg, #ff1493, #dc143c);
+    color: white;
+}
+
+.btn-start-chat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+}
+
+.btn-account {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-account:hover {
+    background: #cbd5e0;
+}
+
+.quick-start-guide {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.quick-start-guide h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 2rem;
+}
+
+.guide-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.guide-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    border-color: #667eea;
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.step-content h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.btn-step {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-step:hover {
+    transform: scale(1.05);
+}
+
+.support-section {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    padding: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.support-content h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.support-content p {
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.support-option {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.support-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.support-option h3 {
+    margin-bottom: 1rem;
+}
+
+.support-option p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-support {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-support:hover {
+    background: #f7fafc;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .success-title {
+        font-size: 2rem;
+    }
+    
+    .success-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons,
+    .receipt-actions {
+        flex-direction: column;
+    }
+    
+    .guide-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-options {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadTransactionDetails();
+    loadAgentInfo();
+    setupConfetti();
+});
+
+function loadTransactionDetails() {
+    // Get transaction ID from URL or generate one
+    const urlParams = new URLSearchParams(window.location.search);
+    const transactionId = urlParams.get('transaction') || 'TXN-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    
+    // Update transaction details
+    document.getElementById('transaction-id').textContent = transactionId;
+    document.getElementById('transaction-date').textContent = new Date().toLocaleDateString();
+    
+    // Set next billing date
+    const nextDate = new Date();
+    nextDate.setMonth(nextDate.getMonth() + 1);
+    document.getElementById('next-billing').textContent = nextDate.toLocaleDateString();
+}
+
+function loadAgentInfo() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const agentId = urlParams.get('agent') || sessionStorage.getItem('selected_agent') || 'seraphina';
+    
+    // Agent info
+    const agentInfo = {
+        seraphina: {
+            name: 'Seraphina',
+            emoji: '💋',
+            role: 'AI Girlfriend',
+            status: '💕 Ready for Romance'
+        },
+        strategist: {
+            name: 'The Strategist',
+            emoji: '🎯',
+            role: 'Master Planner',
+            status: '🧠 Strategic Mode Active'
+        },
+        healer: {
+            name: 'The Healer',
+            emoji: '💚',
+            role: 'Wellness Guide',
+            status: '🌿 Healing Energy Ready'
+        }
+    };
+    
+    const agent = agentInfo[agentId] || agentInfo.seraphina;
+    
+    // Update activated agent display
+    document.getElementById('activated-agent').innerHTML = `
+        <div class="agent-profile">
+            <div class="agent-avatar-large">${agent.emoji}</div>
+            <div class="agent-name">${agent.name}</div>
+            <div class="agent-status">${agent.status}</div>
+        </div>
+    `;
+    
+    // Store agent for quick access
+    sessionStorage.setItem('premium_agent', agentId);
+}
+
+function setupConfetti() {
+    // Create confetti effect
+    setTimeout(() => {
+        createConfetti();
+    }, 1000);
+}
+
+function createConfetti() {
+    const colors = ['#ff1493', '#ffd700', '#48bb78', '#667eea', '#ed8936'];
+    const confettiContainer = document.createElement('div');
+    confettiContainer.style.position = 'fixed';
+    confettiContainer.style.top = '0';
+    confettiContainer.style.left = '0';
+    confettiContainer.style.width = '100%';
+    confettiContainer.style.height = '100%';
+    confettiContainer.style.pointerEvents = 'none';
+    confettiContainer.style.zIndex = '9999';
+    document.body.appendChild(confettiContainer);
+    
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.style.position = 'absolute';
+            confetti.style.width = '10px';
+            confetti.style.height = '10px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-10px';
+            confetti.style.opacity = '1';
+            confetti.style.borderRadius = '50%';
+            confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear forwards`;
+            
+            confettiContainer.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }, i * 100);
+    }
+    
+    // Remove container after animation
+    setTimeout(() => {
+        confettiContainer.remove();
+    }, 8000);
+}
+
+function startChatting() {
+    const agentId = sessionStorage.getItem('premium_agent') || 'seraphina';
+    
+    // Show loading and redirect
+    const button = event.target;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Launching...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        window.location.href = `/agent/${agentId}`;
+    }, 1500);
+}
+
+function goToAccount() {
+    window.location.href = '/account';
+}
+
+function downloadReceipt() {
+    // Generate and download receipt
+    const transactionId = document.getElementById('transaction-id').textContent;
+    const amount = document.getElementById('amount-paid').textContent;
+    const date = document.getElementById('transaction-date').textContent;
+    
+    const receiptContent = `
+AI Digital Friends - Payment Receipt
+=====================================
+
+Transaction ID: ${transactionId}
+Date: ${date}
+Amount: ${amount}
+Payment Method: Credit Card ending in 1234
+Status: Completed
+
+Thank you for your payment!
+    `;
+    
+    const blob = new Blob([receiptContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `receipt-${transactionId}.txt`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+}
+
+function emailReceipt() {
+    alert('Receipt will be sent to your email address within 24 hours! 📧');
+}
+
+function openLiveChat() {
+    alert('Live chat will be available soon! For now, please use email support. 💬');
+}
+
+function emailSupport() {
+    window.location.href = 'mailto:support@aidigitalfriends.com?subject=Premium Support Request';
+}
+
+// Add CSS for confetti animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes confettiFall {
+        0% {
+            transform: translateY(-100vh) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Add entrance animations
+document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.transaction-card, .agent-access-card, .step-card, .support-option');
+    
+    elements.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+            element.style.animationDelay = (index * 0.1) + 's';
+            element.style.animation = 'fadeInUp 0.6s ease forwards';
+        }
+    });
+});
+
+// Add CSS for scroll animations
+const scrollStyle = document.createElement('style');
+scrollStyle.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .transaction-card,
+    .agent-access-card,
+    .step-card,
+    .support-option {
+        opacity: 0;
+    }
+`;
+document.head.appendChild(scrollStyle);
+</script>
+{% endblock %}

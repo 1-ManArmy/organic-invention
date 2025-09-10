@@ -1,0 +1,709 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- SDKs Hero Section -->
+<section class="sdks-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>SDKs & Libraries</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-cube"></i>
+            SDKs & Libraries
+        </h1>
+        <p class="page-description">
+            Official Software Development Kits and client libraries for seamless integration 
+            with AI Digital Friend API across popular programming languages.
+        </p>
+    </div>
+</section>
+
+<!-- SDKs Content -->
+<section class="sdks-content">
+    <div class="container">
+        <div class="sdks-grid">
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python SDK</h3>
+                    <p>Official Python client library with async support</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>pip install intelcore-ai</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>from intelcore import IntelCoreAI
+
+client = IntelCoreAI(api_key="YOUR_API_KEY")
+
+response = client.chat.create(
+    model="ai-friend-pro",
+    message="Hello AI!"
+)
+
+print(response.content)</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon javascript">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript SDK</h3>
+                    <p>Browser and Node.js compatible with TypeScript support</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>npm install @intelcore/ai-sdk</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>import { IntelCoreAI } from '@intelcore/ai-sdk';
+
+const client = new IntelCoreAI({
+  apiKey: 'YOUR_API_KEY'
+});
+
+const response = await client.chat.create({
+  model: 'ai-friend-pro',
+  message: 'Hello AI!'
+});
+
+console.log(response.content);</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">NPM Package</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon go">
+                        <i class="fab fa-golang"></i>
+                    </div>
+                    <h3>Go SDK</h3>
+                    <p>High-performance Go client with goroutine support</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>go get github.com/intelcore-ai/go-sdk</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/intelcore-ai/go-sdk"
+)
+
+func main() {
+    client := intelcore.NewClient("YOUR_API_KEY")
+    
+    response, err := client.Chat.Create(context.Background(), &intelcore.ChatRequest{
+        Model: "ai-friend-pro",
+        Message: "Hello AI!",
+    })
+    
+    if err != nil {
+        panic(err)
+    }
+    
+    fmt.Println(response.Content)
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon java">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3>Java SDK</h3>
+                    <p>Enterprise-ready Java library with Spring integration</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.intelcore&lt;/groupId&gt;
+  &lt;artifactId&gt;ai-sdk&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>import com.intelcore.ai.IntelCoreAI;
+import com.intelcore.ai.models.ChatResponse;
+
+IntelCoreAI client = new IntelCoreAI("YOUR_API_KEY");
+
+ChatResponse response = client.chat()
+    .model("ai-friend-pro")
+    .message("Hello AI!")
+    .execute();
+
+System.out.println(response.getContent());</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">Maven Central</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon php">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3>PHP SDK</h3>
+                    <p>Modern PHP library with PSR-7 and Composer support</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>composer require intelcore/ai-php</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>&lt;?php
+
+require_once 'vendor/autoload.php';
+
+use IntelCore\AI\IntelCoreAI;
+
+$client = new IntelCoreAI('YOUR_API_KEY');
+
+$response = $client->chat()->create([
+    'model' => 'ai-friend-pro',
+    'message' => 'Hello AI!'
+]);
+
+echo $response['content'];</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">Packagist</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdk-card">
+                <div class="sdk-header">
+                    <div class="sdk-icon ruby">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Ruby SDK</h3>
+                    <p>Ruby gem with Rails integration and ActiveRecord support</p>
+                </div>
+                <div class="sdk-content">
+                    <div class="installation">
+                        <h4>Installation</h4>
+                        <div class="code-block">
+                            <pre><code>gem install intelcore-ai</code></pre>
+                        </div>
+                    </div>
+                    <div class="quick-example">
+                        <h4>Quick Example</h4>
+                        <div class="code-block">
+                            <pre><code>require 'intelcore-ai'
+
+client = IntelCore::AI::Client.new(api_key: 'YOUR_API_KEY')
+
+response = client.chat.create(
+  model: 'ai-friend-pro',
+  message: 'Hello AI!'
+)
+
+puts response.content</code></pre>
+                        </div>
+                    </div>
+                    <div class="sdk-links">
+                        <a href="#" class="btn btn-primary">View Documentation</a>
+                        <a href="#" class="btn btn-outline">RubyGems</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2>SDK Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Built-in Authentication</h3>
+                    <p>Automatic API key management and secure credential handling</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Automatic Retries</h3>
+                    <p>Smart retry logic with exponential backoff for failed requests</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Type Safety</h3>
+                    <p>Full TypeScript definitions and strongly typed responses</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Request Metrics</h3>
+                    <p>Built-in analytics and performance monitoring capabilities</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <h3>Streaming Support</h3>
+                    <p>Real-time response streaming for immediate user feedback</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Configurable</h3>
+                    <p>Flexible configuration options for timeouts, retries, and endpoints</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="community-sdks">
+            <h2>Community SDKs</h2>
+            <p class="section-description">
+                Community-contributed libraries and integrations for additional languages and frameworks.
+            </p>
+            <div class="community-grid">
+                <div class="community-card">
+                    <h4>.NET / C#</h4>
+                    <p>NuGet package for .NET applications</p>
+                    <a href="#" class="community-link">View on GitHub →</a>
+                </div>
+                
+                <div class="community-card">
+                    <h4>Rust</h4>
+                    <p>High-performance Rust crate</p>
+                    <a href="#" class="community-link">View on Crates.io →</a>
+                </div>
+                
+                <div class="community-card">
+                    <h4>Swift</h4>
+                    <p>iOS and macOS development</p>
+                    <a href="#" class="community-link">View on GitHub →</a>
+                </div>
+                
+                <div class="community-card">
+                    <h4>Kotlin</h4>
+                    <p>Android and JVM applications</p>
+                    <a href="#" class="community-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.sdks-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb i {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-title i {
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.page-description {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.sdks-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.sdks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.sdk-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sdk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sdk-header {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.sdk-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.sdk-icon.python {
+    background: linear-gradient(135deg, #3776ab, #ffd43b);
+}
+
+.sdk-icon.javascript {
+    background: linear-gradient(135deg, #f7df1e, #f0db4f);
+    color: #323330;
+}
+
+.sdk-icon.go {
+    background: linear-gradient(135deg, #00add8, #00758f);
+}
+
+.sdk-icon.java {
+    background: linear-gradient(135deg, #ed8b00, #5382a1);
+}
+
+.sdk-icon.php {
+    background: linear-gradient(135deg, #777bb4, #4f5d95);
+}
+
+.sdk-icon.ruby {
+    background: linear-gradient(135deg, #cc342d, #a91e1e);
+}
+
+.sdk-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.sdk-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.sdk-content {
+    padding: 2rem;
+}
+
+.installation,
+.quick-example {
+    margin-bottom: 2rem;
+}
+
+.installation h4,
+.quick-example h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.code-block {
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-block pre {
+    padding: 1rem;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+    overflow-x: auto;
+}
+
+.sdk-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+.features-section {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4rem;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.community-sdks {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.community-sdks h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.community-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.community-card:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.community-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.community-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.community-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.community-link:hover {
+    color: #5a6fd8;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .sdks-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-section,
+    .community-sdks {
+        padding: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sdk-links {
+        flex-direction: column;
+    }
+}
+</style>
+{% endblock %}

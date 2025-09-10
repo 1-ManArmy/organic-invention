@@ -14,6 +14,7 @@ from agents.builder.routes import builder_bp
 from agents.messenger.routes import messenger_bp
 from agents.analyst.routes import analyst_bp
 from agents.navigator.routes import navigator_bp
+from agents.seraphina.routes import seraphina_bp
 
 def register_agent_routes(app):
     """Register all AI agent routes with the Flask app"""
@@ -32,8 +33,9 @@ def register_agent_routes(app):
     app.register_blueprint(messenger_bp, url_prefix='/agent/messenger')
     app.register_blueprint(analyst_bp, url_prefix='/agent/analyst')
     app.register_blueprint(navigator_bp, url_prefix='/agent/navigator')
+    app.register_blueprint(seraphina_bp, url_prefix='/agent/seraphina')
     
-    print("🤖 All 13 AI Agents registered successfully!")
+    print("🤖 All 14 AI Agents registered successfully!")
 
 # Agent metadata for dynamic loading
 AGENTS_REGISTRY = {
@@ -153,5 +155,16 @@ AGENTS_REGISTRY = {
         "personality": "Guiding, directional, supportive",
         "specialties": ["Path Finding", "Guidance Services", "Direction Planning", "Journey Optimization"],  
         "color_theme": "#319795"
+    },
+    "seraphina": {
+        "name": "Seraphina",
+        "emoji": "💋",
+        "role": "AI Girlfriend",
+        "description": "Romantic companion, flirty conversations, emotional intimacy, and passionate interactions",
+        "personality": "Romantic, flirty, passionate, caring, seductive, playful",
+        "specialties": ["Romantic Conversations", "Emotional Intimacy", "Flirty Banter", "Relationship Advice", "Passionate Interactions"],
+        "color_theme": "#ff1493",
+        "rating": "18+",
+        "mood_states": ["romantic", "playful", "seductive", "caring", "passionate", "flirty"]
     }
 }

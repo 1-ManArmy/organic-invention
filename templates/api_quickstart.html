@@ -1,0 +1,812 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Quick Start Hero Section -->
+<section class="quickstart-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Quick Start</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-rocket"></i>
+            Quick Start Guide
+        </h1>
+        <p class="page-description">
+            Get up and running with AI Digital Friend API in under 5 minutes. 
+            Follow our step-by-step guide to make your first API call.
+        </p>
+    </div>
+</section>
+
+<!-- Quick Start Steps -->
+<section class="quickstart-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="steps-sidebar">
+                <nav class="steps-nav">
+                    <h3>Steps</h3>
+                    <ul>
+                        <li><a href="#step-1" class="active">1. Get API Key</a></li>
+                        <li><a href="#step-2">2. Make First Call</a></li>
+                        <li><a href="#step-3">3. Handle Response</a></li>
+                        <li><a href="#step-4">4. Next Steps</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="help-card">
+                    <h4>Need Help?</h4>
+                    <p>Our support team is here to help you get started.</p>
+                    <a href="/support" class="help-btn">
+                        <i class="fas fa-headset"></i>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Step 1: Get API Key -->
+                <div id="step-1" class="step-section">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h2>Get Your API Key</h2>
+                    </div>
+                    <p>First, you'll need an API key to authenticate your requests. Sign up for a free account to get started.</p>
+                    
+                    <div class="action-card">
+                        <h4>Sign Up for Free</h4>
+                        <p>Create your account and get instant access to our API with 1,000 free requests per month.</p>
+                        <a href="/signup" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </a>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Already have an account?</h4>
+                        <p>Find your API key in your <a href="/dashboard">dashboard</a> under the "API Keys" section.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Make First Call -->
+                <div id="step-2" class="step-section">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h2>Make Your First API Call</h2>
+                    </div>
+                    <p>Let's send a simple chat message to our AI Digital Friend API using cURL:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" onclick="copyCode('step2-curl')">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                        <pre id="step2-curl"><code>curl -X POST https://api.intelcoreai.com/v1/chat \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Hello! How can you help me today?",
+    "model": "ai-friend-pro",
+    "temperature": 0.7,
+    "max_tokens": 150
+  }'</code></pre>
+                    </div>
+
+                    <div class="tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="showTab('curl')">cURL</button>
+                            <button class="tab-btn" onclick="showTab('python')">Python</button>
+                            <button class="tab-btn" onclick="showTab('javascript')">JavaScript</button>
+                            <button class="tab-btn" onclick="showTab('nodejs')">Node.js</button>
+                        </div>
+
+                        <div id="curl" class="tab-content active">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>cURL</span>
+                                    <button class="copy-btn" onclick="copyCode('curl-code')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre id="curl-code"><code>curl -X POST https://api.intelcoreai.com/v1/chat \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Hello! How can you help me today?",
+    "model": "ai-friend-pro",
+    "temperature": 0.7
+  }'</code></pre>
+                            </div>
+                        </div>
+
+                        <div id="python" class="tab-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Python</span>
+                                    <button class="copy-btn" onclick="copyCode('python-code')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre id="python-code"><code>import requests
+
+url = "https://api.intelcoreai.com/v1/chat"
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+data = {
+    "message": "Hello! How can you help me today?",
+    "model": "ai-friend-pro",
+    "temperature": 0.7
+}
+
+response = requests.post(url, headers=headers, json=data)
+result = response.json()
+print(result)</code></pre>
+                            </div>
+                        </div>
+
+                        <div id="javascript" class="tab-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>JavaScript (Browser)</span>
+                                    <button class="copy-btn" onclick="copyCode('js-code')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre id="js-code"><code>fetch('https://api.intelcoreai.com/v1/chat', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    message: 'Hello! How can you help me today?',
+    model: 'ai-friend-pro',
+    temperature: 0.7
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));</code></pre>
+                            </div>
+                        </div>
+
+                        <div id="nodejs" class="tab-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Node.js</span>
+                                    <button class="copy-btn" onclick="copyCode('nodejs-code')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre id="nodejs-code"><code>const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.intelcoreai.com/v1/chat',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  data: {
+    message: 'Hello! How can you help me today?',
+    model: 'ai-friend-pro',
+    temperature: 0.7
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.log(error));</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Handle Response -->
+                <div id="step-3" class="step-section">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h2>Handle the Response</h2>
+                    </div>
+                    <p>The API will return a JSON response containing the AI's message and additional metadata:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>JSON Response</span>
+                            <button class="copy-btn" onclick="copyCode('response-json')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre id="response-json"><code>{
+  "id": "chatcmpl-7qNH8",
+  "object": "chat.completion",
+  "created": 1690814400,
+  "model": "ai-friend-pro",
+  "choices": [{
+    "index": 0,
+    "message": {
+      "role": "assistant",
+      "content": "Hello! I'm here to help you with a wide range of tasks. I can assist with answering questions, providing information, helping with analysis, creative writing, coding, and much more. What would you like to work on today?"
+    },
+    "finish_reason": "stop"
+  }],
+  "usage": {
+    "prompt_tokens": 12,
+    "completion_tokens": 45,
+    "total_tokens": 57
+  }
+}</code></pre>
+                    </div>
+
+                    <div class="response-explanation">
+                        <h4>Response Fields Explained</h4>
+                        <ul>
+                            <li><code>id</code>: Unique identifier for this chat completion</li>
+                            <li><code>choices</code>: Array containing the AI's response(s)</li>
+                            <li><code>message.content</code>: The actual text response from the AI</li>
+                            <li><code>usage</code>: Token usage statistics for billing and monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4: Next Steps -->
+                <div id="step-4" class="step-section">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <h2>Next Steps</h2>
+                    </div>
+                    <p>Great job! You've successfully made your first API call. Here's what to explore next:</p>
+
+                    <div class="next-steps-grid">
+                        <a href="/api/authentication" class="next-step-card">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Authentication</h4>
+                            <p>Learn about advanced authentication methods and security best practices.</p>
+                        </a>
+
+                        <a href="/api/endpoints" class="next-step-card">
+                            <div class="card-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4>All Endpoints</h4>
+                            <p>Explore our complete API reference with all available endpoints and parameters.</p>
+                        </a>
+
+                        <a href="/api/sdks" class="next-step-card">
+                            <div class="card-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h4>SDKs & Libraries</h4>
+                            <p>Use our official SDKs to integrate more easily with your preferred programming language.</p>
+                        </div>
+
+                        <a href="/api/examples" class="next-step-card">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Code Examples</h4>
+                            <p>Browse real-world examples and implementation patterns for common use cases.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.quickstart-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb i {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-title i {
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.page-description {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.quickstart-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+}
+
+.steps-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.steps-nav h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.steps-nav ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.steps-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.steps-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.steps-nav a:hover,
+.steps-nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+.help-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.help-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.help-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.help-btn {
+    background: #667eea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.help-btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+}
+
+.main-content {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.step-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 2rem;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.step-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.action-card {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.action-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.action-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.info-box {
+    background: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.info-box h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0050b3;
+}
+
+.info-box p {
+    color: #003a8c;
+    margin: 0;
+}
+
+.info-box a {
+    color: #1890ff;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+.code-block {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.code-header {
+    background: #2d2d30;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.code-header span {
+    color: #cccccc;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: #cccccc;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.copy-btn:hover {
+    background: #555;
+    border-color: #777;
+}
+
+.code-block pre {
+    padding: 1.5rem;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e6e6e6;
+    overflow-x: auto;
+}
+
+.tabs {
+    margin: 2rem 0;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: #f1f5f9;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e2e8f0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.response-explanation {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.response-explanation h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.response-explanation ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.response-explanation li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.response-explanation li:last-child {
+    border-bottom: none;
+}
+
+.response-explanation code {
+    background: #667eea;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.next-step-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.next-step-card:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.next-step-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.next-step-card .card-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.next-step-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.next-step-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .steps-sidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .main-content {
+        padding: 2rem;
+        order: 1;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+function showTab(tabName) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Remove active class from all buttons
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Show selected tab content
+    document.getElementById(tabName).classList.add('active');
+    
+    // Add active class to clicked button
+    event.target.classList.add('active');
+}
+
+function copyCode(elementId) {
+    const code = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        // Find the copy button that was clicked
+        const btn = event.target.closest('.copy-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+        }, 2000);
+    });
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Update active nav item
+            document.querySelectorAll('.steps-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
+</script>
+{% endblock %}

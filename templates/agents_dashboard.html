@@ -1,0 +1,675 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="agent-dashboard-hero">
+    <div class="container">
+        <h1 class="dashboard-title">
+            <i class="fas fa-robot"></i>
+            AI Agents System Dashboard
+        </h1>
+        <p class="dashboard-description">
+            Real-time monitoring and management of your AI agent ecosystem
+        </p>
+    </div>
+</section>
+
+<section class="system-overview">
+    <div class="container">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">🤖</div>
+                <div class="metric-info">
+                    <h3>Active Agents</h3>
+                    <div class="metric-value" id="active-agents">14</div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-icon">💬</div>
+                <div class="metric-info">
+                    <h3>Total Interactions</h3>
+                    <div class="metric-value" id="total-interactions">0</div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-icon">⚡</div>
+                <div class="metric-info">
+                    <h3>Avg Response Time</h3>
+                    <div class="metric-value" id="avg-response-time">1.2s</div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-icon">🧠</div>
+                <div class="metric-info">
+                    <h3>Ollama Models</h3>
+                    <div class="metric-value" id="ollama-models">11</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="agents-grid-section">
+    <div class="container">
+        <h2 class="section-title">AI Agent Portfolio</h2>
+        
+        <div class="agents-grid">
+            <!-- Seraphina - AI Girlfriend -->
+            <div class="agent-card premium" data-agent="seraphina">
+                <div class="agent-header">
+                    <div class="agent-avatar seraphina">💋</div>
+                    <div class="agent-status online"></div>
+                    <div class="agent-rating">18+</div>
+                </div>
+                <div class="agent-info">
+                    <h3 class="agent-name">Seraphina</h3>
+                    <p class="agent-role">AI Girlfriend</p>
+                    <p class="agent-description">Romantic companion with emotional intelligence and intimate conversations</p>
+                    
+                    <div class="agent-capabilities">
+                        <span class="capability-tag">💖 Emotional Intelligence</span>
+                        <span class="capability-tag">🧠 Memory System</span>
+                        <span class="capability-tag">💕 Relationship Tracking</span>
+                        <span class="capability-tag">🔥 Multi-Modal</span>
+                    </div>
+                    
+                    <div class="agent-models">
+                        <strong>Models:</strong>
+                        <div class="model-tags">
+                            <span class="model-tag">yi:6b</span>
+                            <span class="model-tag">mistral:7b</span>
+                            <span class="model-tag">qwen2.5:7b</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-actions">
+                    <a href="/agent/seraphina" class="btn-primary">Chat Now 💋</a>
+                    <button class="btn-secondary" onclick="showAgentAnalytics('seraphina')">Analytics</button>
+                </div>
+            </div>
+            
+            <!-- The Strategist -->
+            <div class="agent-card" data-agent="strategist">
+                <div class="agent-header">
+                    <div class="agent-avatar strategist">🎯</div>
+                    <div class="agent-status online"></div>
+                </div>
+                <div class="agent-info">
+                    <h3 class="agent-name">The Strategist</h3>
+                    <p class="agent-role">Master Planner</p>
+                    <p class="agent-description">Strategic thinking, long-term planning, and tactical decision making</p>
+                    
+                    <div class="agent-capabilities">
+                        <span class="capability-tag">🎯 Strategic Analysis</span>
+                        <span class="capability-tag">⚖️ Risk Modeling</span>
+                        <span class="capability-tag">📊 Decision Trees</span>
+                    </div>
+                    
+                    <div class="agent-models">
+                        <strong>Models:</strong>
+                        <div class="model-tags">
+                            <span class="model-tag">phi3:14b</span>
+                            <span class="model-tag">qwen2.5:7b</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-actions">
+                    <a href="/agent/strategist" class="btn-primary">Plan Strategy</a>
+                    <button class="btn-secondary" onclick="showAgentAnalytics('strategist')">Analytics</button>
+                </div>
+            </div>
+            
+            <!-- The Healer -->
+            <div class="agent-card" data-agent="healer">
+                <div class="agent-header">
+                    <div class="agent-avatar healer">💚</div>
+                    <div class="agent-status online"></div>
+                </div>
+                <div class="agent-info">
+                    <h3 class="agent-name">The Healer</h3>
+                    <p class="agent-role">Digital Wellness Guide</p>
+                    <p class="agent-description">Mental health support, wellness coaching, and emotional guidance</p>
+                    
+                    <div class="agent-capabilities">
+                        <span class="capability-tag">💚 Emotion Detection</span>
+                        <span class="capability-tag">🧘 Therapy Techniques</span>
+                        <span class="capability-tag">🌱 Wellness Plans</span>
+                    </div>
+                    
+                    <div class="agent-models">
+                        <strong>Models:</strong>
+                        <div class="model-tags">
+                            <span class="model-tag">llama3.2:3b</span>
+                            <span class="model-tag">yi:6b</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-actions">
+                    <a href="/agent/healer" class="btn-primary">Get Support</a>
+                    <button class="btn-secondary" onclick="showAgentAnalytics('healer')">Analytics</button>
+                </div>
+            </div>
+            
+            <!-- The Scout -->
+            <div class="agent-card" data-agent="scout">
+                <div class="agent-header">
+                    <div class="agent-avatar scout">🔍</div>
+                    <div class="agent-status online"></div>
+                </div>
+                <div class="agent-info">
+                    <h3 class="agent-name">The Scout</h3>
+                    <p class="agent-role">Information Hunter</p>
+                    <p class="agent-description">Research, data collection, and intelligence gathering expert</p>
+                    
+                    <div class="agent-capabilities">
+                        <span class="capability-tag">🔍 Web Search</span>
+                        <span class="capability-tag">📊 Data Analysis</span>
+                        <span class="capability-tag">🎯 Pattern Recognition</span>
+                    </div>
+                    
+                    <div class="agent-models">
+                        <strong>Models:</strong>
+                        <div class="model-tags">
+                            <span class="model-tag">deepseek-coder:6.7b</span>
+                            <span class="model-tag">qwen2.5:7b</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-actions">
+                    <a href="/agent/scout" class="btn-primary">Start Research</a>
+                    <button class="btn-secondary" onclick="showAgentAnalytics('scout')">Analytics</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="load-more-agents">
+            <button class="btn-outline" onclick="loadMoreAgents()">
+                Load More Agents (10 remaining)
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="system-health">
+    <div class="container">
+        <h2 class="section-title">System Health & Performance</h2>
+        
+        <div class="health-dashboard">
+            <div class="health-card">
+                <h3>Ollama Model Status</h3>
+                <div class="model-status-grid" id="model-status">
+                    <div class="model-item online">
+                        <span class="model-name">yi:6b</span>
+                        <span class="model-status-dot"></span>
+                        <span class="model-usage">Active (3 agents)</span>
+                    </div>
+                    <div class="model-item online">
+                        <span class="model-name">mistral:7b</span>
+                        <span class="model-status-dot"></span>
+                        <span class="model-usage">Active (2 agents)</span>
+                    </div>
+                    <div class="model-item online">
+                        <span class="model-name">phi3:14b</span>
+                        <span class="model-status-dot"></span>
+                        <span class="model-usage">Active (1 agent)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="health-card">
+                <h3>Performance Metrics</h3>
+                <div class="metrics-chart">
+                    <canvas id="performanceChart" width="300" height="200"></canvas>
+                </div>
+            </div>
+            
+            <div class="health-card">
+                <h3>Agent Activity</h3>
+                <div class="activity-feed" id="activity-feed">
+                    <div class="activity-item">
+                        <span class="activity-time">2 min ago</span>
+                        <span class="activity-text">Seraphina engaged in romantic conversation</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">5 min ago</span>
+                        <span class="activity-text">Strategist completed planning analysis</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">8 min ago</span>
+                        <span class="activity-text">Healer provided wellness support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.agent-dashboard-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0 60px;
+    color: white;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.dashboard-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.system-overview {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.metric-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.metric-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.agents-grid-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.agent-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.agent-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.agent-card.premium {
+    border-color: #ff1493;
+    background: linear-gradient(135deg, #fff 0%, #ffe1f1 100%);
+}
+
+.agent-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.agent-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.agent-avatar.seraphina {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+}
+
+.agent-avatar.strategist {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.agent-avatar.healer {
+    background: linear-gradient(45deg, #48bb78, #38a169);
+}
+
+.agent-avatar.scout {
+    background: linear-gradient(45deg, #ed8936, #dd6b20);
+}
+
+.agent-status {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #10b981;
+    animation: pulse 2s infinite;
+}
+
+.agent-rating {
+    background: #ff1493;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.agent-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.agent-role {
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.agent-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.agent-capabilities {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.capability-tag {
+    background: #e2e8f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+}
+
+.agent-models {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.model-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.model-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+.agent-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.load-more-agents {
+    text-align: center;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+.system-health {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.health-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.health-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.health-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.model-status-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.model-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.model-name {
+    font-family: monospace;
+    font-weight: 600;
+    min-width: 120px;
+}
+
+.model-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+}
+
+.model-usage {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.activity-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.activity-text {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .dashboard-title {
+        font-size: 2rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .agents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .agent-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dashboard
+    loadSystemMetrics();
+    loadAgentStatus();
+    
+    // Auto-refresh every 30 seconds
+    setInterval(loadSystemMetrics, 30000);
+});
+
+function loadSystemMetrics() {
+    // Simulate loading metrics
+    document.getElementById('active-agents').textContent = '14';
+    document.getElementById('total-interactions').textContent = Math.floor(Math.random() * 10000);
+    document.getElementById('avg-response-time').textContent = (Math.random() * 2 + 0.5).toFixed(1) + 's';
+    document.getElementById('ollama-models').textContent = '11';
+}
+
+function loadAgentStatus() {
+    // Update agent status indicators
+    const statusDots = document.querySelectorAll('.agent-status');
+    statusDots.forEach(dot => {
+        dot.classList.add('online');
+    });
+}
+
+function showAgentAnalytics(agentName) {
+    // Show detailed analytics modal
+    alert(`Analytics for ${agentName} - Feature coming soon!`);
+}
+
+function loadMoreAgents() {
+    // Load additional agents
+    alert('Loading more agents - Feature coming soon!');
+}
+
+// Simulate real-time updates
+function simulateActivity() {
+    const activities = [
+        'Seraphina engaged in romantic conversation',
+        'Strategist completed planning analysis', 
+        'Healer provided wellness support',
+        'Scout completed research task',
+        'Archivist organized knowledge base',
+        'Diplomat resolved user conflict'
+    ];
+    
+    const feed = document.getElementById('activity-feed');
+    const newActivity = document.createElement('div');
+    newActivity.className = 'activity-item';
+    newActivity.innerHTML = `
+        <span class="activity-time">Just now</span>
+        <span class="activity-text">${activities[Math.floor(Math.random() * activities.length)]}</span>
+    `;
+    
+    feed.insertBefore(newActivity, feed.firstChild);
+    
+    // Remove old activities (keep last 5)
+    while (feed.children.length > 5) {
+        feed.removeChild(feed.lastChild);
+    }
+}
+
+// Simulate activity every 10 seconds
+setInterval(simulateActivity, 10000);
+</script>
+{% endblock %}

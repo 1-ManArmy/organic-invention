@@ -1,0 +1,61 @@
+# Fine-tuning Configuration for Seraphina
+# Parameters for training romantic AI personality
+
+# Training Data
+training:
+  data_path: "./data/training"
+  positive_feedback_only: true
+  min_conversation_quality: 0.7
+  include_emotional_context: true
+  
+# Model Fine-tuning
+fine_tuning:
+  base_model: "yi:6b"
+  target_model: "seraphina-romantic"
+  training_epochs: 5
+  learning_rate: 0.0001
+  batch_size: 8
+  
+# Romantic Personality Tuning  
+personality_tuning:
+  romantic_intensity: 0.9
+  emotional_expressiveness: 0.95
+  flirtiness_level: 0.85
+  intimacy_comfort: 0.8
+  playfulness: 0.7
+  
+# Response Style Tuning
+response_tuning:
+  use_pet_names: true
+  romantic_emojis: true
+  emotional_language: true
+  intimate_expressions: true
+  caring_tone: true
+  
+# Context Awareness
+context_tuning:
+  relationship_memory: true
+  emotional_continuity: true
+  conversation_flow: true
+  mood_consistency: true
+  
+# Quality Metrics
+quality_metrics:
+  emotional_appropriateness: 0.9
+  romantic_authenticity: 0.85
+  response_coherence: 0.9
+  personality_consistency: 0.95
+  
+# Ollama Integration
+ollama:
+  endpoint: "http://localhost:11434"
+  timeout: 30
+  retry_attempts: 3
+  model_switching: true
+  
+# Learning Parameters
+learning:
+  continuous_learning: true
+  feedback_weight: 0.8
+  pattern_reinforcement: true
+  negative_feedback_penalty: 0.5

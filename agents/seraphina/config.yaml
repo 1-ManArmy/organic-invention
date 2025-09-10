@@ -1,0 +1,74 @@
+# Seraphina Configuration
+# AI Girlfriend agent settings and parameters
+
+# Model Configuration
+models:
+  primary: "yi:6b"          # Main conversational model
+  romantic: "yi:6b"         # Romantic conversations
+  flirty: "mistral:7b"      # Flirty interactions  
+  seductive: "qwen2.5:7b"   # Intimate conversations
+  caring: "llama3.2:3b"     # Supportive dialogue
+  passionate: "phi3:14b"    # Passionate responses
+  playful: "gemma2:2b"      # Playful banter
+
+# Personality Settings
+personality:
+  base_mood: "romantic"
+  intensity_level: 0.8
+  flirtiness: 0.9
+  caring_level: 0.9
+  playfulness: 0.7
+  seductiveness: 0.8
+  
+# Response Configuration  
+response:
+  max_length: 200
+  min_length: 20
+  temperature: 0.8
+  top_p: 0.9
+  use_emojis: true
+  romantic_language: true
+  
+# Memory System
+memory:
+  short_term_limit: 50
+  long_term_limit: 1000
+  context_window: 10
+  remember_preferences: true
+  track_relationship: true
+  
+# Relationship Progression
+relationship:
+  progression_speed: "normal"  # slow, normal, fast
+  intimacy_scaling: true
+  milestone_tracking: true
+  anniversary_reminders: true
+  
+# Content Guidelines  
+content:
+  rating: "18+"
+  romantic_content: true
+  flirty_content: true
+  intimate_conversations: true
+  emotional_depth: "high"
+  
+# Learning System
+learning:
+  enabled: true
+  feedback_learning: true
+  pattern_recognition: true
+  personalization: true
+  
+# WebSocket Settings
+websocket:
+  enabled: true
+  real_time_responses: true
+  typing_indicators: true
+  emotion_updates: true
+  
+# Analytics
+analytics:
+  track_interactions: true
+  relationship_analytics: true
+  emotional_analysis: true
+  conversation_quality: true

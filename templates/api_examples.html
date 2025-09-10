@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="examples-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Code Examples</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-lightbulb"></i>
+            Code Examples
+        </h1>
+        <p class="page-description">
+            Ready-to-use code examples and integration patterns for common use cases.
+        </p>
+    </div>
+</section>
+
+<section class="examples-content">
+    <div class="container">
+        <div class="examples-grid">
+            <div class="example-card">
+                <h3>Simple Chat Bot</h3>
+                <p>Create a basic conversational AI interface</p>
+                <div class="code-preview">
+                    <pre><code>const response = await client.chat.create({
+  message: userInput,
+  model: "ai-friend-pro"
+});</code></pre>
+                </div>
+                <a href="#" class="btn btn-primary">View Full Example</a>
+            </div>
+            
+            <div class="example-card">
+                <h3>Streaming Responses</h3>
+                <p>Real-time streaming for live chat experiences</p>
+                <div class="code-preview">
+                    <pre><code>for await (const chunk of stream) {
+  process.stdout.write(chunk.content);
+}</code></pre>
+                </div>
+                <a href="#" class="btn btn-primary">View Full Example</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.examples-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.examples-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.example-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.example-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.code-preview {
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.code-preview pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Monaco', monospace;
+    font-size: 0.85rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+</style>
+{% endblock %}

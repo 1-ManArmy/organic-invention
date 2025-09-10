@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="rate-limits-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Rate Limits</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-tachometer-alt"></i>
+            Rate Limits
+        </h1>
+        <p class="page-description">
+            Understand API usage limits, rate limiting policies, and optimization strategies.
+        </p>
+    </div>
+</section>
+
+<section class="rate-limits-content">
+    <div class="container">
+        <div class="limits-table">
+            <h2>Current Rate Limits</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Requests/Minute</th>
+                        <th>Tokens/Month</th>
+                        <th>Concurrent Requests</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Free</td>
+                        <td>20</td>
+                        <td>10,000</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Pro</td>
+                        <td>60</td>
+                        <td>100,000</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>600</td>
+                        <td>Unlimited</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="handling-limits">
+            <h2>Handling Rate Limits</h2>
+            <div class="code-block">
+                <pre><code>try {
+    const response = await client.chat.create(request);
+} catch (error) {
+    if (error.status === 429) {
+        // Rate limit exceeded
+        const retryAfter = error.headers['retry-after'];
+        await sleep(retryAfter * 1000);
+        // Retry request
+    }
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.rate-limits-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.rate-limits-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.limits-table {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.limits-table h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.handling-limits {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.handling-limits h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.code-block {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.code-block pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Monaco', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+</style>
+{% endblock %}

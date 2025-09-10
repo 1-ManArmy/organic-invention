@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .guide-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .guide-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guide-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-card p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guide-button {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .guide-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-rocket"></i> Getting Started Guides</h1>
+            <p>Learn how to use our AI platform effectively with these comprehensive guides</p>
+        </div>
+        
+        <div class="guides-grid">
+            <!-- Quick Start Guide -->
+            <div class="guide-card" onclick="window.location.href='/docs/quick-start'">
+                <div class="guide-icon">
+                    <i class="fas fa-play" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Quick Start Guide</h3>
+                <p>Get up and running in minutes with our step-by-step quick start guide. Perfect for beginners who want to start using AI immediately.</p>
+                <a href="/docs/quick-start" class="guide-button">
+                    <i class="fas fa-arrow-right"></i> Start Here
+                </a>
+            </div>
+            
+            <!-- Tutorials -->
+            <div class="guide-card" onclick="window.location.href='/docs/tutorials'">
+                <div class="guide-icon">
+                    <i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Interactive Tutorials</h3>
+                <p>Hands-on tutorials that guide you through building your first AI applications with real examples and code samples.</p>
+                <a href="/docs/tutorials" class="guide-button">
+                    <i class="fas fa-code"></i> View Tutorials
+                </a>
+            </div>
+            
+            <!-- Chatbot Tutorial -->
+            <div class="guide-card" onclick="window.location.href='/docs/chatbot-tutorial'">
+                <div class="guide-icon">
+                    <i class="fas fa-robot" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Build a Chatbot</h3>
+                <p>Learn how to create intelligent chatbots using our AI platform with this comprehensive tutorial series.</p>
+                <a href="/docs/chatbot-tutorial" class="guide-button">
+                    <i class="fas fa-comments"></i> Build Chatbot
+                </a>
+            </div>
+            
+            <!-- Authentication Guide -->
+            <div class="guide-card" onclick="window.location.href='/docs/authentication'">
+                <div class="guide-icon">
+                    <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Authentication Setup</h3>
+                <p>Secure your AI applications with proper authentication. Learn about API keys, tokens, and security best practices.</p>
+                <a href="/docs/authentication" class="guide-button">
+                    <i class="fas fa-lock"></i> Setup Auth
+                </a>
+            </div>
+            
+            <!-- Integrations -->
+            <div class="guide-card" onclick="window.location.href='/docs/integrations'">
+                <div class="guide-icon">
+                    <i class="fas fa-plug" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Platform Integrations</h3>
+                <p>Connect our AI with your existing tools and platforms. Slack, Discord, websites, and more integrations available.</p>
+                <a href="/docs/integrations" class="guide-button">
+                    <i class="fas fa-link"></i> View Integrations
+                </a>
+            </div>
+            
+            <!-- Advanced Usage -->
+            <div class="guide-card" onclick="window.location.href='/docs/advanced'">
+                <div class="guide-icon">
+                    <i class="fas fa-cogs" style="font-size: 1.5rem; color: white;"></i>
+                </div>
+                <h3>Advanced Features</h3>
+                <p>Unlock the full potential of our AI platform with advanced configuration options and professional features.</p>
+                <a href="/docs/advanced" class="guide-button">
+                    <i class="fas fa-rocket"></i> Advanced Guide
+                </a>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/support" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Support
+            </a>
+        </div>
+    </div>
+</body>
+</html>

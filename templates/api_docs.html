@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .api-sections {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .api-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        .endpoints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .endpoint-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .endpoint-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .endpoint-method {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .method-get { background: #4ECDC4; }
+        .method-post { background: #FF6B6B; }
+        .method-put { background: #FFE66D; color: #333; }
+        .method-delete { background: #FF8A65; }
+        
+        .endpoint-path {
+            font-family: monospace;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .endpoint-description {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+        
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .quick-link {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .quick-link:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-code"></i> API Documentation</h1>
+            <p>Complete reference for integrating with our AI platform API</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <a href="/docs/authentication" class="quick-link">
+                <i class="fas fa-key" style="font-size: 2rem; color: #4ECDC4; margin-bottom: 1rem;"></i>
+                <h3>Authentication</h3>
+                <p>API keys and security</p>
+            </a>
+            
+            <a href="/docs/python-sdk" class="quick-link">
+                <i class="fab fa-python" style="font-size: 2rem; color: #FFE66D; margin-bottom: 1rem;"></i>
+                <h3>Python SDK</h3>
+                <p>Official Python library</p>
+            </a>
+            
+            <a href="/docs/rate-limits" class="quick-link">
+                <i class="fas fa-tachometer-alt" style="font-size: 2rem; color: #FF6B6B; margin-bottom: 1rem;"></i>
+                <h3>Rate Limits</h3>
+                <p>Usage limitations</p>
+            </a>
+            
+            <a href="/docs/error-codes" class="quick-link">
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #FF8A65; margin-bottom: 1rem;"></i>
+                <h3>Error Codes</h3>
+                <p>Error handling guide</p>
+            </a>
+        </div>
+        
+        <!-- API Sections -->
+        <div class="api-sections">
+            <!-- Chat API -->
+            <div class="api-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-comments" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h2>Chat API</h2>
+                </div>
+                
+                <div class="endpoints-grid">
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/chat/completions</div>
+                        <div class="endpoint-description">Generate AI responses for conversational interactions</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/chat/history</div>
+                        <div class="endpoint-description">Retrieve conversation history and past interactions</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/chat/stream</div>
+                        <div class="endpoint-description">Stream real-time AI responses for live conversations</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Models API -->
+            <div class="api-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-brain" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h2>Models API</h2>
+                </div>
+                
+                <div class="endpoints-grid">
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/models</div>
+                        <div class="endpoint-description">List all available AI models and their capabilities</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/models/{model_id}</div>
+                        <div class="endpoint-description">Get detailed information about a specific model</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/models/fine-tune</div>
+                        <div class="endpoint-description">Create and manage custom fine-tuned models</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Integrations API -->
+            <div class="api-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-plug" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h2>Integrations API</h2>
+                </div>
+                
+                <div class="endpoints-grid">
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/integrations/slack</div>
+                        <div class="endpoint-description">Connect and configure Slack bot integrations</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/integrations/discord</div>
+                        <div class="endpoint-description">Set up Discord bot functionality</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-post">POST</div>
+                        <div class="endpoint-path">/api/v1/webhooks</div>
+                        <div class="endpoint-description">Create and manage webhook endpoints</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Analytics API -->
+            <div class="api-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-line" style="font-size: 1.2rem; color: white;"></i>
+                    </div>
+                    <h2>Analytics API</h2>
+                </div>
+                
+                <div class="endpoints-grid">
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/analytics/usage</div>
+                        <div class="endpoint-description">Get detailed usage statistics and metrics</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/analytics/performance</div>
+                        <div class="endpoint-description">Monitor API performance and response times</div>
+                    </div>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-method method-get">GET</div>
+                        <div class="endpoint-path">/api/v1/analytics/costs</div>
+                        <div class="endpoint-description">Track API usage costs and billing information</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/support" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Support
+            </a>
+        </div>
+    </div>
+</body>
+</html>

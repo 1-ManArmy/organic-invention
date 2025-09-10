@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="errors-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Error Handling</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-exclamation-triangle"></i>
+            Error Handling
+        </h1>
+        <p class="page-description">
+            Complete error code reference and troubleshooting guidelines.
+        </p>
+    </div>
+</section>
+
+<section class="errors-content">
+    <div class="container">
+        <div class="error-codes">
+            <h2>HTTP Status Codes</h2>
+            <div class="codes-grid">
+                <div class="code-card success">
+                    <div class="code-number">200</div>
+                    <div class="code-info">
+                        <h3>OK</h3>
+                        <p>Request was successful</p>
+                    </div>
+                </div>
+                
+                <div class="code-card error">
+                    <div class="code-number">400</div>
+                    <div class="code-info">
+                        <h3>Bad Request</h3>
+                        <p>Invalid request parameters</p>
+                    </div>
+                </div>
+                
+                <div class="code-card error">
+                    <div class="code-number">401</div>
+                    <div class="code-info">
+                        <h3>Unauthorized</h3>
+                        <p>Invalid or missing API key</p>
+                    </div>
+                </div>
+                
+                <div class="code-card error">
+                    <div class="code-number">403</div>
+                    <div class="code-info">
+                        <h3>Forbidden</h3>
+                        <p>Access denied for this resource</p>
+                    </div>
+                </div>
+                
+                <div class="code-card error">
+                    <div class="code-number">429</div>
+                    <div class="code-info">
+                        <h3>Rate Limited</h3>
+                        <p>Too many requests</p>
+                    </div>
+                </div>
+                
+                <div class="code-card error">
+                    <div class="code-number">500</div>
+                    <div class="code-info">
+                        <h3>Server Error</h3>
+                        <p>Internal server error occurred</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-handling">
+            <h2>Error Response Format</h2>
+            <div class="error-example">
+                <div class="code-block">
+                    <pre><code>{
+  "error": {
+    "type": "invalid_request_error",
+    "code": "missing_parameter",
+    "message": "Missing required parameter: 'message'",
+    "param": "message",
+    "request_id": "req_12345"
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="troubleshooting">
+            <h2>Common Issues & Solutions</h2>
+            <div class="issues-list">
+                <div class="issue-card">
+                    <h3>Authentication Failed</h3>
+                    <p><strong>Problem:</strong> Getting 401 Unauthorized errors</p>
+                    <p><strong>Solution:</strong> Verify your API key is correct and included in the Authorization header</p>
+                </div>
+                
+                <div class="issue-card">
+                    <h3>Rate Limit Exceeded</h3>
+                    <p><strong>Problem:</strong> Getting 429 Too Many Requests</p>
+                    <p><strong>Solution:</strong> Implement exponential backoff and respect the Retry-After header</p>
+                </div>
+                
+                <div class="issue-card">
+                    <h3>Invalid Parameters</h3>
+                    <p><strong>Problem:</strong> Getting 400 Bad Request errors</p>
+                    <p><strong>Solution:</strong> Check parameter names, types, and required fields in the documentation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.errors-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.errors-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.error-codes {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.error-codes h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.codes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.code-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.code-card.success {
+    border-color: #10b981;
+}
+
+.code-card.error {
+    border-color: #ef4444;
+}
+
+.code-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.code-card.success .code-number {
+    background: #10b981;
+}
+
+.code-card.error .code-number {
+    background: #ef4444;
+}
+
+.code-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.code-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.error-handling {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.error-handling h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.code-block {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.code-block pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Monaco', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.troubleshooting {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.troubleshooting h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.issues-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.issue-card {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+}
+
+.issue-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.issue-card p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.issue-card strong {
+    color: var(--text-primary);
+}
+</style>
+{% endblock %}

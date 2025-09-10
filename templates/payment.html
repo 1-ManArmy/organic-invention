@@ -1,0 +1,958 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="payment-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/agents">Agents Marketplace</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Payment</span>
+        </div>
+        <h1 class="hero-title">
+            <i class="fas fa-crown"></i>
+            Complete Your Subscription
+        </h1>
+        <p class="hero-description">
+            Unlock premium features and enjoy unlimited conversations with your AI companion
+        </p>
+    </div>
+</section>
+
+<section class="payment-container">
+    <div class="container">
+        <div class="payment-layout">
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <div class="summary-header">
+                    <h2>Order Summary</h2>
+                </div>
+                
+                <div class="selected-agent" id="selected-agent">
+                    <!-- Agent info will be populated by JavaScript -->
+                </div>
+                
+                <div class="pricing-breakdown">
+                    <div class="pricing-item">
+                        <span>Monthly Subscription</span>
+                        <span id="monthly-price">$19.99</span>
+                    </div>
+                    <div class="pricing-item">
+                        <span>Setup Fee</span>
+                        <span class="free">FREE</span>
+                    </div>
+                    <div class="pricing-item discount">
+                        <span>First Month Discount</span>
+                        <span>-50%</span>
+                    </div>
+                    <hr>
+                    <div class="pricing-item total">
+                        <span>Total Today</span>
+                        <span id="total-price">$9.99</span>
+                    </div>
+                    <div class="next-billing">
+                        Next billing: <span id="next-billing-date"></span>
+                    </div>
+                </div>
+                
+                <div class="premium-features">
+                    <h3>What's Included</h3>
+                    <ul class="features-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Unlimited conversations
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Voice interaction
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Enhanced memory
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Personality customization
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Priority support
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            Early access to features
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Payment Form -->
+            <div class="payment-form">
+                <div class="payment-methods">
+                    <h2>Payment Method</h2>
+                    <div class="method-tabs">
+                        <button class="method-tab active" data-method="card">
+                            <i class="fas fa-credit-card"></i>
+                            Credit Card
+                        </button>
+                        <button class="method-tab" data-method="paypal">
+                            <i class="fab fa-paypal"></i>
+                            PayPal
+                        </button>
+                        <button class="method-tab" data-method="crypto">
+                            <i class="fab fa-bitcoin"></i>
+                            Crypto
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Credit Card Form -->
+                <form id="payment-form" class="card-form">
+                    <div class="form-section">
+                        <h3>Billing Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="email" required placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="fullname" required placeholder="John Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Card Number</label>
+                                <input type="text" id="cardnumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                                <div class="card-icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" id="expiry" required placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVC</label>
+                                <input type="text" id="cvc" required placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="terms-checkbox">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <div class="auto-renew-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Your subscription will automatically renew monthly. You can cancel anytime from your account settings.</span>
+                        </div>
+                        
+                        <button type="submit" class="btn-pay" id="pay-button">
+                            <i class="fas fa-lock"></i>
+                            Pay Securely - $<span id="pay-amount">9.99</span>
+                        </button>
+                        
+                        <div class="security-info">
+                            <div class="security-badges">
+                                <div class="badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>SSL Encrypted</span>
+                                </div>
+                                <div class="badge">
+                                    <i class="fas fa-lock"></i>
+                                    <span>PCI Compliant</span>
+                                </div>
+                                <div class="badge">
+                                    <i class="fas fa-undo"></i>
+                                    <span>30-Day Refund</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- PayPal Form -->
+                <div id="paypal-form" class="payment-method-form" style="display: none;">
+                    <div class="paypal-container">
+                        <div class="paypal-info">
+                            <h3>Pay with PayPal</h3>
+                            <p>You'll be redirected to PayPal to complete your payment securely.</p>
+                        </div>
+                        
+                        <button class="btn-paypal" onclick="processPayPal()">
+                            <i class="fab fa-paypal"></i>
+                            Continue with PayPal
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Crypto Form -->
+                <div id="crypto-form" class="payment-method-form" style="display: none;">
+                    <div class="crypto-container">
+                        <div class="crypto-info">
+                            <h3>Pay with Cryptocurrency</h3>
+                            <p>Select your preferred cryptocurrency to proceed with payment.</p>
+                        </div>
+                        
+                        <div class="crypto-options">
+                            <button class="crypto-option" onclick="processCrypto('bitcoin')">
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Bitcoin (BTC)</span>
+                            </button>
+                            <button class="crypto-option" onclick="processCrypto('ethereum')">
+                                <i class="fab fa-ethereum"></i>
+                                <span>Ethereum (ETH)</span>
+                            </button>
+                            <button class="crypto-option" onclick="processCrypto('usdc')">
+                                <i class="fas fa-coins"></i>
+                                <span>USD Coin (USDC)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Money Back Guarantee -->
+        <div class="guarantee-banner">
+            <div class="guarantee-content">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-text">
+                    <h3>30-Day Money Back Guarantee</h3>
+                    <p>Not satisfied? Get a full refund within 30 days, no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.payment-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 100px 0 60px;
+    color: white;
+    text-align: center;
+}
+
+.breadcrumb {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb i {
+    margin: 0 1rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.payment-container {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.order-summary {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: fit-content;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 2rem;
+}
+
+.summary-header {
+    margin-bottom: 2rem;
+}
+
+.summary-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.selected-agent {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.agent-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.agent-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #ff1493, #dc143c);
+}
+
+.agent-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.agent-details p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.pricing-breakdown {
+    margin-bottom: 2rem;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pricing-item:last-of-type {
+    border-bottom: none;
+}
+
+.pricing-item.total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.pricing-item.discount {
+    color: #48bb78;
+}
+
+.free {
+    color: #48bb78;
+    font-weight: 600;
+}
+
+.next-billing {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.premium-features h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.features-list i {
+    color: #48bb78;
+    width: 16px;
+}
+
+.payment-form {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.payment-methods h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.method-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.method-tab {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.method-tab.active,
+.method-tab:hover {
+    border-color: #667eea;
+    background: #f7fafc;
+    color: #667eea;
+}
+
+.method-tab i {
+    font-size: 1.5rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row:has(.form-group:only-child) {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group {
+    position: relative;
+}
+
+.card-icons {
+    position: absolute;
+    right: 1rem;
+    top: 2.2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-icons i {
+    font-size: 1.2rem;
+    color: #a0aec0;
+}
+
+.terms-checkbox {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+}
+
+.auto-renew-info {
+    background: #f0f8ff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.auto-renew-info i {
+    color: #667eea;
+    margin-top: 0.1rem;
+}
+
+.btn-pay {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.btn-pay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.btn-pay:active {
+    transform: translateY(0);
+}
+
+.security-info {
+    text-align: center;
+}
+
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.badge i {
+    color: #48bb78;
+    font-size: 1.2rem;
+}
+
+.payment-method-form {
+    padding: 2rem;
+}
+
+.paypal-container,
+.crypto-container {
+    text-align: center;
+}
+
+.paypal-info,
+.crypto-info {
+    margin-bottom: 2rem;
+}
+
+.btn-paypal {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #0070ba;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-paypal:hover {
+    background: #005ea6;
+    transform: translateY(-2px);
+}
+
+.crypto-options {
+    display: grid;
+    gap: 1rem;
+}
+
+.crypto-option {
+    padding: 1rem 2rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 600;
+}
+
+.crypto-option:hover {
+    border-color: #667eea;
+    background: #f7fafc;
+}
+
+.crypto-option i {
+    font-size: 1.5rem;
+    color: #f7931a;
+}
+
+.guarantee-banner {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+}
+
+.guarantee-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.guarantee-icon {
+    font-size: 3rem;
+}
+
+.guarantee-text h3 {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .method-tabs {
+        flex-direction: column;
+    }
+    
+    .guarantee-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .security-badges {
+        gap: 1rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    initializePaymentForm();
+    loadAgentInfo();
+    setupPaymentMethods();
+    setupFormValidation();
+});
+
+function initializePaymentForm() {
+    // Set next billing date
+    const nextDate = new Date();
+    nextDate.setMonth(nextDate.getMonth() + 1);
+    document.getElementById('next-billing-date').textContent = nextDate.toLocaleDateString();
+    
+    // Format card number input
+    const cardInput = document.getElementById('cardnumber');
+    cardInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\s/g, '');
+        let formattedValue = value.replace(/(.{4})/g, '$1 ').trim();
+        if (formattedValue.length <= 19) {
+            e.target.value = formattedValue;
+        }
+    });
+    
+    // Format expiry input
+    const expiryInput = document.getElementById('expiry');
+    expiryInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+    });
+    
+    // CVC input validation
+    const cvcInput = document.getElementById('cvc');
+    cvcInput.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+}
+
+function loadAgentInfo() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const agentId = urlParams.get('agent') || sessionStorage.getItem('selected_agent');
+    const price = parseFloat(urlParams.get('price')) || parseFloat(sessionStorage.getItem('selected_price')) || 19.99;
+    
+    if (!agentId) {
+        // Redirect to agents page if no agent selected
+        window.location.href = '/agents';
+        return;
+    }
+    
+    // Agent info mapping
+    const agentInfo = {
+        seraphina: {
+            name: 'Seraphina',
+            emoji: '💋',
+            role: 'AI Girlfriend',
+            description: 'Romantic companion with emotional intelligence'
+        },
+        strategist: {
+            name: 'The Strategist',
+            emoji: '🎯',
+            role: 'Master Planner',
+            description: 'Strategic thinking and planning expert'
+        },
+        healer: {
+            name: 'The Healer',
+            emoji: '💚',
+            role: 'Digital Wellness Guide',
+            description: 'Mental health and wellness support'
+        }
+        // Add more agents as needed
+    };
+    
+    const agent = agentInfo[agentId] || agentInfo.seraphina;
+    const discountedPrice = (price * 0.5).toFixed(2);
+    
+    // Update UI with agent info
+    document.getElementById('selected-agent').innerHTML = `
+        <div class="agent-info">
+            <div class="agent-avatar">${agent.emoji}</div>
+            <div class="agent-details">
+                <h3>${agent.name}</h3>
+                <p>${agent.role} - ${agent.description}</p>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('monthly-price').textContent = `$${price.toFixed(2)}`;
+    document.getElementById('total-price').textContent = `$${discountedPrice}`;
+    document.getElementById('pay-amount').textContent = discountedPrice;
+}
+
+function setupPaymentMethods() {
+    const methodTabs = document.querySelectorAll('.method-tab');
+    const cardForm = document.getElementById('payment-form');
+    const paypalForm = document.getElementById('paypal-form');
+    const cryptoForm = document.getElementById('crypto-form');
+    
+    methodTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Update active state
+            methodTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show appropriate form
+            const method = this.dataset.method;
+            
+            cardForm.style.display = method === 'card' ? 'block' : 'none';
+            paypalForm.style.display = method === 'paypal' ? 'block' : 'none';
+            cryptoForm.style.display = method === 'crypto' ? 'block' : 'none';
+        });
+    });
+}
+
+function setupFormValidation() {
+    const form = document.getElementById('payment-form');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        processPayment();
+    });
+}
+
+function processPayment() {
+    const button = document.getElementById('pay-button');
+    const originalText = button.innerHTML;
+    
+    // Show loading state
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Payment...';
+    button.disabled = true;
+    
+    // Collect form data
+    const formData = {
+        email: document.getElementById('email').value,
+        fullname: document.getElementById('fullname').value,
+        cardnumber: document.getElementById('cardnumber').value,
+        expiry: document.getElementById('expiry').value,
+        cvc: document.getElementById('cvc').value,
+        country: document.getElementById('country').value,
+        agent: new URLSearchParams(window.location.search).get('agent'),
+        amount: document.getElementById('pay-amount').textContent
+    };
+    
+    // Simulate payment processing
+    setTimeout(() => {
+        // Send to dummy payment processor
+        fetch('/api/process-payment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = `/payment/success?transaction=${data.transaction_id}`;
+            } else {
+                throw new Error(data.message || 'Payment failed');
+            }
+        })
+        .catch(error => {
+            alert('Payment failed: ' + error.message);
+            button.innerHTML = originalText;
+            button.disabled = false;
+        });
+    }, 3000);
+}
+
+function processPayPal() {
+    alert('PayPal integration coming soon! 🚀\\n\\nFor now, please use the credit card option.');
+}
+
+function processCrypto(currency) {
+    alert(`${currency.toUpperCase()} payment coming soon! 🚀\\n\\nFor now, please use the credit card option.`);
+}
+
+// Add some smooth animations
+document.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.order-summary, .payment-form');
+    
+    elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+            element.style.animation = 'slideInUp 0.6s ease forwards';
+        }
+    });
+});
+
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+</script>
+{% endblock %}

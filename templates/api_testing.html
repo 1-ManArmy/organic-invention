@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="testing-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>API Testing</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-flask"></i>
+            API Testing
+        </h1>
+        <p class="page-description">
+            Interactive API explorer, testing tools, and debugging guides.
+        </p>
+    </div>
+</section>
+
+<section class="testing-content">
+    <div class="container">
+        <div class="api-explorer">
+            <h2>Interactive API Explorer</h2>
+            <div class="test-form">
+                <div class="form-group">
+                    <label>Endpoint</label>
+                    <select>
+                        <option>/chat/completions</option>
+                        <option>/agents</option>
+                        <option>/models</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Enter your test message..."></textarea>
+                </div>
+                <button class="btn btn-primary">Test API Call</button>
+            </div>
+            <div class="response-area">
+                <h3>Response</h3>
+                <div class="response-display">
+                    <pre><code>// Response will appear here...</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="testing-tools">
+            <h2>Testing Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Postman Collection</h3>
+                    <p>Pre-configured API requests for Postman</p>
+                    <a href="#" class="btn btn-outline">Download</a>
+                </div>
+                <div class="tool-card">
+                    <h3>Insomnia Workspace</h3>
+                    <p>Complete API workspace for Insomnia</p>
+                    <a href="#" class="btn btn-outline">Import</a>
+                </div>
+                <div class="tool-card">
+                    <h3>OpenAPI Spec</h3>
+                    <p>Machine-readable API specification</p>
+                    <a href="#" class="btn btn-outline">View Spec</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.testing-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.testing-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.api-explorer {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.api-explorer h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.test-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.response-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.response-display {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.response-display pre {
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Monaco', monospace;
+}
+
+.testing-tools {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testing-tools h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+}
+
+.tool-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+</style>
+{% endblock %}

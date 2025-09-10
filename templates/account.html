@@ -1,0 +1,938 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="account-hero">
+    <div class="container">
+        <h1 class="account-title">
+            <i class="fas fa-user-circle"></i>
+            My Account
+        </h1>
+        <p class="account-description">
+            Manage your AI companions and subscription settings
+        </p>
+    </div>
+</section>
+
+<section class="account-dashboard">
+    <div class="container">
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="profile-name">Premium User</h3>
+                    <p class="profile-email">user@example.com</p>
+                    <div class="premium-badge">
+                        <i class="fas fa-crown"></i>
+                        Premium Member
+                    </div>
+                </div>
+                
+                <nav class="account-nav">
+                    <a href="#overview" class="nav-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Overview
+                    </a>
+                    <a href="#agents" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        My AI Agents
+                    </a>
+                    <a href="#subscription" class="nav-item">
+                        <i class="fas fa-credit-card"></i>
+                        Subscription
+                    </a>
+                    <a href="#settings" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="account-content">
+                <!-- Overview Tab -->
+                <div id="overview" class="content-tab active">
+                    <h2>Account Overview</h2>
+                    
+                    <div class="overview-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">💬</div>
+                            <div class="stat-info">
+                                <h3>1,247</h3>
+                                <p>Total Conversations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-info">
+                                <h3>156h</h3>
+                                <p>Total Chat Time</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🤖</div>
+                            <div class="stat-info">
+                                <h3>3</h3>
+                                <p>Active AI Agents</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-info">
+                                <h3>45</h3>
+                                <p>Days as Member</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">💋</div>
+                                <div class="activity-content">
+                                    <p><strong>Seraphina</strong> - Romantic conversation about future plans</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">🎯</div>
+                                <div class="activity-content">
+                                    <p><strong>The Strategist</strong> - Business strategy consultation</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon">💚</div>
+                                <div class="activity-content">
+                                    <p><strong>The Healer</strong> - Wellness check-in and meditation session</p>
+                                    <span class="activity-time">3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- My AI Agents Tab -->
+                <div id="agents" class="content-tab">
+                    <h2>My AI Agents</h2>
+                    
+                    <div class="agents-grid">
+                        <div class="agent-card-small active">
+                            <div class="agent-header-small">
+                                <div class="agent-avatar-small">💋</div>
+                                <div class="agent-status online"></div>
+                            </div>
+                            <h3>Seraphina</h3>
+                            <p>AI Girlfriend</p>
+                            <div class="agent-actions-small">
+                                <button class="btn-chat" onclick="window.location.href='/agent/seraphina'">
+                                    <i class="fas fa-comments"></i> Chat
+                                </button>
+                                <button class="btn-customize" onclick="window.location.href='/agent/seraphina/customize'">
+                                    <i class="fas fa-paint-brush"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="agent-card-small">
+                            <div class="agent-header-small">
+                                <div class="agent-avatar-small">🎯</div>
+                                <div class="agent-status offline"></div>
+                            </div>
+                            <h3>The Strategist</h3>
+                            <p>Master Planner</p>
+                            <div class="agent-actions-small">
+                                <button class="btn-chat" onclick="window.location.href='/agent/strategist'">
+                                    <i class="fas fa-comments"></i> Chat
+                                </button>
+                                <button class="btn-customize">
+                                    <i class="fas fa-paint-brush"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="agent-card-small add-new">
+                            <div class="add-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>Add New Agent</h3>
+                            <p>Explore marketplace</p>
+                            <button class="btn-add" onclick="window.location.href='/agents'">
+                                <i class="fas fa-plus"></i> Browse Agents
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Subscription Tab -->
+                <div id="subscription" class="content-tab">
+                    <h2>Subscription Details</h2>
+                    
+                    <div class="subscription-card">
+                        <div class="subscription-header">
+                            <h3>Premium Membership</h3>
+                            <span class="subscription-status active">Active</span>
+                        </div>
+                        
+                        <div class="subscription-details">
+                            <div class="detail-item">
+                                <span class="label">Plan:</span>
+                                <span class="value">Premium Monthly</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Price:</span>
+                                <span class="value">$19.99/month</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Next Billing:</span>
+                                <span class="value">October 10, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Payment Method:</span>
+                                <span class="value">•••• •••• •••• 1234</span>
+                            </div>
+                        </div>
+                        
+                        <div class="subscription-actions">
+                            <button class="btn-manage">
+                                <i class="fas fa-edit"></i>
+                                Manage Payment
+                            </button>
+                            <button class="btn-cancel">
+                                <i class="fas fa-times"></i>
+                                Cancel Subscription
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="billing-history">
+                        <h3>Billing History</h3>
+                        <div class="history-list">
+                            <div class="history-item">
+                                <div class="history-date">Sep 10, 2025</div>
+                                <div class="history-description">Premium Monthly Subscription</div>
+                                <div class="history-amount">$9.99</div>
+                                <div class="history-status paid">Paid</div>
+                            </div>
+                            
+                            <div class="history-item">
+                                <div class="history-date">Aug 10, 2025</div>
+                                <div class="history-description">Premium Monthly Subscription</div>
+                                <div class="history-amount">$19.99</div>
+                                <div class="history-status paid">Paid</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Settings Tab -->
+                <div id="settings" class="content-tab">
+                    <h2>Account Settings</h2>
+                    
+                    <div class="settings-sections">
+                        <div class="settings-section">
+                            <h3>Profile Information</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" value="Premium User" placeholder="Your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" value="user@example.com" placeholder="Your email">
+                                </div>
+                                <button type="submit" class="btn-save">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Privacy Settings</h3>
+                            <div class="settings-toggles">
+                                <div class="toggle-item">
+                                    <label>Save conversation history</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="toggle-item">
+                                    <label>Allow voice data collection</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="toggle-item">
+                                    <label>Share usage analytics</label>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Notifications</h3>
+                            <div class="settings-toggles">
+                                <div class="toggle-item">
+                                    <label>Email notifications</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="toggle-item">
+                                    <label>New feature announcements</label>
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="toggle-item">
+                                    <label>Weekly usage reports</label>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.account-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0 40px;
+    color: white;
+    text-align: center;
+}
+
+.account-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.account-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.account-dashboard {
+    padding: 40px 0 80px;
+    background: #f8fafc;
+    min-height: 80vh;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.account-sidebar {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    height: fit-content;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 2rem;
+}
+
+.user-profile {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.profile-name {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.profile-email {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.premium-badge {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    color: #744210;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.account-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #f7fafc;
+    color: #667eea;
+}
+
+.nav-item i {
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.account-content {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.content-tab {
+    display: none;
+    padding: 2.5rem;
+}
+
+.content-tab.active {
+    display: block;
+}
+
+.content-tab h2 {
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-size: 1.8rem;
+}
+
+.overview-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: #667eea;
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.stat-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.recent-activity h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 10px;
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.activity-content p {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.agent-card-small {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.agent-card-small:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+}
+
+.agent-card-small.active {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.agent-card-small.add-new {
+    border: 2px dashed #cbd5e0;
+    background: white;
+}
+
+.agent-header-small {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.agent-avatar-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1493, #dc143c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.agent-status {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 40px);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.agent-status.online {
+    background: #48bb78;
+}
+
+.agent-status.offline {
+    background: #a0aec0;
+}
+
+.agent-card-small h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.agent-card-small p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.agent-actions-small {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-chat,
+.btn-customize,
+.btn-add {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-chat {
+    background: #667eea;
+    color: white;
+}
+
+.btn-chat:hover {
+    background: #5a6fd8;
+}
+
+.btn-customize {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-customize:hover {
+    background: #cbd5e0;
+}
+
+.btn-add {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-add:hover {
+    background: #38a169;
+}
+
+.add-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: #a0aec0;
+}
+
+.subscription-card {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.subscription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.subscription-header h3 {
+    color: var(--text-primary);
+}
+
+.subscription-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.subscription-status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.subscription-details {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: var(--text-secondary);
+}
+
+.value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.subscription-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-manage,
+.btn-cancel {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-manage {
+    background: #667eea;
+    color: white;
+}
+
+.btn-manage:hover {
+    background: #5a6fd8;
+}
+
+.btn-cancel {
+    background: #e2e8f0;
+    color: #e53e3e;
+}
+
+.btn-cancel:hover {
+    background: #fed7d7;
+}
+
+.billing-history h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.history-list {
+    background: #f7fafc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    align-items: center;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-status.paid {
+    color: #48bb78;
+    font-weight: 600;
+}
+
+.settings-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.settings-section {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.settings-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-save {
+    padding: 0.75rem 1.5rem;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+    background: #38a169;
+}
+
+.settings-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.toggle-item label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.toggle-item input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .account-sidebar {
+        position: relative;
+        top: auto;
+    }
+    
+    .overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .agents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .subscription-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setupNavigation();
+    loadAccountData();
+});
+
+function setupNavigation() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const contentTabs = document.querySelectorAll('.content-tab');
+    
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update navigation
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show content
+            const targetId = this.getAttribute('href').substring(1);
+            contentTabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+}
+
+function loadAccountData() {
+    // This would typically load data from your backend
+    console.log('Account data loaded');
+}
+
+// Dummy functions for demonstration
+function managePayment() {
+    alert('Payment management will redirect to secure payment portal');
+}
+
+function cancelSubscription() {
+    if (confirm('Are you sure you want to cancel your subscription? You will lose access to premium features.')) {
+        alert('Subscription cancelled. You will receive a confirmation email.');
+    }
+}
+</script>
+{% endblock %}

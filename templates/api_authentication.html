@@ -1,0 +1,1118 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Authentication Hero Section -->
+<section class="auth-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/api">API Documentation</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Authentication</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-shield-alt"></i>
+            API Authentication
+        </h1>
+        <p class="page-description">
+            Secure your API access with multiple authentication methods. 
+            Learn about API keys, OAuth 2.0, JWT tokens, and security best practices.
+        </p>
+    </div>
+</section>
+
+<!-- Authentication Content -->
+<section class="auth-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="sidebar">
+                <nav class="auth-nav">
+                    <h3>Authentication</h3>
+                    <ul>
+                        <li><a href="#api-keys" class="active">API Keys</a></li>
+                        <li><a href="#oauth">OAuth 2.0</a></li>
+                        <li><a href="#jwt">JWT Tokens</a></li>
+                        <li><a href="#security">Security Best Practices</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="security-badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Enterprise Security</h4>
+                    <p>SOC 2 Type II certified with end-to-end encryption.</p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- API Keys Section -->
+                <div id="api-keys" class="auth-section">
+                    <h2>API Key Authentication</h2>
+                    <p>API keys are the simplest way to authenticate your requests. Include your API key in the Authorization header of every request.</p>
+
+                    <div class="method-card">
+                        <h3>Header Authentication</h3>
+                        <p>Include your API key in the Authorization header using the Bearer token format:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>HTTP Request</span>
+                                <button class="copy-btn" onclick="copyCode('header-auth')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre id="header-auth"><code>Authorization: Bearer sk-1234567890abcdef1234567890abcdef</code></pre>
+                        </div>
+
+                        <div class="example-grid">
+                            <div class="example-item">
+                                <h4>cURL Example</h4>
+                                <div class="code-block small">
+                                    <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://api.intelcoreai.com/v1/chat</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="example-item">
+                                <h4>Python Example</h4>
+                                <div class="code-block small">
+                                    <pre><code>headers = {
+    "Authorization": "Bearer YOUR_API_KEY"
+}
+requests.get(url, headers=headers)</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Security Warning</h4>
+                        <p>Never expose your API keys in client-side code, public repositories, or logs. Keep them secure on your server.</p>
+                    </div>
+
+                    <div class="api-key-management">
+                        <h3>Managing API Keys</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-plus"></i>
+                                <div>
+                                    <h4>Create Keys</h4>
+                                    <p>Generate new API keys with custom names and permissions</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Monitor Usage</h4>
+                                    <p>Track API key usage, requests, and rate limits</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ban"></i>
+                                <div>
+                                    <h4>Revoke Access</h4>
+                                    <p>Instantly revoke compromised keys from your dashboard</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Set Expiration</h4>
+                                    <p>Configure automatic expiration for temporary keys</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OAuth 2.0 Section -->
+                <div id="oauth" class="auth-section">
+                    <h2>OAuth 2.0 Authentication</h2>
+                    <p>OAuth 2.0 provides secure, token-based authentication ideal for applications that need to act on behalf of users.</p>
+
+                    <div class="oauth-flow">
+                        <h3>Authorization Code Flow</h3>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Authorization Request</h4>
+                                    <p>Redirect user to authorization server</p>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>User Consent</h4>
+                                    <p>User grants permissions</p>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Authorization Code</h4>
+                                    <p>Receive code via callback</p>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Access Token</h4>
+                                    <p>Exchange code for token</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Step 1: Authorization URL</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Authorization Request</span>
+                                <button class="copy-btn" onclick="copyCode('oauth-auth')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre id="oauth-auth"><code>https://auth.intelcoreai.com/oauth/authorize?
+  response_type=code&
+  client_id=YOUR_CLIENT_ID&
+  redirect_uri=https://yourapp.com/callback&
+  scope=read write&
+  state=random_state_value</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>Step 2: Token Exchange</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Token Request</span>
+                                <button class="copy-btn" onclick="copyCode('oauth-token')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre id="oauth-token"><code>curl -X POST https://auth.intelcoreai.com/oauth/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=authorization_code" \
+  -d "code=AUTHORIZATION_CODE" \
+  -d "client_id=YOUR_CLIENT_ID" \
+  -d "client_secret=YOUR_CLIENT_SECRET" \
+  -d "redirect_uri=https://yourapp.com/callback"</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="scopes-section">
+                        <h3>Available Scopes</h3>
+                        <div class="scopes-grid">
+                            <div class="scope-item">
+                                <code>read</code>
+                                <p>Read access to user data and AI responses</p>
+                            </div>
+                            <div class="scope-item">
+                                <code>write</code>
+                                <p>Create and modify conversations and settings</p>
+                            </div>
+                            <div class="scope-item">
+                                <code>admin</code>
+                                <p>Full administrative access (enterprise only)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JWT Section -->
+                <div id="jwt" class="auth-section">
+                    <h2>JWT Token Authentication</h2>
+                    <p>JSON Web Tokens (JWT) provide stateless authentication with embedded claims and expiration handling.</p>
+
+                    <div class="jwt-structure">
+                        <h3>JWT Structure</h3>
+                        <div class="jwt-visual">
+                            <div class="jwt-part header">
+                                <h4>Header</h4>
+                                <p>Algorithm & Token Type</p>
+                            </div>
+                            <div class="jwt-dot">.</div>
+                            <div class="jwt-part payload">
+                                <h4>Payload</h4>
+                                <p>Claims & User Data</p>
+                            </div>
+                            <div class="jwt-dot">.</div>
+                            <div class="jwt-part signature">
+                                <h4>Signature</h4>
+                                <p>Security Verification</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <h4>JWT Example</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>JWT Token</span>
+                                <button class="copy-btn" onclick="copyCode('jwt-example')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre id="jwt-example"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE2MTYyMzkwMjIsInNjb3BlcyI6WyJyZWFkIiwid3JpdGUiXX0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="jwt-claims">
+                        <h3>Standard Claims</h3>
+                        <div class="claims-grid">
+                            <div class="claim-item">
+                                <code>sub</code>
+                                <p>Subject (User ID)</p>
+                            </div>
+                            <div class="claim-item">
+                                <code>exp</code>
+                                <p>Expiration Time</p>
+                            </div>
+                            <div class="claim-item">
+                                <code>iat</code>
+                                <p>Issued At</p>
+                            </div>
+                            <div class="claim-item">
+                                <code>aud</code>
+                                <p>Audience</p>
+                            </div>
+                            <div class="claim-item">
+                                <code>iss</code>
+                                <p>Issuer</p>
+                            </div>
+                            <div class="claim-item">
+                                <code>scopes</code>
+                                <p>Permissions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Best Practices -->
+                <div id="security" class="auth-section">
+                    <h2>Security Best Practices</h2>
+                    <p>Follow these security guidelines to protect your API keys and user data.</p>
+
+                    <div class="practices-grid">
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h3>Key Management</h3>
+                            <ul>
+                                <li>Rotate API keys regularly</li>
+                                <li>Use different keys for different environments</li>
+                                <li>Store keys in environment variables</li>
+                                <li>Never commit keys to version control</li>
+                            </ul>
+                        </div>
+
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>Network Security</h3>
+                            <ul>
+                                <li>Always use HTTPS in production</li>
+                                <li>Validate SSL certificates</li>
+                                <li>Implement IP whitelisting</li>
+                                <li>Use VPN for sensitive operations</li>
+                            </ul>
+                        </div>
+
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Token Lifecycle</h3>
+                            <ul>
+                                <li>Set appropriate token expiration</li>
+                                <li>Implement token refresh mechanisms</li>
+                                <li>Revoke tokens on logout</li>
+                                <li>Monitor token usage patterns</li>
+                            </ul>
+                        </div>
+
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Attack Prevention</h3>
+                            <ul>
+                                <li>Implement rate limiting</li>
+                                <li>Monitor for unusual activity</li>
+                                <li>Use CSRF protection</li>
+                                <li>Validate all input data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="compliance-section">
+                        <h3>Compliance & Standards</h3>
+                        <div class="compliance-badges">
+                            <div class="compliance-badge">
+                                <i class="fas fa-certificate"></i>
+                                <div>
+                                    <h4>SOC 2 Type II</h4>
+                                    <p>Security & availability controls</p>
+                                </div>
+                            </div>
+                            <div class="compliance-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h4>ISO 27001</h4>
+                                    <p>Information security management</p>
+                                </div>
+                            </div>
+                            <div class="compliance-badge">
+                                <i class="fas fa-user-shield"></i>
+                                <div>
+                                    <h4>GDPR Compliant</h4>
+                                    <p>European privacy regulations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.auth-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+.breadcrumb i {
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-title i {
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.page-description {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.auth-content {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.auth-nav h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.auth-nav ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.auth-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.auth-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.auth-nav a:hover,
+.auth-nav a.active {
+    background: #667eea;
+    color: white;
+}
+
+.security-badge {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.badge-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.badge-icon i {
+    font-size: 1.5rem;
+}
+
+.security-badge h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.security-badge p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 2rem;
+}
+
+.auth-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.auth-section > p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.method-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.method-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.code-block {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.code-block.small {
+    margin: 1rem 0;
+}
+
+.code-header {
+    background: #2d2d30;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.code-header span {
+    color: #cccccc;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: #cccccc;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.copy-btn:hover {
+    background: #555;
+    border-color: #777;
+}
+
+.code-block pre {
+    padding: 1.5rem;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e6e6e6;
+    overflow-x: auto;
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.example-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.warning-box h4 {
+    color: #856404;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.warning-box p {
+    color: #856404;
+    margin: 0;
+}
+
+.api-key-management {
+    margin-top: 3rem;
+}
+
+.api-key-management h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.feature-item i {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.feature-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.oauth-flow {
+    margin: 2rem 0;
+}
+
+.oauth-flow h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.flow-steps {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.flow-step {
+    min-width: 150px;
+    text-align: center;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: 700;
+}
+
+.step-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.step-content p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #667eea;
+    font-weight: 700;
+}
+
+.code-example {
+    margin: 2rem 0;
+}
+
+.code-example h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.scopes-section {
+    margin-top: 3rem;
+}
+
+.scopes-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.scopes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.scope-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.scope-item code {
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.scope-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.jwt-structure {
+    margin: 2rem 0;
+}
+
+.jwt-structure h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.jwt-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.jwt-part {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    min-width: 120px;
+}
+
+.jwt-part.header {
+    border-color: #ff6b6b;
+    background: #fff5f5;
+}
+
+.jwt-part.payload {
+    border-color: #4ecdc4;
+    background: #f0fdfc;
+}
+
+.jwt-part.signature {
+    border-color: #45b7d1;
+    background: #f0f9ff;
+}
+
+.jwt-part h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.jwt-part p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.jwt-dot {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.jwt-claims {
+    margin-top: 3rem;
+}
+
+.jwt-claims h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.claims-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.claim-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.claim-item code {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.claim-item p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.practice-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.practice-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.practice-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.practice-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.practice-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.practice-card li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.practice-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+}
+
+.compliance-section {
+    margin-top: 3rem;
+}
+
+.compliance-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.compliance-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.compliance-badge {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.compliance-badge i {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.compliance-badge h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.compliance-badge p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .main-content {
+        padding: 2rem;
+        order: 1;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .example-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .flow-steps {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+        align-self: center;
+    }
+    
+    .jwt-visual {
+        flex-direction: column;
+    }
+    
+    .jwt-dot {
+        transform: rotate(90deg);
+    }
+    
+    .practices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compliance-badges {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+function copyCode(elementId) {
+    const code = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        const btn = event.target.closest('.copy-btn');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+        }, 2000);
+    });
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Update active nav item
+            document.querySelectorAll('.auth-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
+</script>
+{% endblock %}

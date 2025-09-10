@@ -1,7 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify, session
 from datetime import datetime
+import uuid
+import random
 
 app = Flask(__name__)
+app.secret_key = 'ai_agents_secret_key_2025'
 # Main routes
 @app.route("/")
 def homepage():
@@ -368,5 +371,189 @@ def data_processing_agreement():
     """Data Processing Agreement Page"""
     return render_template("data_processing_agreement.html", title="Data Processing Agreement - AI Digital Friend")
 
+@app.route("/guides")
+def guides():
+    """Getting Started Guides Page"""
+    return render_template("guides.html", title="Getting Started Guides - AI Digital Friend")
+
+@app.route("/api-docs")
+def api_docs():
+    """API Documentation Page"""
+    return render_template("api_docs.html", title="API Documentation - AI Digital Friend")
+
+# API Sub-pages Routes
+@app.route("/api/quickstart")
+def api_quickstart():
+    """API Quick Start Guide Page"""
+    return render_template("api_quickstart.html", title="API Quick Start - AI Digital Friend")
+
+@app.route("/api/authentication")
+def api_authentication():
+    """API Authentication Guide Page"""
+    return render_template("api_authentication.html", title="API Authentication - AI Digital Friend")
+
+@app.route("/api/endpoints")
+def api_endpoints():
+    """API Endpoints Reference Page"""
+    return render_template("api_endpoints.html", title="API Endpoints - AI Digital Friend")
+
+@app.route("/api/websockets")
+def api_websockets():
+    """WebSocket API Documentation Page"""
+    return render_template("api_websockets.html", title="WebSocket API - AI Digital Friend")
+
+@app.route("/api/sdks")
+def api_sdks():
+    """API SDKs and Libraries Page"""
+    return render_template("api_sdks.html", title="API SDKs - AI Digital Friend")
+
+@app.route("/api/examples")
+def api_examples():
+    """API Code Examples Page"""
+    return render_template("api_examples.html", title="API Examples - AI Digital Friend")
+
+@app.route("/api/rate-limits")
+def api_rate_limits():
+    """API Rate Limits Documentation Page"""
+    return render_template("api_rate_limits.html", title="API Rate Limits - AI Digital Friend")
+
+@app.route("/api/testing")
+def api_testing():
+    """API Testing Tools Page"""
+    return render_template("api_testing.html", title="API Testing - AI Digital Friend")
+
+@app.route("/api/errors")
+def api_errors():
+    """API Error Handling Documentation Page"""
+    return render_template("api_errors.html", title="API Error Handling - AI Digital Friend")
+
+# AI Agents Dashboard
+@app.route("/agents")
+def agents_marketplace():
+    """AI Agents Marketplace - Browse and Subscribe"""
+    return render_template("agents_marketplace.html", title="AI Agents Marketplace - AI Digital Friends")
+
+@app.route("/agents/dashboard")
+def agents_dashboard():
+    """AI Agents System Dashboard"""
+    return render_template("agents_dashboard.html", title="AI Agents Dashboard - AI Digital Friend")
+
+# Payment System Routes
+@app.route("/payment")
+def payment_page():
+    """Payment page for agent subscriptions"""
+    agent_id = request.args.get('agent', 'seraphina')
+    price = request.args.get('price', '19.99')
+    return render_template("payment.html", 
+                         title="Payment - AI Digital Friends",
+                         agent_id=agent_id, 
+                         price=price)
+
+@app.route("/payment/success")
+def payment_success():
+    """Payment success page"""
+    transaction_id = request.args.get('transaction', f'TXN-{datetime.now().year}-{random.randint(100, 999)}')
+    return render_template("payment_success.html", 
+                         title="Payment Successful - AI Digital Friends",
+                         transaction_id=transaction_id)
+
+# API Endpoints
+@app.route("/api/process-payment", methods=['POST'])
+def process_payment():
+    """Dummy payment processor for testing"""
+    try:
+        payment_data = request.get_json()
+        
+        # Validate required fields
+        required_fields = ['email', 'fullname', 'cardnumber', 'expiry', 'cvc']
+        for field in required_fields:
+            if not payment_data.get(field):
+                return jsonify({
+                    'success': False,
+                    'message': f'Missing required field: {field}'
+                }), 400
+        
+        # Simulate payment processing delay
+        import time
+        time.sleep(2)
+        
+        # Dummy validation - reject certain test card numbers
+        card_number = payment_data['cardnumber'].replace(' ', '')
+        if card_number in ['4000000000000002', '4000000000000010']:
+            return jsonify({
+                'success': False,
+                'message': 'Payment declined - insufficient funds'
+            }), 400
+        
+        # Generate transaction ID
+        transaction_id = f'TXN-{datetime.now().year}-{random.randint(1000, 9999)}'
+        
+        # Store transaction in session (in real app, store in database)
+        if 'user_id' not in session:
+            session['user_id'] = str(uuid.uuid4())
+        
+        session[f'transaction_{transaction_id}'] = {
+            'agent': payment_data.get('agent'),
+            'amount': payment_data.get('amount'),
+            'email': payment_data.get('email'),
+            'status': 'completed',
+            'date': datetime.now().isoformat()
+        }
+        
+        return jsonify({
+            'success': True,
+            'message': 'Payment processed successfully',
+            'transaction_id': transaction_id
+        })
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Payment processing error: {str(e)}'
+        }), 500
+
+@app.route("/api/agents")
+def get_agents_api():
+    """API endpoint to get all available agents"""
+    try:
+        from agents import AGENTS_REGISTRY
+        return jsonify({
+            'success': True,
+            'agents': AGENTS_REGISTRY
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
+
+# Account Management Routes
+@app.route("/account")
+def account_dashboard():
+    """User account dashboard"""
+    return render_template("account.html", title="My Account - AI Digital Friends")
+
+@app.route("/help")
+def help_center():
+    """Help center page"""
+    return render_template("help.html", title="Help Center - AI Digital Friends")
+
+@app.route("/terms")
+def terms_of_service():
+    """Terms of service page"""
+    return render_template("terms.html", title="Terms of Service - AI Digital Friends")
+
+@app.route("/privacy")
+def privacy_policy():
+    """Privacy policy page"""
+    return render_template("privacy.html", title="Privacy Policy - AI Digital Friends")
+
+# Register AI Agents
+try:
+    from agents import register_agent_routes
+    register_agent_routes(app)
+except ImportError as e:
+    print(f"Warning: Could not register AI agents: {e}")
+
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8000)
+    app.run(debug=True, host="0.0.0.0", port=3000)

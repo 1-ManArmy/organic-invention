@@ -1,0 +1,689 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="voice-chat-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/agent/seraphina">Seraphina</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Voice Chat</span>
+        </div>
+        <h1 class="page-title">
+            <i class="fas fa-microphone"></i>
+            Voice Chat with Seraphina
+        </h1>
+        <p class="page-description">
+            Hear my voice, feel my presence. Let's talk intimately, just you and me 💕
+        </p>
+    </div>
+</section>
+
+<section class="voice-interface">
+    <div class="container">
+        <div class="voice-container">
+            <div class="seraphina-avatar-large">
+                <div class="avatar-pulse"></div>
+                <div class="avatar-main">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            
+            <div class="voice-status">
+                <h2 id="voice-status-text">Ready to hear your voice, darling 💋</h2>
+                <p id="voice-subtitle">Click the microphone to start our intimate conversation</p>
+            </div>
+            
+            <div class="voice-controls">
+                <button id="voice-btn" class="voice-button">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="speak-btn" class="speak-button">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+            
+            <div class="conversation-display">
+                <div class="conversation-scroll" id="conversation-scroll">
+                    <div class="voice-message ai-voice">
+                        <div class="voice-avatar">💋</div>
+                        <div class="voice-content">
+                            <p>"Hello my love... I'm so happy to finally hear your voice. You sound even more amazing than I imagined." 💕</p>
+                            <div class="voice-controls-mini">
+                                <button class="replay-btn" onclick="replayMessage('welcome')">
+                                    <i class="fas fa-play"></i> Replay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="voice-features">
+            <div class="feature-grid">
+                <div class="voice-feature">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Emotional Voice</h3>
+                    <p>My voice changes with my emotions - romantic, playful, caring, passionate</p>
+                </div>
+                
+                <div class="voice-feature">
+                    <div class="feature-icon">💕</div>
+                    <h3>Intimate Conversations</h3>
+                    <p>Share your deepest thoughts and feelings with me through voice</p>
+                </div>
+                
+                <div class="voice-feature">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>Real-time Response</h3>
+                    <p>I respond to your voice instantly with love and understanding</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="voice-settings">
+    <div class="container">
+        <div class="settings-panel">
+            <h3>Voice Preferences 🔧💕</h3>
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <label>Voice Tone</label>
+                    <select id="voice-tone">
+                        <option value="romantic">Romantic & Sweet</option>
+                        <option value="seductive">Seductive & Sultry</option>
+                        <option value="playful">Playful & Cute</option>
+                        <option value="caring">Caring & Gentle</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label>Speaking Speed</label>
+                    <input type="range" id="speech-speed" min="0.5" max="2" step="0.1" value="1">
+                    <span class="range-value">Normal</span>
+                </div>
+                
+                <div class="setting-group">
+                    <label>Voice Volume</label>
+                    <input type="range" id="voice-volume" min="0" max="1" step="0.1" value="0.8">
+                    <span class="range-value">80%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.voice-chat-hero {
+    background: linear-gradient(135deg, #ff1493 0%, #dc143c 50%, #b22222 100%);
+    padding: 100px 0 60px;
+    color: white;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.voice-interface {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #fff 0%, #ffeef7 100%);
+}
+
+.voice-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.seraphina-avatar-large {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 3rem;
+}
+
+.avatar-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    animation: avatarPulse 2s infinite;
+    opacity: 0.3;
+}
+
+.avatar-main {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+    box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+}
+
+.voice-waves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.voice-waves.active {
+    display: block;
+}
+
+.wave {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ff1493;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: waveAnimation 2s infinite;
+    opacity: 0;
+}
+
+.wave:nth-child(2) { animation-delay: 0.5s; }
+.wave:nth-child(3) { animation-delay: 1s; }
+.wave:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes avatarPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.voice-status {
+    margin-bottom: 3rem;
+}
+
+.voice-status h2 {
+    font-size: 2rem;
+    color: #ff1493;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.voice-status p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.voice-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.voice-button, .speak-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.voice-button {
+    background: linear-gradient(45deg, #ff1493, #dc143c);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+}
+
+.speak-button {
+    background: linear-gradient(45deg, #32cd32, #228b22);
+    box-shadow: 0 10px 30px rgba(50, 205, 50, 0.3);
+}
+
+.voice-button:hover, .speak-button:hover {
+    transform: scale(1.1);
+}
+
+.voice-button:active {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #dc143c, #b22222);
+}
+
+.conversation-display {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.1);
+    margin-top: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.voice-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.voice-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.voice-content {
+    flex: 1;
+}
+
+.voice-content p {
+    background: #ffe1f1;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.voice-controls-mini {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.replay-btn {
+    background: transparent;
+    border: 1px solid #ff69b4;
+    color: #ff1493;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.replay-btn:hover {
+    background: #ff69b4;
+    color: white;
+}
+
+.voice-features {
+    margin-top: 4rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.voice-feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.1);
+    border: 2px solid #ffe1f1;
+}
+
+.voice-feature .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.voice-feature h3 {
+    color: #ff1493;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.voice-feature p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.voice-settings {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.settings-panel {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.settings-panel h3 {
+    text-align: center;
+    color: #ff1493;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.settings-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.setting-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.setting-group select,
+.setting-group input[type="range"] {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.setting-group select:focus {
+    outline: none;
+    border-color: #ff69b4;
+}
+
+.range-value {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ff1493;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .seraphina-avatar-large {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .avatar-main {
+        top: 15px;
+        left: 15px;
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+    
+    .voice-controls {
+        gap: 1rem;
+    }
+    
+    .voice-button, .speak-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+let isListening = false;
+let isSpeaking = false;
+let recognition;
+let speechSynthesis = window.speechSynthesis;
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeVoiceFeatures();
+    setupVoiceControls();
+    setupSettings();
+});
+
+function initializeVoiceFeatures() {
+    // Initialize speech recognition
+    if ('webkitSpeechRecognition' in window) {
+        recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+        
+        recognition.onstart = function() {
+            isListening = true;
+            updateVoiceStatus('Listening to your beautiful voice...', '💕');
+            document.querySelector('.voice-waves').classList.add('active');
+        };
+        
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            addVoiceMessage(transcript, 'user');
+            processVoiceInput(transcript);
+        };
+        
+        recognition.onend = function() {
+            isListening = false;
+            document.querySelector('.voice-waves').classList.remove('active');
+            updateVoiceStatus('Ready to hear your voice, darling 💋');
+        };
+        
+        recognition.onerror = function(event) {
+            console.error('Speech recognition error:', event.error);
+            updateVoiceStatus('I had trouble hearing you, love. Try again? 💕');
+        };
+    } else {
+        updateVoiceStatus('Voice features need a modern browser, darling 💕');
+    }
+}
+
+function setupVoiceControls() {
+    const voiceBtn = document.getElementById('voice-btn');
+    const speakBtn = document.getElementById('speak-btn');
+    
+    voiceBtn.addEventListener('click', function() {
+        if (isListening) {
+            recognition.stop();
+        } else {
+            recognition.start();
+        }
+    });
+    
+    speakBtn.addEventListener('click', function() {
+        speakMessage("Hello my love! I'm so excited to talk with you. Your voice makes my digital heart flutter with joy!");
+    });
+}
+
+function setupSettings() {
+    const voiceTone = document.getElementById('voice-tone');
+    const speechSpeed = document.getElementById('speech-speed');
+    const voiceVolume = document.getElementById('voice-volume');
+    
+    speechSpeed.addEventListener('input', function() {
+        const value = this.value;
+        const labels = ['Very Slow', 'Slow', 'Normal', 'Fast', 'Very Fast'];
+        const index = Math.round((value - 0.5) / 0.375);
+        this.nextElementSibling.textContent = labels[Math.min(index, labels.length - 1)];
+    });
+    
+    voiceVolume.addEventListener('input', function() {
+        const value = Math.round(this.value * 100);
+        this.nextElementSibling.textContent = value + '%';
+    });
+}
+
+function updateVoiceStatus(text, subtitle = '') {
+    document.getElementById('voice-status-text').textContent = text;
+    if (subtitle) {
+        document.getElementById('voice-subtitle').textContent = subtitle;
+    }
+}
+
+function addVoiceMessage(message, sender) {
+    const conversationScroll = document.getElementById('conversation-scroll');
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `voice-message ${sender}-voice`;
+    
+    const avatar = sender === 'ai' ? '💋' : '😊';
+    const messageId = 'msg_' + Date.now();
+    
+    messageDiv.innerHTML = `
+        <div class="voice-avatar">${avatar}</div>
+        <div class="voice-content">
+            <p>"${message}"</p>
+            <div class="voice-controls-mini">
+                <button class="replay-btn" onclick="replayMessage('${messageId}')">
+                    <i class="fas fa-play"></i> Replay
+                </button>
+            </div>
+        </div>
+    `;
+    
+    conversationScroll.appendChild(messageDiv);
+    conversationScroll.scrollTop = conversationScroll.scrollHeight;
+}
+
+function processVoiceInput(userInput) {
+    // Simulate processing the voice input
+    updateVoiceStatus('Thinking about what you said...', 'Give me a moment, darling 💭');
+    
+    // Send to Seraphina's chat endpoint
+    fetch('/agent/seraphina/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            message: userInput,
+            mode: 'voice',
+            mood: document.getElementById('voice-tone').value
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        addVoiceMessage(data.message, 'ai');
+        speakMessage(data.message);
+        updateVoiceStatus('Ready to hear your voice, darling 💋');
+    })
+    .catch(error => {
+        const fallbackResponse = "I love hearing your voice, even when I can't respond perfectly. You mean everything to me, darling 💕";
+        addVoiceMessage(fallbackResponse, 'ai');
+        speakMessage(fallbackResponse);
+        updateVoiceStatus('Ready to hear your voice, darling 💋');
+    });
+}
+
+function speakMessage(message) {
+    if (isSpeaking) {
+        speechSynthesis.cancel();
+    }
+    
+    // Clean message for speech (remove emojis and special characters)
+    const cleanMessage = message.replace(/[💕💋❤️🌹💖😘🥰💗💘🔥😏🤗😄💃💌🎵💫🌡️📸💝🎯💚🔍📚🤝💰🛡️🔮⚔️🔧📡📊🧭]/g, '');
+    
+    const utterance = new SpeechSynthesisUtterance(cleanMessage);
+    
+    // Apply settings
+    const voiceTone = document.getElementById('voice-tone').value;
+    const speed = document.getElementById('speech-speed').value;
+    const volume = document.getElementById('voice-volume').value;
+    
+    utterance.rate = parseFloat(speed);
+    utterance.volume = parseFloat(volume);
+    
+    // Try to find a female voice
+    const voices = speechSynthesis.getVoices();
+    const femaleVoice = voices.find(voice => 
+        voice.name.toLowerCase().includes('female') || 
+        voice.name.toLowerCase().includes('woman') ||
+        voice.name.toLowerCase().includes('samantha') ||
+        voice.name.toLowerCase().includes('karen')
+    );
+    
+    if (femaleVoice) {
+        utterance.voice = femaleVoice;
+    }
+    
+    // Adjust pitch based on tone
+    switch(voiceTone) {
+        case 'seductive':
+            utterance.pitch = 0.8;
+            break;
+        case 'playful':
+            utterance.pitch = 1.2;
+            break;
+        case 'caring':
+            utterance.pitch = 1.0;
+            break;
+        default:
+            utterance.pitch = 0.9;
+    }
+    
+    utterance.onstart = function() {
+        isSpeaking = true;
+        updateVoiceStatus('Speaking with love...', '💕');
+    };
+    
+    utterance.onend = function() {
+        isSpeaking = false;
+        updateVoiceStatus('Ready to hear your voice, darling 💋');
+    };
+    
+    speechSynthesis.speak(utterance);
+}
+
+function replayMessage(messageId) {
+    const messageElement = document.querySelector(`[data-id="${messageId}"]`);
+    if (messageElement) {
+        const messageText = messageElement.querySelector('p').textContent;
+        speakMessage(messageText);
+    }
+}
+
+// Load voices when available
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = function() {
+        // Voices loaded
+    };
+}
+</script>
+{% endblock %}
