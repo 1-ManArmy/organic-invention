@@ -2,9 +2,13 @@ from flask import Flask, render_template, request, jsonify, session
 from datetime import datetime
 import uuid
 import random
+from config import load_config
 
+# Initialize Flask app with configuration
 app = Flask(__name__)
-app.secret_key = 'ai_agents_secret_key_2025'
+config = load_config()
+app.secret_key = config.SECRET_KEY
+app.config.from_object(config)
 # Main routes
 @app.route("/")
 def homepage():
